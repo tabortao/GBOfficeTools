@@ -1,6 +1,7 @@
 ﻿using Aspose.Words;
 using System;
 using System.Drawing;
+using System.IO;
 
 namespace BookmarksTool.LeiTools.AsposeOffice
 
@@ -149,11 +150,57 @@ namespace BookmarksTool.LeiTools.AsposeOffice
             doc.Save(strFileName);
         }
 
-        /*
-        public void SaveToPDF(string path)
+        #region 批量word转pdf
+
+        public static bool Word2PDF(string wordPath)
         {
-            doc.Save(path, Aspose.Words.SaveFormat.Pdf);
+            bool result = false;
+            //实现查找路径中word文件,带来筛选，直接选出word文件。
+            var wordFiles = Directory.GetFiles(wordPath, "*.doc");
+            //var wordFiles = Directory.EnumerateFiles(wordPath, "*.doc");
+            foreach (var wordFile in wordFiles)
+            {
+                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
+                string pdfFilePath = wordPath + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
+                //循环，转换每一个word文件。
+                Document doc = new Document(wordFile);
+                try
+                {
+                    if (!File.Exists(pdfFilePath))
+                    {
+                        SaveToPDF(wordFile, pdfFilePath);
+                    }
+                    else
+                    {
+                        File.Delete(pdfFilePath);
+                        SaveToPDF(wordFile, pdfFilePath);
+                    }
+                }
+                catch (Exception e)
+                {
+                    //System.Windows.Forms.MessageBox.Show("请关闭需要转换的所有word文档。" + "\r\n" + e.Message);
+                    //Console.WriteLine(e.Message);
+                    Form1.form1.TextBoxMsg(e.Message);
+                    result = false;
+                }
+            }
+            //application.Quit();//退出word
+            return result;
         }
-        */
+
+        /// <summary>
+        /// 单个word文件转换为pdf
+        /// </summary>
+        /// <param name="wordFilePath">word文件路径，含文件名及拓展名</param>
+        /// <param name="pdfFilePath">pdf文件路径，含文件名及拓展名</param>
+        public static void SaveToPDF(string wordFilePath, string pdfFilePath)
+        {
+            string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFilePath); //获取文件名称，不含拓展名。
+            Aspose.Words.Document doc = new Aspose.Words.Document(wordFilePath);
+            doc.Save(pdfFilePath, Aspose.Words.SaveFormat.Pdf);
+            Form1.form1.TextBoxMsg(wordFileNameWithoutExtension + "转换PDF成功!");
+        }
+
+        #endregion 批量word转pdf
     }
 }

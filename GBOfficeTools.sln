@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookmarksTool", "BookmarksTool\BookmarksTool.csproj", "{E24B78D8-B284-4D39-8333-CF40D1F39628}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{3ED2BA8F-EDA2-468A-9DEE-AEB5C76B9782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformTest", "WinformTest\WinformTest.csproj", "{B9AD001F-F95F-49CC-81F9-1AA171C5C318}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{E24B78D8-B284-4D39-8333-CF40D1F39628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E24B78D8-B284-4D39-8333-CF40D1F39628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E24B78D8-B284-4D39-8333-CF40D1F39628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED2BA8F-EDA2-468A-9DEE-AEB5C76B9782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED2BA8F-EDA2-468A-9DEE-AEB5C76B9782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED2BA8F-EDA2-468A-9DEE-AEB5C76B9782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED2BA8F-EDA2-468A-9DEE-AEB5C76B9782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9AD001F-F95F-49CC-81F9-1AA171C5C318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9AD001F-F95F-49CC-81F9-1AA171C5C318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9AD001F-F95F-49CC-81F9-1AA171C5C318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9AD001F-F95F-49CC-81F9-1AA171C5C318}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

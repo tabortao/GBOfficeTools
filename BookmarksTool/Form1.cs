@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BookmarksTool
@@ -40,7 +41,7 @@ namespace BookmarksTool
             sw.Stop();
             //Console.WriteLine("运行结束,用时{0}秒！按任意键结束", sw.Elapsed);
             Form1.form1.TextBoxMsg("运行结束,用时" + sw.Elapsed + "秒！");
-            MessageBox.Show("Word报告生成完成，请注意查看！");
+            //MessageBox.Show("Word报告生成完成，请注意查看！");
         }
 
         private void btn_word2pdf_Click(object sender, EventArgs e)
@@ -48,11 +49,14 @@ namespace BookmarksTool
             TextBoxMsg("正在运行……");
             var sw = new Stopwatch();
             sw.Start(); //开始计时
-            var start2 = new LeiTools.MSOffice.Word.Word2PDF();
-            start2.StartWord2PDF();
+            //var start2 = new LeiTools.MSOffice.Word.Word2PDF();
+            //start2.StartWord2PDF();
+            var docPath = Directory.GetCurrentDirectory();
+            LeiTools.AsposeOffice.AsposeOfficeWord.Word2PDF(docPath);
+            
             sw.Stop();
             Form1.form1.TextBoxMsg("运行结束，用时" + sw.Elapsed + "秒");
-            MessageBox.Show("Word批量转换PDF完成，请注意查看！");
+            //MessageBox.Show("Word批量转换PDF完成，请注意查看！");
         }
 
         private void Btn_help_Click(object sender, EventArgs e)

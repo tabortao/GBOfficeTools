@@ -2,27 +2,92 @@
 using System;
 using System.IO;
 
-// 本程序使用引用-添加引用-扩展 Microsoft.Office.Interop.Word.dll，要求系统需安装office
-// 本程序已测试成功，为控制台应用程序，将程序放入包含word的文件夹内，执行本程序，即可实现把文件夹内所有word转换为pdf
-//WordTOPDF.exe
-//1.系统需安装微软office软件才可以运行；
-//2.测试转换38个word文件用时1分51.05s；（采用并行计算，来优化速度）
-//3.转换质量较高，暂无问题。
-//4.20230103:测试发下采用并行计算容易出现问题，修改为采用普通循环计算。
-
-namespace BookmarksTool.LeiTools.MSOffice.Word
+namespace BookmarksTool.LeiTools.MSOffice
 {
-    /// <summary>
-    /// 通过调用微软office，实现批量转换
-    /// </summary>
-    public class Word2PDF
+    public class MSWord
     {
-        //internal object w;
+        /// <summary>
+        /// 判断word文件是否打开
+        /// </summary>
+        /// <param name="pathName">文件路径</param>
+        /// <returns></returns>
+        public bool IsFileLocked(string pathName)
+        {
+            try
+            {
+                if (!File.Exists(pathName))
+                {
+                    return false;
+                }
+                using (var fs = new FileStream(pathName, FileMode.Open, FileAccess.Read, FileShare.None))
+                {
+                    fs.Close();
+                }
+            }
+            catch
+            {
+                return true;
+            }
+            return false;
+        }
+
+        #region Word转换为PDF
+
+        public static bool Word2PDF(string wordPath)
+        {
+            //1、打开word
+            bool result = false;
+            Application application = new Application
+            {
+                Visible = false
+            };
+            Document document = null;
+            //实现查找路径中word文件,带来筛选，直接选出word文件。
+            var wordFiles = Directory.GetFiles(wordPath, "*.doc");
+            //var wordFiles = Directory.EnumerateFiles(wordPath, "*.doc");
+            foreach (var wordFile in wordFiles)
+            {
+                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
+                string pdfFilePath = wordPath + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
+                //Console.WriteLine("wordFileNameWithoutExtension" + wordFileNameWithoutExtension);
+                //Console.WriteLine("pdfFilePath" + pdfFilePath);
+
+                //循环，转换每一个word文件。
+                try
+                {
+                    if (!File.Exists(@pdfFilePath))//存在PDF，不需要继续转换
+                    {
+                        document = application.Documents.Open(wordFile);
+                        document.ExportAsFixedFormat(pdfFilePath, WdExportFormat.wdExportFormatPDF);
+                        //Form1.form1.TextBoxMsg(f.Name + "转换PDF成功!");
+                        Console.WriteLine("文件{0}转换PDF成功。", wordFileNameWithoutExtension);
+                    }
+                    else
+                    {
+                        File.Delete(@pdfFilePath);
+                        document.ExportAsFixedFormat(pdfFilePath, WdExportFormat.wdExportFormatPDF);
+                    }
+                    result = true;
+                }
+                catch (Exception e)
+                {
+                    //System.Windows.Forms.MessageBox.Show("请关闭需要转换的所有word文档。" + "\r\n" + e.Message);
+                    Console.WriteLine(e.Message);
+                    result = false;
+                }
+                finally
+                {
+                    document.Close();
+                }
+            }
+            //application.Quit();//退出word
+            return result;
+        }
 
         /// <summary>
         /// Word转Pdf核心函数
         /// </summary>
-        private bool WordTOPDF(DirectoryInfo docPath)
+        public static bool WordTOPDF(DirectoryInfo docPath)
         {
             bool result = false;
             Application application = new Application
@@ -178,31 +243,15 @@ namespace BookmarksTool.LeiTools.MSOffice.Word
             return result;
         }
 
-        public void StartWord2PDF()
+        public static void StartWord2PDF()
         {
             var docPath = Directory.GetCurrentDirectory();
-            var path = new DirectoryInfo(docPath);
-            var w = new BookmarksTool.LeiTools.MSOffice.Word.Word2PDF();
-            w.WordTOPDF(path);
+            var path = new DirectoryInfo(docPath);          
+            WordTOPDF(path);
+            
+            
         }
 
-        //class Program
-        //{
-        //    static void Main(string[] args)
-        //    {
-        //        Stopwatch sw = new Stopwatch();
-        //        sw.Start();
-        //        string docPath = Directory.GetCurrentDirectory();
-
-        //        Console.WriteLine("当前路径为：{0}", docPath);
-        //        //string docPath = @"./Word/";
-        //        DirectoryInfo di = new DirectoryInfo(docPath);
-        //        Word2PDF w = new Word2PDF();
-        //        w.WordTOPDF(di);
-        //        sw.Stop();
-        //        Console.WriteLine("全部Word已转换为PDF,用时{0}秒", sw.Elapsed);
-        //        Console.ReadKey();
-        //    }
-        //}
+        #endregion Word转换为PDF
     }
 }

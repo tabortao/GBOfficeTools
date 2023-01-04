@@ -83,7 +83,7 @@
       <HintPath>..\packages\Aspose.Cells.dll</HintPath>
     </Reference>
     <Reference Include="Aspose.Words">
-      <HintPath>..\packages\Aspose.Words.dll</HintPath>
+      <HintPath>..\packages\AsposeWords 18.7\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
@@ -117,6 +117,7 @@
     <Compile Include="LeiTools\Keygen\RegInfo.cs" />
     <Compile Include="LeiTools\MSOffice\MSOfficeExcel.cs" />
     <Compile Include="LeiTools\MSOffice\MSOfficeWord.cs" />
+    <Compile Include="LeiTools\MSOffice\MSWord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
