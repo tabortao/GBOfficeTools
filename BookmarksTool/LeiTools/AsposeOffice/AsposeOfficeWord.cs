@@ -151,7 +151,52 @@ namespace BookmarksTool.LeiTools.AsposeOffice
         }
 
         #region 批量word转pdf
+        /// <summary>
+        /// Word2PDF()无参数时，直接将软件所在文件夹内的word转换为PDF。
+        /// </summary>
+        /// <returns></returns>
+        public static bool Word2PDF()
+        {
+            var wordPath = Directory.GetCurrentDirectory();
+            bool result = false;
+            //实现查找路径中word文件,带来筛选，直接选出word文件。
+            var wordFiles = Directory.GetFiles(wordPath, "*.doc");
+            //var wordFiles = Directory.EnumerateFiles(wordPath, "*.doc");
+            foreach (var wordFile in wordFiles)
+            {
+                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
+                string pdfFilePath = wordPath + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
+                //循环，转换每一个word文件。
+                Document doc = new Document(wordFile);
+                try
+                {
+                    if (!File.Exists(pdfFilePath))
+                    {
+                        SaveToPDF(wordFile, pdfFilePath);
+                    }
+                    else
+                    {
+                        File.Delete(pdfFilePath);
+                        SaveToPDF(wordFile, pdfFilePath);
+                    }
+                }
+                catch (Exception e)
+                {
+                    //System.Windows.Forms.MessageBox.Show("请关闭需要转换的所有word文档。" + "\r\n" + e.Message);
+                    //Console.WriteLine(e.Message);
+                    Form1.form1.TextBoxMsg(e.Message);
+                    result = false;
+                }
+            }
+            //application.Quit();//退出word
+            return result;
+        }
 
+        /// <summary>
+        /// 把某个文件夹内的全部word转换为PDF
+        /// </summary>
+        /// <param name="wordPath">word文件夹路径</param>
+        /// <returns></returns>
         public static bool Word2PDF(string wordPath)
         {
             bool result = false;
@@ -162,6 +207,48 @@ namespace BookmarksTool.LeiTools.AsposeOffice
             {
                 string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
                 string pdfFilePath = wordPath + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
+                //循环，转换每一个word文件。
+                Document doc = new Document(wordFile);
+                try
+                {
+                    if (!File.Exists(pdfFilePath))
+                    {
+                        SaveToPDF(wordFile, pdfFilePath);
+                    }
+                    else
+                    {
+                        File.Delete(pdfFilePath);
+                        SaveToPDF(wordFile, pdfFilePath);
+                    }
+                }
+                catch (Exception e)
+                {
+                    //System.Windows.Forms.MessageBox.Show("请关闭需要转换的所有word文档。" + "\r\n" + e.Message);
+                    //Console.WriteLine(e.Message);
+                    Form1.form1.TextBoxMsg(e.Message);
+                    result = false;
+                }
+            }
+            //application.Quit();//退出word
+            return result;
+        }
+
+        /// <summary>
+        /// 选中多个word文件，然后转换为PDF
+        /// </summary>
+        /// <param name="wordFiles">word文件路径，数组格式</param>
+        /// <returns></returns>
+        public static bool Word2PDF(string[] wordFiles)
+        {
+            bool result = false;
+            //实现查找路径中word文件,带来筛选，直接选出word文件。
+            //var wordFiles = Directory.GetFiles(wordPath, "*.doc");
+            //var wordFiles = Directory.EnumerateFiles(wordPath, "*.doc");
+            foreach (var wordFile in wordFiles)
+            {
+                string wordFileFolder = Path.GetDirectoryName(wordFile);
+                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
+                string pdfFilePath = wordFileFolder + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
                 //循环，转换每一个word文件。
                 Document doc = new Document(wordFile);
                 try

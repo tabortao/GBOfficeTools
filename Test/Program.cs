@@ -112,6 +112,7 @@ namespace Test
             //TestIsFileLocked();
             string wordPath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\Test\bin\Debug";
             Word2PDF(wordPath);
+            Console.WriteLine();
 
             Console.ReadLine();
         }

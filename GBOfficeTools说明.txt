@@ -1,10 +1,13 @@
 
+Todo:
+1、增加选择excel模板的功能按钮
+2、增加选择word模板或word文件（待转pdf）的功能按钮
 
 
-
-20221231 GBOfficeTools
+20230104 GBOfficeTools
 1、全新升级，重新构建，更名为GBOfficeTools。
 2、把所有常用功能，集合到LeiTools类库中。
+3、增加Word批量转换PDF功能。
 
 
 20210128 BookmarksToolPro V1.5

@@ -4,13 +4,17 @@ using System.IO;
 namespace BookmarksTool.LeiTools.AsposeOffice
 {
     public class BookmarksReplace
-    {
-        public void StartBookmarksReplace()
+    {    
+
+        /// <summary>
+        /// 如果没有选择excel文件且没有选择word文件，默认在程序所在文件夹查找并执行
+        /// </summary>
+        public static void ReportMaker()
         {
             try
             {
                 var docPath = Directory.GetCurrentDirectory();
-                var path = new DirectoryInfo(docPath);
+                //var path = new DirectoryInfo(docPath);
                 var files = Directory.GetFiles(docPath, "*.xlsx", SearchOption.AllDirectories);
 
                 if (files.Length > 1)
@@ -26,15 +30,15 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     var excelName = Path.GetFileName(excelPath);
                     //Console.WriteLine("当前计算采用模板为：" + excelName);
                     Form1.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
-                    ReportMaker(excelPath, path);
+                    ReportMaker(excelPath, docPath);
                 }
                 else if (files.Length == 1)
                 {
                     var excelPath = files[0];
-                    var excelName = Path.GetFileName(excelPath);
+                    var excelName = Path.GetFileName(excelPath); // 获取excel文件名，不含路径
                     //Console.WriteLine("当前计算采用模板为：" + excelName);
                     Form1.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
-                    ReportMaker(excelPath, path);
+                    ReportMaker(excelPath, docPath);
                 }
                 else
                 {
@@ -54,21 +58,22 @@ namespace BookmarksTool.LeiTools.AsposeOffice
         /// </summary>
         /// <param name="excelPath">excel文件路径</param>
         /// <param name="path">Word模板路径</param>
-        private void ReportMaker(string excelPath, DirectoryInfo path)
+        public static void ReportMaker(string excelPath, string wordFolderPath)
         {
+            Form1.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
+            var wordFiles = Directory.GetFiles(wordFolderPath, "*.doc"); //从文件夹中，筛选出word
             var excel = new LeiTools.AsposeOffice.AsposeOfficeExcel();
             excel.Open(excelPath);
             const int bookmarkNo = 500;//sheet1 书签列书签个数
-            var files = path.GetFiles();
-            foreach (var f in files)
+            //var files = Directory.GetFiles(docPath, "*.xlsx", SearchOption.AllDirectories);
+
+            foreach (var f in wordFiles)
             {
-                if (f.Extension != ".doc" && f.Extension != ".docx") continue;
+                //if (f.Extension != ".doc" && f.Extension != ".docx") continue;
                 try
                 {
-                    var wordPath = f.FullName;
-                    var wordName = f.Name;
                     var word = new LeiTools.AsposeOffice.AsposeOfficeWord();
-                    word.Open(wordPath);
+                    word.Open(f);
                     word.Builder();
                     excel.GetWorksheet(0);//excel转到sheet1
                     for (var i = 0; i <= bookmarkNo; i++)
@@ -86,7 +91,57 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     {
                         word.ReplaceBookMark("Involved_Range", @"./参评范围.jpg", "IMG");
                     }
-                    word.Save(wordPath);
+                    word.Save(f);
+                    //Console.WriteLine(wordName + "  报告生成完成！");
+                    Form1.form1.TextBoxMsg(f + "  报告生成完成！");
+                }
+                catch (Exception e)
+                {
+                    //Console.WriteLine("错误，{0}", e.Message);
+                    System.Windows.Forms.MessageBox.Show(e.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 选中1个excel文件模板，选择多个word文件，然后批量对书签替换
+        /// </summary>
+        /// <param name="excelPath">单个excel文件路径</param>
+        /// <param name="wordsPath">多个word文件路径，这里是通过选择文件对话框实现，已经过滤了只能选择word文件</param>
+        public static void ReportMaker(string excelPath, string[] wordsPath)
+        {
+            Form1.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
+            var excel = new LeiTools.AsposeOffice.AsposeOfficeExcel();
+            excel.Open(excelPath);
+            const int bookmarkNo = 500;//sheet1 书签列书签个数
+            //var files = path.GetFiles();
+            foreach (var f in wordsPath)
+            {
+                //if (f.Extension != ".doc" && f.Extension != ".docx") continue;
+                try
+                {
+                    //var wordPath = Path.GetDirectoryName(f); //word文件所在的文件夹路径
+                    var wordName = Path.GetFileName(f);
+                    var word = new LeiTools.AsposeOffice.AsposeOfficeWord();
+                    word.Open(f);
+                    word.Builder();
+                    excel.GetWorksheet(0);//excel转到sheet1
+                    for (var i = 0; i <= bookmarkNo; i++)
+                    {
+                        var bookmarkName = excel.GetCellsValue(i, 3);
+                        var bookmarkText = excel.GetCellsValue(i, 2);
+                        if (bookmarkName != "0")
+                        {
+                            //Console.WriteLine(bookmarkName);
+                            word.ReplaceBookMark(bookmarkName, bookmarkText);
+                        }
+                    }
+
+                    if (File.Exists(@"./参评范围.jpg"))
+                    {
+                        word.ReplaceBookMark("Involved_Range", @"./参评范围.jpg", "IMG");
+                    }
+                    word.Save(f);
                     //Console.WriteLine(wordName + "  报告生成完成！");
                     Form1.form1.TextBoxMsg(wordName + "  报告生成完成！");
                 }

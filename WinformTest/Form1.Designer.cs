@@ -32,7 +32,8 @@ namespace WinformTest
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.btn_folderBrowser = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btn_openFileDialog = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -49,24 +50,36 @@ namespace WinformTest
             this.btn_folderBrowser.UseVisualStyleBackColor = true;
             this.btn_folderBrowser.Click += new System.EventHandler(this.btn_folderBrowser_Click);
             // 
-            // richTextBox1
+            // btn_openFileDialog
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(66, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(678, 96);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.btn_openFileDialog.Location = new System.Drawing.Point(238, 129);
+            this.btn_openFileDialog.Name = "btn_openFileDialog";
+            this.btn_openFileDialog.Size = new System.Drawing.Size(128, 23);
+            this.btn_openFileDialog.TabIndex = 3;
+            this.btn_openFileDialog.Text = "打开选择文件对话框";
+            this.btn_openFileDialog.UseVisualStyleBackColor = true;
+            this.btn_openFileDialog.Click += new System.EventHandler(this.btn_openFileDialog_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(66, 25);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(658, 80);
+            this.textBox1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_openFileDialog);
             this.Controls.Add(this.btn_folderBrowser);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -75,7 +88,8 @@ namespace WinformTest
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button btn_folderBrowser;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btn_openFileDialog;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
