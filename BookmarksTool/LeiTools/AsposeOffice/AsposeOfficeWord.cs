@@ -151,6 +151,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
         }
 
         #region 批量word转pdf
+
         /// <summary>
         /// Word2PDF()无参数时，直接将软件所在文件夹内的word转换为PDF。
         /// </summary>
@@ -161,33 +162,8 @@ namespace BookmarksTool.LeiTools.AsposeOffice
             bool result = false;
             //实现查找路径中word文件,带来筛选，直接选出word文件。
             var wordFiles = Directory.GetFiles(wordPath, "*.doc");
-            //var wordFiles = Directory.EnumerateFiles(wordPath, "*.doc");
-            foreach (var wordFile in wordFiles)
-            {
-                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
-                string pdfFilePath = wordPath + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
-                //循环，转换每一个word文件。
-                Document doc = new Document(wordFile);
-                try
-                {
-                    if (!File.Exists(pdfFilePath))
-                    {
-                        SaveToPDF(wordFile, pdfFilePath);
-                    }
-                    else
-                    {
-                        File.Delete(pdfFilePath);
-                        SaveToPDF(wordFile, pdfFilePath);
-                    }
-                }
-                catch (Exception e)
-                {
-                    //System.Windows.Forms.MessageBox.Show("请关闭需要转换的所有word文档。" + "\r\n" + e.Message);
-                    //Console.WriteLine(e.Message);
-                    Form1.form1.TextBoxMsg(e.Message);
-                    result = false;
-                }
-            }
+            //SaveToPDF(wordFiles);
+            ParallelSaveToPDF(wordFiles); // 并行循环执行Word转PDF
             //application.Quit();//退出word
             return result;
         }
@@ -202,33 +178,8 @@ namespace BookmarksTool.LeiTools.AsposeOffice
             bool result = false;
             //实现查找路径中word文件,带来筛选，直接选出word文件。
             var wordFiles = Directory.GetFiles(wordPath, "*.doc");
-            //var wordFiles = Directory.EnumerateFiles(wordPath, "*.doc");
-            foreach (var wordFile in wordFiles)
-            {
-                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
-                string pdfFilePath = wordPath + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
-                //循环，转换每一个word文件。
-                Document doc = new Document(wordFile);
-                try
-                {
-                    if (!File.Exists(pdfFilePath))
-                    {
-                        SaveToPDF(wordFile, pdfFilePath);
-                    }
-                    else
-                    {
-                        File.Delete(pdfFilePath);
-                        SaveToPDF(wordFile, pdfFilePath);
-                    }
-                }
-                catch (Exception e)
-                {
-                    //System.Windows.Forms.MessageBox.Show("请关闭需要转换的所有word文档。" + "\r\n" + e.Message);
-                    //Console.WriteLine(e.Message);
-                    Form1.form1.TextBoxMsg(e.Message);
-                    result = false;
-                }
-            }
+            //SaveToPDF(wordFiles);
+            ParallelSaveToPDF(wordFiles); // 并行循环执行Word转PDF
             //application.Quit();//退出word
             return result;
         }
@@ -244,6 +195,20 @@ namespace BookmarksTool.LeiTools.AsposeOffice
             //实现查找路径中word文件,带来筛选，直接选出word文件。
             //var wordFiles = Directory.GetFiles(wordPath, "*.doc");
             //var wordFiles = Directory.EnumerateFiles(wordPath, "*.doc");
+            //SaveToPDF(wordFiles);
+            ParallelSaveToPDF(wordFiles); // 并行循环执行Word转PDF
+            //application.Quit();//退出word
+            return result;
+        }
+
+        /// <summary>
+        /// 普通循环，批量将Word转PDF
+        /// </summary>
+        /// <param name="wordFiles"></param>
+        /// <returns></returns>
+        public static bool SaveToPDF(string[] wordFiles)
+        {
+            bool result = false;
             foreach (var wordFile in wordFiles)
             {
                 string wordFileFolder = Path.GetDirectoryName(wordFile);
@@ -256,11 +221,13 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     if (!File.Exists(pdfFilePath))
                     {
                         SaveToPDF(wordFile, pdfFilePath);
+                        result = true;
                     }
                     else
                     {
                         File.Delete(pdfFilePath);
                         SaveToPDF(wordFile, pdfFilePath);
+                        result = true;
                     }
                 }
                 catch (Exception e)
@@ -271,7 +238,48 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     result = false;
                 }
             }
-            //application.Quit();//退出word
+            return result;
+        }
+
+        /// <summary>
+        /// 并行循环，批量将Word转PDF
+        /// </summary>
+        /// <param name="wordFiles"></param>
+        /// <returns></returns>
+        public static bool ParallelSaveToPDF(string[] wordFiles)
+        {
+            bool result = false;
+
+            //循环，转换每一个word文件。
+            System.Threading.Tasks.Parallel.ForEach(wordFiles, wordFile =>
+            {
+                string wordFileFolder = Path.GetDirectoryName(wordFile);
+                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
+                string pdfFilePath = wordFileFolder + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
+                Document doc = new Document(wordFile);
+                try
+                {
+                    if (!File.Exists(pdfFilePath))
+                    {
+                        SaveToPDF(wordFile, pdfFilePath);
+                        result = true;
+                    }
+                    else
+                    {
+                        File.Delete(pdfFilePath);
+                        SaveToPDF(wordFile, pdfFilePath);
+                        result = true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    //System.Windows.Forms.MessageBox.Show("请关闭需要转换的所有word文档。" + "\r\n" + e.Message);
+                    //Console.WriteLine(e.Message);
+                    Form1.form1.TextBoxMsg(e.Message);
+                    result = false;
+                }
+            });
+
             return result;
         }
 
@@ -280,12 +288,22 @@ namespace BookmarksTool.LeiTools.AsposeOffice
         /// </summary>
         /// <param name="wordFilePath">word文件路径，含文件名及拓展名</param>
         /// <param name="pdfFilePath">pdf文件路径，含文件名及拓展名</param>
-        public static void SaveToPDF(string wordFilePath, string pdfFilePath)
+        public static bool SaveToPDF(string wordFilePath, string pdfFilePath)
         {
-            string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFilePath); //获取文件名称，不含拓展名。
-            Aspose.Words.Document doc = new Aspose.Words.Document(wordFilePath);
-            doc.Save(pdfFilePath, Aspose.Words.SaveFormat.Pdf);
-            Form1.form1.TextBoxMsg(wordFileNameWithoutExtension + "转换PDF成功!");
+            bool result;
+            try
+            {
+                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFilePath); //获取文件名称，不含拓展名。
+                Aspose.Words.Document doc = new Aspose.Words.Document(wordFilePath);
+                doc.Save(pdfFilePath, Aspose.Words.SaveFormat.Pdf);
+                Form1.form1.TextBoxMsg(wordFileNameWithoutExtension + "转PDF成功!");
+                return true;
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+            return result;
         }
 
         #endregion 批量word转pdf

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
 using System.Windows.Forms;
 
 namespace BookmarksTool
@@ -11,6 +10,7 @@ namespace BookmarksTool
         public static Form1 form1; //定义为静态变量，并在构造方法中引用Form1，可以实现在另外的一个类中调用窗体的控件或方法
         public static string excelFilePath; // 定义静态变量 excelFilePath，用于存储excel模板文件路径
         public static string[] wordsPath;// 定义静态变量 wordsPath，用于存储选中的多个word模板文件路径
+        public static string folderPath; // 定义静态变量 folderPath，用于存储文件夹路径
 
         public Form1()
         {
@@ -35,47 +35,63 @@ namespace BookmarksTool
             //textBox1.Text += "正在运行……";
             //string mCode = RegInfo.GetMachineCode();
             //string leiCode = "681348742402123950127693";
-            textBox1.Text = ""; //清空文本框内容，为下次执行扫除干净
-            if (String.IsNullOrEmpty(txt_Excel.Text))
-                TextBoxMsg("正在运行……");
+            textBox1.ResetText();
+            //textBox1.Text = string.Empty;
+            //textBox1.Text = ""; //清空文本框内容，为下次执行扫除干净
+
+            TextBoxMsg("批量生成Word报告正在运行，请稍后……");
             var sw = new Stopwatch();
             sw.Start();  //开始计时
-            var excelName = Path.GetFileName(excelFilePath);
-            TextBoxMsg("当前计算采用模板为：" + excelName);
             if (txt_Excel.Text.Length != 0 && txt_Words.Text.Length != 0)
             {
+                //普通循环运算，进行word书签替换
                 LeiTools.AsposeOffice.BookmarksReplace.ReportMaker(excelFilePath, wordsPath);
+                //并行运算，进行word书签替换
+                //LeiTools.AsposeOffice.BookmarksReplace.ParallelReportMaker(excelFilePath, wordsPath);
             }
             else if (txt_Excel.Text.Length == 0 && txt_Words.Text.Length == 0)
             {
                 //如果没有选择excel文件且没有选择word文件，默认在程序所在文件夹查找并执行
+                //普通循环运算，进行word书签替换
                 LeiTools.AsposeOffice.BookmarksReplace.ReportMaker();
+                //并行运算，进行word书签替换
+                //LeiTools.AsposeOffice.BookmarksReplace.ParallelReportMaker();
             }
             else if (txt_Excel.Text.Length == 0 || txt_Words.Text.Length == 0)
             {
                 MessageBox.Show("请选择Excel模板文件或选择Word文件");
+            }
+            else
+            {
+                MessageBox.Show("文件选择有误，请重新选择！");
             }
 
             //LeiTools.AsposeOffice.BookmarksReplace.StartBookmarksReplace2();
             sw.Stop();
             //Console.WriteLine("运行结束,用时{0}秒！按任意键结束", sw.Elapsed);
             Form1.form1.TextBoxMsg("运行结束,用时" + sw.Elapsed + "秒！");
-            //MessageBox.Show("Word报告生成完成，请注意查看！");
         }
 
         private void btn_word2pdf_Click(object sender, EventArgs e)
         {
-            textBox1.Text = ""; //清空文本框内容，为下次执行扫除干净
-            TextBoxMsg("正在运行……");
+            textBox1.ResetText();
+            //textBox1.Text = ""; //清空文本框内容，为下次执行扫除干净
+            TextBoxMsg("Word批量转PDF正在运行，请稍等……");
             var sw = new Stopwatch();
             sw.Start(); //开始计时
             //var start2 = new LeiTools.MSOffice.Word.Word2PDF();
-            //start2.StartWord2PDF();          
-            if (txt_Words.Text.Length != 0)
+            //start2.StartWord2PDF();
+            if (txt_Words.Text.Length != 0 || (txt_Folder.Text.Length != 0 && txt_Words.Text.Length != 0))
             {
+                //如果选择了多个word文件，或者既选择了文件夹，又选择了多个word文件时，将多个word文件转为PDF
                 LeiTools.AsposeOffice.AsposeOfficeWord.Word2PDF(wordsPath);
             }
-            else if (txt_Words.Text.Length == 0)
+            else if (txt_Folder.Text.Length != 0)
+            {
+                //如果选择了文件夹路径，把文件夹内的word转为pdf
+                LeiTools.AsposeOffice.AsposeOfficeWord.Word2PDF(folderPath);
+            }
+            else if (txt_Words.Text.Length == 0 && txt_Folder.Text.Length == 0)
             {
                 //如果没有选择excel文件且没有选择word文件，默认在程序所在文件夹查找并执行
                 LeiTools.AsposeOffice.AsposeOfficeWord.Word2PDF();
@@ -84,11 +100,8 @@ namespace BookmarksTool
             {
                 MessageBox.Show("选择的Word文件有误，请重试！");
             }
-            
-
-            sw.Stop();
-            Form1.form1.TextBoxMsg("运行结束，用时" + sw.Elapsed + "秒");
-            //MessageBox.Show("Word批量转换PDF完成，请注意查看！");
+            sw.Stop();//计时结束
+            Form1.form1.TextBoxMsg("Word批量转PDF已完成，用时" + sw.Elapsed + "秒");
         }
 
         private void Btn_help_Click(object sender, EventArgs e)
@@ -137,7 +150,7 @@ namespace BookmarksTool
                 wordsPath = dialog.FileNames;
                 foreach (var wordPath in wordsPath)
                 {
-                    TextBoxMsg(wordPath);
+                    //TextBoxMsg(wordPath);
                     txt_Words.AppendText(wordPath + "\r\n");
                 }
 
@@ -187,6 +200,19 @@ namespace BookmarksTool
                 //MessageBox.Show(String.Format("Name={0} !", str));
             }
             //return FilePath;
+        }
+
+        private void btn_SelectFolder_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            dialog.Description = "请选择文件夹";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                folderPath = dialog.SelectedPath;
+                TextBoxMsg(folderPath);
+                txt_Folder.AppendText(folderPath);
+            }
         }
     }
 }

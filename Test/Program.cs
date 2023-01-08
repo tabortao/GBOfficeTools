@@ -1,4 +1,5 @@
-﻿using Microsoft.Office.Interop.Word;
+﻿//using Microsoft.Office.Interop.Word;
+using Aspose.Words;
 using System;
 using System.IO;
 
@@ -8,56 +9,56 @@ namespace Test
     {
         #region word 转 pdf
 
-        public static bool Word2PDF(string wordPath)
-        {
-            //1、打开word
-            bool result = false;
-            Application application = new Application
-            {
-                Visible = false
-            };
-            Document document = null;
-            //实现查找路径中word文件,带来筛选，直接选出word文件。
-            var wordFiles = Directory.GetFiles(wordPath, "*.doc");
-            //var wordFiles = Directory.EnumerateFiles(wordPath, "*.doc");
-            foreach (var wordFile in wordFiles)
-            {
-                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
-                string pdfFilePath = wordPath + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
-                //Console.WriteLine("wordFileNameWithoutExtension" + wordFileNameWithoutExtension);
-                //Console.WriteLine("pdfFilePath" + pdfFilePath);
+        //public static bool Word2PDF(string wordPath)
+        //{
+        //    //1、打开word
+        //    bool result = false;
+        //    Application application = new Application
+        //    {
+        //        Visible = false
+        //    };
+        //    Document document = null;
+        //    //实现查找路径中word文件,带来筛选，直接选出word文件。
+        //    var wordFiles = Directory.GetFiles(wordPath, "*.doc");
+        //    //var wordFiles = Directory.EnumerateFiles(wordPath, "*.doc");
+        //    foreach (var wordFile in wordFiles)
+        //    {
+        //        string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFile); //获取文件名称，不含拓展名。
+        //        string pdfFilePath = wordPath + @"\" + wordFileNameWithoutExtension + ".pdf"; //设置pdf文件存储路径。
+        //        //Console.WriteLine("wordFileNameWithoutExtension" + wordFileNameWithoutExtension);
+        //        //Console.WriteLine("pdfFilePath" + pdfFilePath);
 
-                //循环，转换每一个word文件。
-                try
-                {
-                    if (!File.Exists(@pdfFilePath))//存在PDF，不需要继续转换
-                    {
-                        document = application.Documents.Open(wordFile);
-                        document.ExportAsFixedFormat(pdfFilePath, WdExportFormat.wdExportFormatPDF);
-                        //Form1.form1.TextBoxMsg(f.Name + "转换PDF成功!");
-                        Console.WriteLine("文件{0}转换PDF成功。", wordFileNameWithoutExtension);
-                    }
-                    else
-                    {
-                        File.Delete(@pdfFilePath);
-                        document.ExportAsFixedFormat(pdfFilePath, WdExportFormat.wdExportFormatPDF);
-                    }
-                    result = true;
-                }
-                catch (Exception e)
-                {
-                    //System.Windows.Forms.MessageBox.Show("请关闭需要转换的所有word文档。" + "\r\n" + e.Message);
-                    Console.WriteLine(e.Message);
-                    result = false;
-                }
-                finally
-                {
-                    document.Close();
-                }
-            }
-            //application.Quit();//退出word
-            return result;
-        }
+        //        //循环，转换每一个word文件。
+        //        try
+        //        {
+        //            if (!File.Exists(@pdfFilePath))//存在PDF，不需要继续转换
+        //            {
+        //                document = application.Documents.Open(wordFile);
+        //                document.ExportAsFixedFormat(pdfFilePath, WdExportFormat.wdExportFormatPDF);
+        //                //Form1.form1.TextBoxMsg(f.Name + "转换PDF成功!");
+        //                Console.WriteLine("文件{0}转换PDF成功。", wordFileNameWithoutExtension);
+        //            }
+        //            else
+        //            {
+        //                File.Delete(@pdfFilePath);
+        //                document.ExportAsFixedFormat(pdfFilePath, WdExportFormat.wdExportFormatPDF);
+        //            }
+        //            result = true;
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            //System.Windows.Forms.MessageBox.Show("请关闭需要转换的所有word文档。" + "\r\n" + e.Message);
+        //            Console.WriteLine(e.Message);
+        //            result = false;
+        //        }
+        //        finally
+        //        {
+        //            document.Close();
+        //        }
+        //    }
+        //    //application.Quit();//退出word
+        //    return result;
+        //}
 
         #endregion word 转 pdf
 
@@ -107,12 +108,35 @@ namespace Test
 
         #endregion 判断文件是否被打开，并测试
 
+        public static bool SaveToPDF(string wordFilePath, string pdfFilePath)
+        {
+            bool result = false;
+            try
+            {
+                string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFilePath); //获取文件名称，不含拓展名。
+                Aspose.Words.Document doc = new Aspose.Words.Document(wordFilePath);
+                doc.Save(pdfFilePath, Aspose.Words.SaveFormat.Pdf);
+                Console.WriteLine(wordFileNameWithoutExtension + "转PDF成功!");              
+                return true;
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+            return result;
+
+
+        }
+
         private static void Main(string[] args)
         {
             //TestIsFileLocked();
-            string wordPath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\Test\bin\Debug";
-            Word2PDF(wordPath);
-            Console.WriteLine();
+            //string wordPath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\Test\bin\Debug";
+            //Word2PDF(wordPath);
+            string wordFilePath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\BookmarksTool\bin\Debug\07 人均居住用地指标计算书 居建.docx";
+            string pdfFilePath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\BookmarksTool\bin\Debug\07 人均居住用地指标计算书 居建.pdf";
+            //SaveToPDF(wordFilePath,pdfFilePath);
+            Console.WriteLine(SaveToPDF(wordFilePath, pdfFilePath));
 
             Console.ReadLine();
         }

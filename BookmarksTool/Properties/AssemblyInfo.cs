@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("BookmarksTool")]
-[assembly: AssemblyDescription("绿建海绵小工具")]
+[assembly: AssemblyTitle("BookmarksTool V2.3")]
+[assembly: AssemblyDescription("绿建海绵小工具，并行运算，更快")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("筑博设计@绿色建筑部@姚蕾")]
 [assembly: AssemblyProduct("BookmarksTool")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.1.0.0")]
-[assembly: AssemblyFileVersion("2.1.0.0")]
+[assembly: AssemblyVersion("2.3.0.0")]
+[assembly: AssemblyFileVersion("2.3.0.0")]
