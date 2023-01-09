@@ -31,50 +31,68 @@ namespace BookmarksTool
 
         private void Btn_start_Click(object sender, EventArgs e)
         {
-            //Console.WriteLine(@"正在运行……");
-            //textBox1.Text += "正在运行……";
-            //string mCode = RegInfo.GetMachineCode();
-            //string leiCode = "681348742402123950127693";
-            textBox1.ResetText();
-            //textBox1.Text = string.Empty;
-            //textBox1.Text = ""; //清空文本框内容，为下次执行扫除干净
+            bool isDateExpired = LeiTools.Keygen.DateTimeHelper.IsDateExpired(2025); // 设置软件过期时间为2025年
+            if (isDateExpired)
+            {
+                #region 执行Word报告生成
 
-            TextBoxMsg("批量生成Word报告正在运行，请稍后……");
-            var sw = new Stopwatch();
-            sw.Start();  //开始计时
-            if (txt_Excel.Text.Length != 0 && txt_Words.Text.Length != 0)
-            {
-                //普通循环运算，进行word书签替换
-                LeiTools.AsposeOffice.BookmarksReplace.ReportMaker(excelFilePath, wordsPath);
-                //并行运算，进行word书签替换
-                //LeiTools.AsposeOffice.BookmarksReplace.ParallelReportMaker(excelFilePath, wordsPath);
-            }
-            else if (txt_Excel.Text.Length == 0 && txt_Words.Text.Length == 0)
-            {
-                //如果没有选择excel文件且没有选择word文件，默认在程序所在文件夹查找并执行
-                //普通循环运算，进行word书签替换
-                LeiTools.AsposeOffice.BookmarksReplace.ReportMaker();
-                //并行运算，进行word书签替换
-                //LeiTools.AsposeOffice.BookmarksReplace.ParallelReportMaker();
-            }
-            else if (txt_Excel.Text.Length == 0 || txt_Words.Text.Length == 0)
-            {
-                MessageBox.Show("请选择Excel模板文件或选择Word文件");
+                //Console.WriteLine(@"正在运行……");
+                //textBox1.Text += "正在运行……";
+                //string mCode = RegInfo.GetMachineCode();
+                //string leiCode = "681348742402123950127693";
+                //textBox1.ResetText();
+                textBox1.Clear();
+                //textBox1.Text = string.Empty;
+                //textBox1.Text = ""; //清空文本框内容，为下次执行扫除干净
+                System.Threading.Thread.Sleep(10);
+
+                TextBoxMsg("批量生成Word报告正在运行，请稍后……");
+                var sw = new Stopwatch();
+                sw.Start();  //开始计时
+                if (txt_Excel.Text.Length != 0 && txt_Words.Text.Length != 0)
+                {
+                    //普通循环运算，进行word书签替换
+                    LeiTools.AsposeOffice.BookmarksReplace.ReportMaker(excelFilePath, wordsPath);
+                    //并行运算，进行word书签替换
+                    //LeiTools.AsposeOffice.BookmarksReplace.ParallelReportMaker(excelFilePath, wordsPath);
+                }
+                else if (txt_Excel.Text.Length == 0 && txt_Words.Text.Length == 0)
+                {
+                    //如果没有选择excel文件且没有选择word文件，默认在程序所在文件夹查找并执行
+                    //普通循环运算，进行word书签替换
+                    LeiTools.AsposeOffice.BookmarksReplace.ReportMaker();
+                    //并行运算，进行word书签替换
+                    //LeiTools.AsposeOffice.BookmarksReplace.ParallelReportMaker();
+                }
+                else if (txt_Excel.Text.Length == 0 || txt_Words.Text.Length == 0)
+                {
+                    MessageBox.Show("请选择Excel模板文件或选择Word文件");
+                }
+                else
+                {
+                    MessageBox.Show("文件选择有误，请重新选择！");
+                }
+
+                //LeiTools.AsposeOffice.BookmarksReplace.StartBookmarksReplace2();
+                sw.Stop();
+                //Console.WriteLine("运行结束,用时{0}秒！按任意键结束", sw.Elapsed);
+                Form1.form1.TextBoxMsg("运行结束,用时" + sw.Elapsed + "秒！");
+
+                #endregion 执行Word报告生成
             }
             else
             {
-                MessageBox.Show("文件选择有误，请重新选择！");
+                MessageBox.Show("软件授权过期，请联系Lei");
             }
-
-            //LeiTools.AsposeOffice.BookmarksReplace.StartBookmarksReplace2();
-            sw.Stop();
-            //Console.WriteLine("运行结束,用时{0}秒！按任意键结束", sw.Elapsed);
-            Form1.form1.TextBoxMsg("运行结束,用时" + sw.Elapsed + "秒！");
         }
 
         private void btn_word2pdf_Click(object sender, EventArgs e)
         {
-            textBox1.ResetText();
+            //textBox1.ResetText();
+            textBox1.Clear();
+            //textBox1.Text = "";
+            //System.Threading.Thread.Sleep(1000);
+
             //textBox1.Text = ""; //清空文本框内容，为下次执行扫除干净
             TextBoxMsg("Word批量转PDF正在运行，请稍等……");
             var sw = new Stopwatch();
@@ -108,25 +126,38 @@ namespace BookmarksTool
         {
             var help =
                 "    1. 在excel内填写书签名和书签内容，书签英文名；\r\n" +
-                "    2. 在Word中添加书签；\r\n" +
-                "    3. 将含有书签内容的excel和要批量替换的Word文件放入同一个文件夹内；\r\n" +
-                "    4. 执行BookmarksTool.exe，即可迅速替换完成。\r\n" +
-                "    5. 作者：筑博姚蕾。\r\n" +
-                "    6. 如有问题，欢迎联系，邮箱：yaoleistable@qq.com。\r\n";
+                   "    2. 在Word中添加书签；\r\n" +
+                   "    3. 将含有书签内容的excel和要批量替换的Word文件放入同一个文件夹内；\r\n" +
+                   "    4. 执行BookmarksTool.exe，即可迅速替换完成。\r\n" +
+                   "    5. 作者：筑博姚蕾。\r\n" +
+                   "    6. 如有问题，欢迎联系，邮箱：yaoleistable@qq.com。\r\n";
+
             MessageBox.Show(help, "BookmarksTool 使用说明");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var help =
+                   "    一、批量生成Word使用说明：\r\n" +
+                "       （1）方式一：选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
+                "       （2）方式二：拷贝软件到存放Excel和Word的文件夹，点击“批量生成Word”按钮。\r\n" +
+                "    二、Word批量转PDF使用说明：\r\n" +
+                "       （1）方式一：选择要转换的Words文件，点击“Word批量转PDF”按钮。\r\n" +
+                "       （2）方式二：选择文件夹路径（存放Word的文件夹）,点击“Word批量转PDF”按钮\r\n" +
+                "       （3）方式三：拷贝软件到存放Excel和Word的文件夹，点击“Word批量转PDF”按钮。\r\n";
+            textBox1.AppendText(help);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            textBox1.Clear();
             OpenExcelFileDialog();
         }
 
         private void btn_SelectWords_Click(object sender, EventArgs e)
         {
+            textBox1.Clear();
             OpenWordFileDialog();
         }
 
@@ -189,7 +220,7 @@ namespace BookmarksTool
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 excelFilePath = dialog.FileName; //选择的excel文件路径，赋值给静态变量 excelFilePath
-                TextBoxMsg(excelFilePath);
+                //TextBoxMsg(excelFilePath);
                 txt_Excel.AppendText(excelFilePath);
 
                 //获取选择的文件路径
@@ -204,13 +235,14 @@ namespace BookmarksTool
 
         private void btn_SelectFolder_Click(object sender, EventArgs e)
         {
+            textBox1.Clear();
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             dialog.Description = "请选择文件夹";
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 folderPath = dialog.SelectedPath;
-                TextBoxMsg(folderPath);
+                //TextBoxMsg(folderPath);
                 txt_Folder.AppendText(folderPath);
             }
         }

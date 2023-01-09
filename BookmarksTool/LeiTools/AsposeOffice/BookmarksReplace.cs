@@ -28,7 +28,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     var excelPath = files[0];
                     var excelName = Path.GetFileName(excelPath);
                     //Console.WriteLine("当前计算采用模板为：" + excelName);
-                    Form1.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
+                    //Form1.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
                     ReportMaker(excelPath, docPath);
                 }
                 else if (files.Length == 1)
@@ -36,7 +36,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     var excelPath = files[0];
                     var excelName = Path.GetFileName(excelPath); // 获取excel文件名，不含路径
                     //Console.WriteLine("当前计算采用模板为：" + excelName);
-                    Form1.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
+                    //Form1.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
                     ReportMaker(excelPath, docPath);
                 }
                 else

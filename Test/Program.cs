@@ -128,15 +128,33 @@ namespace Test
 
         }
 
+        public static bool IsDateExpired()
+        {
+            bool result= false;
+            DateTime currentTime = new DateTime();
+            currentTime = System.DateTime.Now;
+            int year = currentTime.Year;
+            Console.WriteLine("当前时间："+currentTime);
+            Console.WriteLine("年份："+year);
+            if (year >= 2012)
+            {
+                Console.WriteLine(year);
+                return true;
+            }
+            return result;
+        }
+
         private static void Main(string[] args)
         {
             //TestIsFileLocked();
             //string wordPath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\Test\bin\Debug";
             //Word2PDF(wordPath);
-            string wordFilePath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\BookmarksTool\bin\Debug\07 人均居住用地指标计算书 居建.docx";
-            string pdfFilePath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\BookmarksTool\bin\Debug\07 人均居住用地指标计算书 居建.pdf";
+            //string wordFilePath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\BookmarksTool\bin\Debug\07 人均居住用地指标计算书 居建.docx";
+            //string pdfFilePath = @"E:\Code\CSharp\CSharpProjects2023\GBOfficeTools\BookmarksTool\bin\Debug\07 人均居住用地指标计算书 居建.pdf";
             //SaveToPDF(wordFilePath,pdfFilePath);
-            Console.WriteLine(SaveToPDF(wordFilePath, pdfFilePath));
+            //Console.WriteLine(SaveToPDF(wordFilePath, pdfFilePath));
+            IsDateExpired();
+            Console.WriteLine(IsDateExpired());
 
             Console.ReadLine();
         }

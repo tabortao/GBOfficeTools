@@ -113,6 +113,8 @@
     </Compile>
     <Compile Include="LeiTools\AsposeOffice\AsposeOfficeExcel.cs" />
     <Compile Include="LeiTools\AsposeOffice\AsposeOfficeWord.cs" />
+    <Compile Include="LeiTools\Keygen\DateTimeHelper.cs" />
+    <Compile Include="LeiTools\Keygen\Time.cs" />
     <Compile Include="LeiTools\Keygen\DeviceHelper.cs" />
     <Compile Include="LeiTools\Keygen\RegInfo.cs" />
     <Compile Include="LeiTools\MSOffice\MSOfficeExcel.cs" />

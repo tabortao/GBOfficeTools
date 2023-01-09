@@ -48,6 +48,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox1.Location = new System.Drawing.Point(28, 54);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -60,9 +61,9 @@
             this.btn_word2pdf.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_word2pdf.Image = global::BookmarksTool.Properties.Resources.Pdf;
             this.btn_word2pdf.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_word2pdf.Location = new System.Drawing.Point(351, 372);
+            this.btn_word2pdf.Location = new System.Drawing.Point(352, 372);
             this.btn_word2pdf.Name = "btn_word2pdf";
-            this.btn_word2pdf.Size = new System.Drawing.Size(145, 32);
+            this.btn_word2pdf.Size = new System.Drawing.Size(153, 32);
             this.btn_word2pdf.TabIndex = 4;
             this.btn_word2pdf.Text = "Word批量转PDF";
             this.btn_word2pdf.UseVisualStyleBackColor = true;
@@ -89,7 +90,7 @@
             this.btn_start.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_start.Location = new System.Drawing.Point(128, 372);
             this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(145, 32);
+            this.btn_start.Size = new System.Drawing.Size(153, 32);
             this.btn_start.TabIndex = 0;
             this.btn_start.Text = "批量生成Word报告";
             this.btn_start.UseVisualStyleBackColor = true;
@@ -131,6 +132,7 @@
             // 
             // but_SelectExcel
             // 
+            this.but_SelectExcel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.but_SelectExcel.Location = new System.Drawing.Point(534, 273);
             this.but_SelectExcel.Name = "but_SelectExcel";
             this.but_SelectExcel.Size = new System.Drawing.Size(75, 23);
@@ -141,6 +143,7 @@
             // 
             // btn_SelectWords
             // 
+            this.btn_SelectWords.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_SelectWords.Location = new System.Drawing.Point(534, 302);
             this.btn_SelectWords.Name = "btn_SelectWords";
             this.btn_SelectWords.Size = new System.Drawing.Size(75, 23);
