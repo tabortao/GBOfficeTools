@@ -150,7 +150,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GBOfficeTools说明.txt" />
+    <None Include="GBOfficeTools说明.md" />
     <Content Include="Lei.ico" />
     <None Include="Resources\Pdf.ico" />
     <None Include="Resources\start.ico" />

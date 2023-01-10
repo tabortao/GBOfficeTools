@@ -125,28 +125,39 @@ namespace BookmarksTool
         private void Btn_help_Click(object sender, EventArgs e)
         {
             var help =
-                "    1. 在excel内填写书签名和书签内容，书签英文名；\r\n" +
-                   "    2. 在Word中添加书签；\r\n" +
-                   "    3. 将含有书签内容的excel和要批量替换的Word文件放入同一个文件夹内；\r\n" +
-                   "    4. 执行BookmarksTool.exe，即可迅速替换完成。\r\n" +
-                   "    5. 作者：筑博姚蕾。\r\n" +
-                   "    6. 如有问题，欢迎联系，邮箱：yaoleistable@qq.com。\r\n";
+                "    一、批量生成Word使用说明：\r\n" +
+                "       （1）方式一：选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
+                "       （2）方式二：拷贝软件到存放Excel和Word的文件夹，点击“批量生成Word”按钮。\r\n" +
+                "    二、Word批量转PDF使用说明：\r\n" +
+                "       （1）方式一：选择要转换的Words文件，点击“Word批量转PDF”按钮。\r\n" +
+                "       （2）方式二：选择文件夹路径（存放Word的文件夹）,点击“Word批量转PDF”按钮\r\n" +
+                "       （3）方式三：拷贝软件到存放Excel和Word的文件夹，点击“Word批量转PDF”按钮。\r\n" +
+                "    三、关于软件：\r\n" +
+                "    （1）作者：筑博设计@绿色建筑部@姚蕾。\r\n" +
+                "    （2）如有问题，欢迎联系，微信：yao-lei\r\n";
+
+            //var help =
+            //    "    1. 在excel内填写书签名和书签内容，书签英文名；\r\n" +
+            //       "    2. 在Word中添加书签；\r\n" +
+            //       "    3. 将含有书签内容的excel和要批量替换的Word文件放入同一个文件夹内；\r\n" +
+            //       "    4. 执行BookmarksTool.exe，即可迅速替换完成。\r\n" +
+            //       "    5. 作者：筑博姚蕾。\r\n" +
+            //       "    6. 如有问题，欢迎联系，邮箱：yaoleistable@qq.com。\r\n";
 
             MessageBox.Show(help, "BookmarksTool 使用说明");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var help =
-                   "    一、批量生成Word使用说明：\r\n" +
-                "       （1）方式一：选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
-                "       （2）方式二：拷贝软件到存放Excel和Word的文件夹，点击“批量生成Word”按钮。\r\n" +
-                "    二、Word批量转PDF使用说明：\r\n" +
-                "       （1）方式一：选择要转换的Words文件，点击“Word批量转PDF”按钮。\r\n" +
-                "       （2）方式二：选择文件夹路径（存放Word的文件夹）,点击“Word批量转PDF”按钮\r\n" +
-                "       （3）方式三：拷贝软件到存放Excel和Word的文件夹，点击“Word批量转PDF”按钮。\r\n";
-            textBox1.AppendText(help);
-            
+            //var help =
+            //       "    一、批量生成Word使用说明：\r\n" +
+            //    "       （1）方式一：选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
+            //    "       （2）方式二：拷贝软件到存放Excel和Word的文件夹，点击“批量生成Word”按钮。\r\n" +
+            //    "    二、Word批量转PDF使用说明：\r\n" +
+            //    "       （1）方式一：选择要转换的Words文件，点击“Word批量转PDF”按钮。\r\n" +
+            //    "       （2）方式二：选择文件夹路径（存放Word的文件夹）,点击“Word批量转PDF”按钮\r\n" +
+            //    "       （3）方式三：拷贝软件到存放Excel和Word的文件夹，点击“Word批量转PDF”按钮。\r\n";
+            //textBox1.AppendText(help);
         }
 
         private void button1_Click(object sender, EventArgs e)

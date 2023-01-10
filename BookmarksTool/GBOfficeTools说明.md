@@ -1,43 +1,38 @@
-﻿
-
-# Todo:
+﻿# Todo:
 1、 
 
-# 20230108 BookmarksTool V2.3.1
+
+
+### 20230108 BookmarksTool V2.3.2
 1、实现软件到指定日期不可用的功能。
 2、设置软件过期时间为2025年，Form1.cs第34行。
 3、软件打开后，显示如软件帮助信息。
+4、运行软件最小化。
 
-# 20230108 BookmarksTool V2.3
+### 20230108 BookmarksTool V2.3
 1、书签替换还是用普通循环，并行循环容易卡死。
 2、调整UI大小，更美观些。
 
-
-
-# 20230107 BookmarksTool V2.2
+### 20230107 BookmarksTool V2.2
 1、优化文本框清楚内容的效果。
 2、Word转PDF实现了普通循环转换和并行循环,并行循环计算时间节省约50%以上。
 
-
-# 20230108 BookmarksTool V2.1
+### 20230108 BookmarksTool V2.1
 1、全新升级，重新构建，可选择对于excel文件和word文件。
 2、把所有常用功能，集合到LeiTools类库中。
 3、增加Word批量转换PDF功能。
 4、增加文件夹选择功能，可以选择执行文件夹下面的Word报告生成和PDF转换。
 
-
-
-# 20210128 BookmarksToolPro V1.5
+### 20210128 BookmarksToolPro V1.5
 1、取消了加密功能，所有电脑均可运行。
 
-# 20200405 BookmarksTool V1.4：
+### 20200405 BookmarksTool V1.4：
 1、增加了加密功能，与硬件绑定，防止软件外传。
 
-# 20191025 BookmarksTool V1.0：
+### 20191025 BookmarksTool V1.0：
 1、设计了图像界面。
 2、word中插入英文书签，可对word模板进行批量替换。
 3、采用Costura.Fody.4.1.0、Fody.6.0.2，是最终程序变为一个单独文件。
 
-
-# 20191023 BookmarksTool V0.1 No GUI:
+### 20191023 BookmarksTool V0.1 No GUI:
 1、无图形界面，命令行运行。
