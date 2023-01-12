@@ -6,30 +6,6 @@ namespace BookmarksTool.LeiTools.MSOffice
 {
     public class MSWord
     {
-        /// <summary>
-        /// 判断word文件是否打开
-        /// </summary>
-        /// <param name="pathName">文件路径</param>
-        /// <returns></returns>
-        public bool IsFileLocked(string pathName)
-        {
-            try
-            {
-                if (!File.Exists(pathName))
-                {
-                    return false;
-                }
-                using (var fs = new FileStream(pathName, FileMode.Open, FileAccess.Read, FileShare.None))
-                {
-                    fs.Close();
-                }
-            }
-            catch
-            {
-                return true;
-            }
-            return false;
-        }
 
         #region Word转换为PDF
 

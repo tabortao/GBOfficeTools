@@ -85,10 +85,10 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                             word.ReplaceBookMark(bookmarkName, bookmarkText);
                         }
                     }
-
-                    if (File.Exists(@"./参评范围.jpg"))
+                    string involvedRangePath = Path.GetDirectoryName(f) + @"\参评范围.jpg";
+                    if (File.Exists(involvedRangePath))
                     {
-                        word.ReplaceBookMark("Involved_Range", @"./参评范围.jpg", "IMG");
+                        word.ReplaceBookMark("Involved_Range", involvedRangePath, "IMG");
                     }
                     word.Save(f);
                     //Console.WriteLine(wordName + "  报告生成完成！");
@@ -135,10 +135,10 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                             word.ReplaceBookMark(bookmarkName, bookmarkText);
                         }
                     }
-
-                    if (File.Exists(@"./参评范围.jpg"))
+                    string involvedRangePath = Path.GetDirectoryName(f)+ @"\参评范围.jpg";
+                    if (File.Exists(involvedRangePath))
                     {
-                        word.ReplaceBookMark("Involved_Range", @"./参评范围.jpg", "IMG");
+                        word.ReplaceBookMark("Involved_Range", involvedRangePath, "IMG");
                     }
                     word.Save(f);
                     //Console.WriteLine(wordName + "  报告生成完成！");
@@ -232,10 +232,10 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                               word.ReplaceBookMark(bookmarkName, bookmarkText);
                           }
                       }
-
-                      if (File.Exists(@"./参评范围.jpg"))
+                      string involvedRangePath = Path.GetDirectoryName(f) + @"\参评范围.jpg";
+                      if (File.Exists(involvedRangePath))
                       {
-                          word.ReplaceBookMark("Involved_Range", @"./参评范围.jpg", "IMG");
+                          word.ReplaceBookMark("Involved_Range", involvedRangePath, "IMG");
                       }
                       word.Save(f);
                       //Console.WriteLine(wordName + "  报告生成完成！");
@@ -282,10 +282,10 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                             word.ReplaceBookMark(bookmarkName, bookmarkText);
                         }
                     }
-
-                    if (File.Exists(@"./参评范围.jpg"))
+                    string involvedRangePath = Path.GetDirectoryName(f) + @"\参评范围.jpg";
+                    if (File.Exists(involvedRangePath))
                     {
-                        word.ReplaceBookMark("Involved_Range", @"./参评范围.jpg", "IMG");
+                        word.ReplaceBookMark("Involved_Range", involvedRangePath, "IMG");
                     }
                     word.Save(f);
                     //Console.WriteLine(wordName + "  报告生成完成！");
