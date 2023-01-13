@@ -124,7 +124,12 @@ namespace BookmarksTool
 
         private void Btn_help_Click(object sender, EventArgs e)
         {
-            var help =
+            textBox1.Clear();
+            txt_Excel.Clear();
+            txt_Folder.Clear();
+            txt_Words.Clear();
+
+            string help =
                 "    一、批量生成Word使用说明：\r\n" +
                 "       （1）方式一：选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
                 "       （2）方式二：拷贝软件到存放Excel和Word的文件夹，点击“批量生成Word”按钮。\r\n" +
