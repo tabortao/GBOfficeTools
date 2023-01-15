@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Sunny.UI;
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace BookmarksTool
 {
-    public partial class Form1 : Form
+    public partial class Form1 : UIForm
 
     {
         public static Form1 form1; //定义为静态变量，并在构造方法中引用Form1，可以实现在另外的一个类中调用窗体的控件或方法
@@ -12,11 +13,25 @@ namespace BookmarksTool
         public static string[] wordsPath;// 定义静态变量 wordsPath，用于存储选中的多个word模板文件路径
         public static string folderPath; // 定义静态变量 folderPath，用于存储文件夹路径
 
+        public string help =
+                "    一、批量生成Word使用说明：\r\n" +
+                "       （1）方式一：选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
+                "       （2）方式二：拷贝软件到存放Excel和Word的文件夹，点击“批量生成Word”按钮。\r\n" +
+                "    二、Word批量转PDF使用说明：\r\n" +
+                "       （1）方式一：选择要转换的Words文件，点击“Word批量转PDF”按钮。\r\n" +
+                "       （2）方式二：选择文件夹路径（存放Word的文件夹）,点击“Word批量转PDF”按钮\r\n" +
+                "       （3）方式三：拷贝软件到存放Excel和Word的文件夹，点击“Word批量转PDF”按钮。\r\n" +
+                "    三、关于软件：\r\n" +
+                "    （1）作者：筑博设计@绿色建筑部@姚蕾。\r\n" +
+                "    （2）软件将于2025年到期，联系作者免费获取新版本。\r\n" +
+                "    （3）如有问题，欢迎联系，微信：yao-lei\r\n";
+
         public Form1()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             form1 = this; //构造方法中引用Form1
+            this.rtxt_help.Text = help;
         }
 
         public void TextBoxMsg(string msg)  //输出消息到多行文本框
@@ -128,27 +143,6 @@ namespace BookmarksTool
             txt_Excel.Clear();
             txt_Folder.Clear();
             txt_Words.Clear();
-
-            string help =
-                "    一、批量生成Word使用说明：\r\n" +
-                "       （1）方式一：选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
-                "       （2）方式二：拷贝软件到存放Excel和Word的文件夹，点击“批量生成Word”按钮。\r\n" +
-                "    二、Word批量转PDF使用说明：\r\n" +
-                "       （1）方式一：选择要转换的Words文件，点击“Word批量转PDF”按钮。\r\n" +
-                "       （2）方式二：选择文件夹路径（存放Word的文件夹）,点击“Word批量转PDF”按钮\r\n" +
-                "       （3）方式三：拷贝软件到存放Excel和Word的文件夹，点击“Word批量转PDF”按钮。\r\n" +
-                "    三、关于软件：\r\n" +
-                "    （1）作者：筑博设计@绿色建筑部@姚蕾。\r\n" +
-                "    （2）如有问题，欢迎联系，微信：yao-lei\r\n";
-
-            //var help =
-            //    "    1. 在excel内填写书签名和书签内容，书签英文名；\r\n" +
-            //       "    2. 在Word中添加书签；\r\n" +
-            //       "    3. 将含有书签内容的excel和要批量替换的Word文件放入同一个文件夹内；\r\n" +
-            //       "    4. 执行BookmarksTool.exe，即可迅速替换完成。\r\n" +
-            //       "    5. 作者：筑博姚蕾。\r\n" +
-            //       "    6. 如有问题，欢迎联系，邮箱：yaoleistable@qq.com。\r\n";
-
             MessageBox.Show(help, "BookmarksTool 使用说明");
         }
 
@@ -261,6 +255,14 @@ namespace BookmarksTool
                 //TextBoxMsg(folderPath);
                 txt_Folder.AppendText(folderPath);
             }
+        }
+
+        private void uiRichTextBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
         }
     }
 }

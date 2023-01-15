@@ -13,13 +13,16 @@
 ## 更新记录
 
 
+### 20230112 BookmarksTool V2.4.1
+1. 优化UI界面，感谢开源项目SunnyUI，https://gitee.com/yhuse/SunnyUI。
+
+
 ### 20230112 BookmarksTool V2.3.5
 1. 禁止程序窗口放到和缩小。
 2. 解决高分辨率电脑下，缩放失真问题。
 3. 从.NET Framework 4.0 升级为.NET Framework 4.5，运行速度提升10%。
 4. 目前版本Word批量转PDF功能，经测试，转换33各Word文件用时11.41~12.39秒，之前“WordTOPDF Office Required”版本用时2分08秒，速度提升了10倍。
-
-
+5. 帮助文件中增加“软件将于2025年到期，，联系作者免费获取新版本。
 
 ### 20230110 BookmarksTool V2.3.4
 1. 解决文件路径中存在~$.doc文件时，出现异常的问题，解决办法为先删除掉~$.doc临时（异常退出产生）的文件。
