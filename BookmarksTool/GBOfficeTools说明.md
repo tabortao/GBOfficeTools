@@ -11,9 +11,13 @@
 
 
 ## 更新记录
+1. 增加自动更新检测及实现，先测试实现可以了再增加进来。
+
+### 20230116 BookmarksTool V2.5.0
+1. 优化UI界面，增加左侧导航栏。
 
 
-### 20230112 BookmarksTool V2.4.1
+### 20230114 BookmarksTool V2.4.1
 1. 优化UI界面，感谢开源项目SunnyUI，https://gitee.com/yhuse/SunnyUI。
 
 

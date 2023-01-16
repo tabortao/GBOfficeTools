@@ -160,6 +160,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\清理.png" />
     <None Include="GBOfficeTools说明.md" />
     <Content Include="Lei.ico" />
     <None Include="Resources\Pdf.ico" />

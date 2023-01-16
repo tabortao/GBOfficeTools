@@ -159,18 +159,6 @@ namespace BookmarksTool
             //textBox1.AppendText(help);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Clear();
-            OpenExcelFileDialog();
-        }
-
-        private void btn_SelectWords_Click(object sender, EventArgs e)
-        {
-            textBox1.Clear();
-            OpenWordFileDialog();
-        }
-
         /// <summary>
         /// 打开word文件选择对话框
         /// </summary>
@@ -261,8 +249,30 @@ namespace BookmarksTool
         {
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
+        private void but_SelectExcel_Click(object sender, EventArgs e)
         {
+            textBox1.Clear();
+            OpenExcelFileDialog();
+        }
+
+        private void btn_SelectWords_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            OpenWordFileDialog();
+        }
+
+        /// <summary>
+        /// 清除所有文本框内容
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            txt_Excel.Clear();
+            txt_Words.Clear();
+            txt_Folder.Clear();
+
         }
     }
 }
