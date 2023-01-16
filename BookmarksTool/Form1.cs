@@ -23,8 +23,7 @@ namespace BookmarksTool
                 "       （3）方式三：拷贝软件到存放Excel和Word的文件夹，点击“Word批量转PDF”按钮。\r\n" +
                 "    三、关于软件：\r\n" +
                 "    （1）作者：筑博设计@绿色建筑部@姚蕾。\r\n" +
-                "    （2）软件将于2025年到期，联系作者免费获取新版本。\r\n" +
-                "    （3）如有问题，欢迎联系，微信：yao-lei\r\n";
+                "    （2）如有问题，欢迎联系，微信：yao-lei\r\n";
 
         public Form1()
         {
@@ -59,7 +58,7 @@ namespace BookmarksTool
                 textBox1.Clear();
                 //textBox1.Text = string.Empty;
                 //textBox1.Text = ""; //清空文本框内容，为下次执行扫除干净
-                System.Threading.Thread.Sleep(10);
+                //System.Threading.Thread.Sleep(10);
 
                 TextBoxMsg("批量生成Word报告正在运行，请稍后……");
                 var sw = new Stopwatch();
@@ -80,7 +79,7 @@ namespace BookmarksTool
                     //LeiTools.AsposeOffice.BookmarksReplace.ParallelReportMaker();
                 }
                 else if (txt_Excel.Text.Length == 0 || txt_Words.Text.Length == 0)
-                {
+                {                  
                     MessageBox.Show("请选择Excel模板文件或选择Word文件");
                 }
                 else

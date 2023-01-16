@@ -32,28 +32,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.uiTabControlMenu1 = new Sunny.UI.UITabControlMenu();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_Clear = new Sunny.UI.UIImageButton();
+            this.txt_Folder = new Sunny.UI.UITextBox();
+            this.txt_Words = new Sunny.UI.UITextBox();
+            this.txt_Excel = new Sunny.UI.UITextBox();
+            this.uiLabel5 = new Sunny.UI.UILabel();
+            this.uiLabel3 = new Sunny.UI.UILabel();
+            this.btn_SelectFolder = new Sunny.UI.UIButton();
             this.btn_SelectWords = new Sunny.UI.UIButton();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.but_SelectExcel = new Sunny.UI.UIButton();
             this.textBox1 = new Sunny.UI.UITextBox();
+            this.uiLabel4 = new Sunny.UI.UILabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.rtxt_help = new Sunny.UI.UIRichTextBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiStyleManager1 = new Sunny.UI.UIStyleManager(this.components);
-            this.btn_SelectFolder = new Sunny.UI.UIButton();
-            this.uiLabel3 = new Sunny.UI.UILabel();
-            this.uiLabel4 = new Sunny.UI.UILabel();
-            this.uiLabel5 = new Sunny.UI.UILabel();
-            this.txt_Excel = new Sunny.UI.UITextBox();
-            this.txt_Words = new Sunny.UI.UITextBox();
-            this.txt_Folder = new Sunny.UI.UITextBox();
             this.btn_word2pdf = new Sunny.UI.UISymbolButton();
             this.btn_start = new Sunny.UI.UISymbolButton();
-            this.btn_Clear = new Sunny.UI.UIImageButton();
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTabControlMenu1
@@ -63,11 +63,12 @@
             this.uiTabControlMenu1.Controls.Add(this.tabPage2);
             this.uiTabControlMenu1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.uiTabControlMenu1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTabControlMenu1.ItemSize = new System.Drawing.Size(150, 40);
             this.uiTabControlMenu1.Location = new System.Drawing.Point(-4, 35);
             this.uiTabControlMenu1.Multiline = true;
             this.uiTabControlMenu1.Name = "uiTabControlMenu1";
             this.uiTabControlMenu1.SelectedIndex = 0;
-            this.uiTabControlMenu1.Size = new System.Drawing.Size(830, 425);
+            this.uiTabControlMenu1.Size = new System.Drawing.Size(777, 425);
             this.uiTabControlMenu1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.uiTabControlMenu1.TabIndex = 13;
             this.uiTabControlMenu1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -88,12 +89,117 @@
             this.tabPage1.Controls.Add(this.but_SelectExcel);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.uiLabel4);
-            this.tabPage1.Location = new System.Drawing.Point(201, 0);
+            this.tabPage1.Location = new System.Drawing.Point(151, 0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(629, 425);
+            this.tabPage1.Size = new System.Drawing.Size(626, 425);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "绿建海绵工具箱";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_Clear
+            // 
+            this.btn_Clear.BackgroundImage = global::BookmarksTool.Properties.Resources.清理;
+            this.btn_Clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Clear.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Clear.Location = new System.Drawing.Point(565, 3);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(45, 29);
+            this.btn_Clear.TabIndex = 26;
+            this.btn_Clear.TabStop = false;
+            this.btn_Clear.Text = null;
+            this.btn_Clear.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
+            // txt_Folder
+            // 
+            this.txt_Folder.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Folder.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Folder.Location = new System.Drawing.Point(118, 327);
+            this.txt_Folder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Folder.MinimumSize = new System.Drawing.Size(1, 16);
+            this.txt_Folder.Name = "txt_Folder";
+            this.txt_Folder.ReadOnly = true;
+            this.txt_Folder.RectReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.txt_Folder.ShowText = false;
+            this.txt_Folder.Size = new System.Drawing.Size(395, 28);
+            this.txt_Folder.Style = Sunny.UI.UIStyle.Custom;
+            this.txt_Folder.TabIndex = 23;
+            this.txt_Folder.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txt_Folder.Watermark = "";
+            this.txt_Folder.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // txt_Words
+            // 
+            this.txt_Words.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Words.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Words.Location = new System.Drawing.Point(118, 287);
+            this.txt_Words.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Words.MinimumSize = new System.Drawing.Size(1, 16);
+            this.txt_Words.Name = "txt_Words";
+            this.txt_Words.ReadOnly = true;
+            this.txt_Words.RectReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.txt_Words.ShowText = false;
+            this.txt_Words.Size = new System.Drawing.Size(395, 28);
+            this.txt_Words.Style = Sunny.UI.UIStyle.Custom;
+            this.txt_Words.TabIndex = 22;
+            this.txt_Words.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txt_Words.Watermark = "";
+            this.txt_Words.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // txt_Excel
+            // 
+            this.txt_Excel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Excel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Excel.Location = new System.Drawing.Point(118, 247);
+            this.txt_Excel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Excel.MinimumSize = new System.Drawing.Size(1, 16);
+            this.txt_Excel.Name = "txt_Excel";
+            this.txt_Excel.ReadOnly = true;
+            this.txt_Excel.RectReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.txt_Excel.ShowText = false;
+            this.txt_Excel.Size = new System.Drawing.Size(395, 28);
+            this.txt_Excel.Style = Sunny.UI.UIStyle.Custom;
+            this.txt_Excel.TabIndex = 21;
+            this.txt_Excel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txt_Excel.Watermark = "";
+            this.txt_Excel.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiLabel5
+            // 
+            this.uiLabel5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel5.Location = new System.Drawing.Point(8, 330);
+            this.uiLabel5.Name = "uiLabel5";
+            this.uiLabel5.Size = new System.Drawing.Size(83, 23);
+            this.uiLabel5.TabIndex = 20;
+            this.uiLabel5.Text = "文件夹路径：";
+            this.uiLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel5.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiLabel3
+            // 
+            this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel3.Location = new System.Drawing.Point(8, 250);
+            this.uiLabel3.Name = "uiLabel3";
+            this.uiLabel3.Size = new System.Drawing.Size(100, 23);
+            this.uiLabel3.TabIndex = 18;
+            this.uiLabel3.Text = "Excel模板路径：";
+            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel3.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // btn_SelectFolder
+            // 
+            this.btn_SelectFolder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SelectFolder.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_SelectFolder.Location = new System.Drawing.Point(525, 329);
+            this.btn_SelectFolder.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_SelectFolder.Name = "btn_SelectFolder";
+            this.btn_SelectFolder.Size = new System.Drawing.Size(70, 26);
+            this.btn_SelectFolder.TabIndex = 17;
+            this.btn_SelectFolder.Text = "选择文件夹";
+            this.btn_SelectFolder.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_SelectFolder.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_SelectFolder.Click += new System.EventHandler(this.btn_SelectFolder_Click);
             // 
             // btn_SelectWords
             // 
@@ -143,20 +249,34 @@
             this.textBox1.MinimumSize = new System.Drawing.Size(1, 16);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.RectReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.textBox1.ShowText = false;
             this.textBox1.Size = new System.Drawing.Size(573, 196);
+            this.textBox1.Style = Sunny.UI.UIStyle.Custom;
             this.textBox1.TabIndex = 13;
             this.textBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.textBox1.Watermark = "";
             this.textBox1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
+            // uiLabel4
+            // 
+            this.uiLabel4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel4.Location = new System.Drawing.Point(8, 290);
+            this.uiLabel4.Name = "uiLabel4";
+            this.uiLabel4.Size = new System.Drawing.Size(111, 23);
+            this.uiLabel4.TabIndex = 19;
+            this.uiLabel4.Text = "Words文件路径：";
+            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel4.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.rtxt_help);
             this.tabPage2.Controls.Add(this.uiLabel1);
-            this.tabPage2.Location = new System.Drawing.Point(201, 0);
+            this.tabPage2.Location = new System.Drawing.Point(151, 0);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(629, 425);
+            this.tabPage2.Size = new System.Drawing.Size(626, 425);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "软件使用帮助";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -165,13 +285,14 @@
             // 
             this.rtxt_help.FillColor = System.Drawing.Color.White;
             this.rtxt_help.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rtxt_help.Location = new System.Drawing.Point(17, 37);
+            this.rtxt_help.Location = new System.Drawing.Point(19, 41);
             this.rtxt_help.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rtxt_help.MinimumSize = new System.Drawing.Size(1, 1);
             this.rtxt_help.Name = "rtxt_help";
             this.rtxt_help.Padding = new System.Windows.Forms.Padding(2);
+            this.rtxt_help.ReadOnly = true;
             this.rtxt_help.ShowText = false;
-            this.rtxt_help.Size = new System.Drawing.Size(583, 315);
+            this.rtxt_help.Size = new System.Drawing.Size(577, 292);
             this.rtxt_help.Style = Sunny.UI.UIStyle.Custom;
             this.rtxt_help.TabIndex = 2;
             this.rtxt_help.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -188,107 +309,12 @@
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // btn_SelectFolder
-            // 
-            this.btn_SelectFolder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_SelectFolder.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_SelectFolder.Location = new System.Drawing.Point(525, 329);
-            this.btn_SelectFolder.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btn_SelectFolder.Name = "btn_SelectFolder";
-            this.btn_SelectFolder.Size = new System.Drawing.Size(70, 26);
-            this.btn_SelectFolder.TabIndex = 17;
-            this.btn_SelectFolder.Text = "选择文件夹";
-            this.btn_SelectFolder.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_SelectFolder.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.btn_SelectFolder.Click += new System.EventHandler(this.btn_SelectFolder_Click);
-            // 
-            // uiLabel3
-            // 
-            this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel3.Location = new System.Drawing.Point(8, 250);
-            this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(100, 23);
-            this.uiLabel3.TabIndex = 18;
-            this.uiLabel3.Text = "Excel模板路径：";
-            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel3.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // uiLabel4
-            // 
-            this.uiLabel4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel4.Location = new System.Drawing.Point(8, 290);
-            this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(111, 23);
-            this.uiLabel4.TabIndex = 19;
-            this.uiLabel4.Text = "Words文件路径：";
-            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel4.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // uiLabel5
-            // 
-            this.uiLabel5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel5.Location = new System.Drawing.Point(8, 330);
-            this.uiLabel5.Name = "uiLabel5";
-            this.uiLabel5.Size = new System.Drawing.Size(83, 23);
-            this.uiLabel5.TabIndex = 20;
-            this.uiLabel5.Text = "文件夹路径：";
-            this.uiLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel5.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // txt_Excel
-            // 
-            this.txt_Excel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Excel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Excel.Location = new System.Drawing.Point(118, 247);
-            this.txt_Excel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_Excel.MinimumSize = new System.Drawing.Size(1, 16);
-            this.txt_Excel.Name = "txt_Excel";
-            this.txt_Excel.ReadOnly = true;
-            this.txt_Excel.ShowText = false;
-            this.txt_Excel.Size = new System.Drawing.Size(395, 28);
-            this.txt_Excel.TabIndex = 21;
-            this.txt_Excel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txt_Excel.Watermark = "";
-            this.txt_Excel.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // txt_Words
-            // 
-            this.txt_Words.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Words.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Words.Location = new System.Drawing.Point(118, 287);
-            this.txt_Words.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_Words.MinimumSize = new System.Drawing.Size(1, 16);
-            this.txt_Words.Name = "txt_Words";
-            this.txt_Words.ReadOnly = true;
-            this.txt_Words.ShowText = false;
-            this.txt_Words.Size = new System.Drawing.Size(395, 28);
-            this.txt_Words.TabIndex = 22;
-            this.txt_Words.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txt_Words.Watermark = "";
-            this.txt_Words.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // txt_Folder
-            // 
-            this.txt_Folder.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Folder.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Folder.Location = new System.Drawing.Point(118, 327);
-            this.txt_Folder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_Folder.MinimumSize = new System.Drawing.Size(1, 16);
-            this.txt_Folder.Name = "txt_Folder";
-            this.txt_Folder.ReadOnly = true;
-            this.txt_Folder.ShowText = false;
-            this.txt_Folder.Size = new System.Drawing.Size(395, 28);
-            this.txt_Folder.TabIndex = 23;
-            this.txt_Folder.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txt_Folder.Watermark = "";
-            this.txt_Folder.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
             // btn_word2pdf
             // 
             this.btn_word2pdf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_word2pdf.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_word2pdf.Image = global::BookmarksTool.Properties.Resources.Pdf;
-            this.btn_word2pdf.Location = new System.Drawing.Point(345, 372);
+            this.btn_word2pdf.Location = new System.Drawing.Point(344, 372);
             this.btn_word2pdf.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_word2pdf.Name = "btn_word2pdf";
             this.btn_word2pdf.Size = new System.Drawing.Size(157, 29);
@@ -303,8 +329,8 @@
             // 
             this.btn_start.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_start.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_start.Image = global::BookmarksTool.Properties.Resources.start;
-            this.btn_start.Location = new System.Drawing.Point(128, 372);
+            this.btn_start.Image = global::BookmarksTool.Properties.Resources.Word_Color;
+            this.btn_start.Location = new System.Drawing.Point(127, 372);
             this.btn_start.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_start.Name = "btn_start";
             this.btn_start.Size = new System.Drawing.Size(158, 29);
@@ -315,39 +341,27 @@
             this.btn_start.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.btn_start.Click += new System.EventHandler(this.Btn_start_Click);
             // 
-            // btn_Clear
-            // 
-            this.btn_Clear.BackgroundImage = global::BookmarksTool.Properties.Resources.清理;
-            this.btn_Clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Clear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Clear.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_Clear.Location = new System.Drawing.Point(570, 3);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(40, 29);
-            this.btn_Clear.TabIndex = 26;
-            this.btn_Clear.TabStop = false;
-            this.btn_Clear.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(810, 450);
+            this.ClientSize = new System.Drawing.Size(760, 450);
             this.Controls.Add(this.uiTabControlMenu1);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(810, 450);
-            this.MinimumSize = new System.Drawing.Size(810, 450);
+            this.MaximumSize = new System.Drawing.Size(760, 450);
+            this.MinimumSize = new System.Drawing.Size(760, 450);
             this.Name = "Form1";
+            this.ShowRadius = false;
+            this.ShowRect = false;
             this.Text = "BookmarksTool V2.5";
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 650, 450);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.uiTabControlMenu1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
