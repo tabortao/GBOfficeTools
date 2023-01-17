@@ -31,6 +31,7 @@ namespace BookmarksTool
             InitializeComponent();
             form1 = this; //构造方法中引用Form1
             this.rtxt_help.Text = help;
+            this.lab_Version.Text = "当前版本：" + Application.ProductVersion.ToString() + "\n";           
         }
 
         public void TextBoxMsg(string msg)  //输出消息到多行文本框
@@ -79,7 +80,7 @@ namespace BookmarksTool
                     //LeiTools.AsposeOffice.BookmarksReplace.ParallelReportMaker();
                 }
                 else if (txt_Excel.Text.Length == 0 || txt_Words.Text.Length == 0)
-                {                  
+                {
                     MessageBox.Show("请选择Excel模板文件或选择Word文件");
                 }
                 else
@@ -147,15 +148,7 @@ namespace BookmarksTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //var help =
-            //       "    一、批量生成Word使用说明：\r\n" +
-            //    "       （1）方式一：选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
-            //    "       （2）方式二：拷贝软件到存放Excel和Word的文件夹，点击“批量生成Word”按钮。\r\n" +
-            //    "    二、Word批量转PDF使用说明：\r\n" +
-            //    "       （1）方式一：选择要转换的Words文件，点击“Word批量转PDF”按钮。\r\n" +
-            //    "       （2）方式二：选择文件夹路径（存放Word的文件夹）,点击“Word批量转PDF”按钮\r\n" +
-            //    "       （3）方式三：拷贝软件到存放Excel和Word的文件夹，点击“Word批量转PDF”按钮。\r\n";
-            //textBox1.AppendText(help);
+            LeiTools.AutoUpdate.CheckUpdate();
         }
 
         /// <summary>
@@ -271,7 +264,12 @@ namespace BookmarksTool
             txt_Excel.Clear();
             txt_Words.Clear();
             txt_Folder.Clear();
+        }
 
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            //调用自动更新函数，进行软件更新
+            LeiTools.AutoUpdate.CheckUpdate();
         }
     }
 }

@@ -2,16 +2,22 @@
 
 ## Todo:
 
-1、考虑实现根据配置文件，生成项目文件目录的功能；
-
-2、考虑实现生成文件夹内所有word文件名称的功能，写入并生成txt文件。
-
-3、软件UI界面进行美好，形成左右分栏，实现单窗口多页面应用框架。
+1、软件新功能暂不增加，考虑如何实现做成安装包进行发布。
+2、考虑实现根据配置文件，生成项目文件目录的功能。
+3、考虑实现生成文件夹内所有word文件名称的功能，写入并生成txt文件。
 
 
 
 ## 更新记录
-1. 增加自动更新检测及实现，先测试实现可以了再增加进来。
+
+
+### 20230116 BookmarksTool V2.5.1.1
+1. 增加自动更新功能。
+2. 新增Update.xml，用于自动更新。Nugut安装Autoupdater.NET.Official 1.6.4版本。
+3. 使用HMS搭建简单HTTP服务器，把Update.xml和更新文件放入服务器。
+4. 采用gitee实现软件自动更新，详见AutoUpdate.cs、Update.xml和 https://gitee.com/yaoleistable/GBOfficeTool 用于软件发布，和GBOfficeTools私人程序不一样。
+
+
 
 ### 20230116 BookmarksTool V2.5.0
 1. 优化UI界面，增加左侧导航栏。

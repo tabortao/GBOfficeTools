@@ -33,6 +33,8 @@
             this.uiTabControlMenu1 = new Sunny.UI.UITabControlMenu();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_Clear = new Sunny.UI.UIImageButton();
+            this.btn_word2pdf = new Sunny.UI.UISymbolButton();
+            this.btn_start = new Sunny.UI.UISymbolButton();
             this.txt_Folder = new Sunny.UI.UITextBox();
             this.txt_Words = new Sunny.UI.UITextBox();
             this.txt_Excel = new Sunny.UI.UITextBox();
@@ -45,11 +47,11 @@
             this.textBox1 = new Sunny.UI.UITextBox();
             this.uiLabel4 = new Sunny.UI.UILabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_Update = new Sunny.UI.UIButton();
             this.rtxt_help = new Sunny.UI.UIRichTextBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiStyleManager1 = new Sunny.UI.UIStyleManager(this.components);
-            this.btn_word2pdf = new Sunny.UI.UISymbolButton();
-            this.btn_start = new Sunny.UI.UISymbolButton();
+            this.lab_Version = new Sunny.UI.UILabel();
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear)).BeginInit();
@@ -98,7 +100,7 @@
             // 
             // btn_Clear
             // 
-            this.btn_Clear.BackgroundImage = global::BookmarksTool.Properties.Resources.清理;
+            this.btn_Clear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Clear.BackgroundImage")));
             this.btn_Clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Clear.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -110,6 +112,38 @@
             this.btn_Clear.Text = null;
             this.btn_Clear.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
+            // btn_word2pdf
+            // 
+            this.btn_word2pdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_word2pdf.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_word2pdf.Image = global::BookmarksTool.Properties.Resources.Pdf;
+            this.btn_word2pdf.Location = new System.Drawing.Point(344, 372);
+            this.btn_word2pdf.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_word2pdf.Name = "btn_word2pdf";
+            this.btn_word2pdf.Size = new System.Drawing.Size(157, 29);
+            this.btn_word2pdf.Symbol = 61889;
+            this.btn_word2pdf.TabIndex = 25;
+            this.btn_word2pdf.Text = "Word批量转PDF";
+            this.btn_word2pdf.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_word2pdf.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_word2pdf.Click += new System.EventHandler(this.btn_word2pdf_Click);
+            // 
+            // btn_start
+            // 
+            this.btn_start.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_start.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_start.Image = ((System.Drawing.Image)(resources.GetObject("btn_start.Image")));
+            this.btn_start.Location = new System.Drawing.Point(127, 372);
+            this.btn_start.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_start.Name = "btn_start";
+            this.btn_start.Size = new System.Drawing.Size(158, 29);
+            this.btn_start.Symbol = 73;
+            this.btn_start.TabIndex = 24;
+            this.btn_start.Text = "批量生成Word报告";
+            this.btn_start.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_start.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_start.Click += new System.EventHandler(this.Btn_start_Click);
             // 
             // txt_Folder
             // 
@@ -272,6 +306,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lab_Version);
+            this.tabPage2.Controls.Add(this.btn_Update);
             this.tabPage2.Controls.Add(this.rtxt_help);
             this.tabPage2.Controls.Add(this.uiLabel1);
             this.tabPage2.Location = new System.Drawing.Point(151, 0);
@@ -280,6 +316,20 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "软件使用帮助";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Update.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Update.Location = new System.Drawing.Point(262, 354);
+            this.btn_Update.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(88, 30);
+            this.btn_Update.TabIndex = 3;
+            this.btn_Update.Text = "立即更新";
+            this.btn_Update.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Update.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // rtxt_help
             // 
@@ -309,37 +359,15 @@
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // btn_word2pdf
+            // lab_Version
             // 
-            this.btn_word2pdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_word2pdf.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_word2pdf.Image = global::BookmarksTool.Properties.Resources.Pdf;
-            this.btn_word2pdf.Location = new System.Drawing.Point(344, 372);
-            this.btn_word2pdf.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btn_word2pdf.Name = "btn_word2pdf";
-            this.btn_word2pdf.Size = new System.Drawing.Size(157, 29);
-            this.btn_word2pdf.Symbol = 61889;
-            this.btn_word2pdf.TabIndex = 25;
-            this.btn_word2pdf.Text = "Word批量转PDF";
-            this.btn_word2pdf.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_word2pdf.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.btn_word2pdf.Click += new System.EventHandler(this.btn_word2pdf_Click);
-            // 
-            // btn_start
-            // 
-            this.btn_start.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_start.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_start.Image = global::BookmarksTool.Properties.Resources.Word_Color;
-            this.btn_start.Location = new System.Drawing.Point(127, 372);
-            this.btn_start.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(158, 29);
-            this.btn_start.Symbol = 73;
-            this.btn_start.TabIndex = 24;
-            this.btn_start.Text = "批量生成Word报告";
-            this.btn_start.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_start.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.btn_start.Click += new System.EventHandler(this.Btn_start_Click);
+            this.lab_Version.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lab_Version.Location = new System.Drawing.Point(466, 388);
+            this.lab_Version.Name = "lab_Version";
+            this.lab_Version.Size = new System.Drawing.Size(141, 23);
+            this.lab_Version.TabIndex = 4;
+            this.lab_Version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lab_Version.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // Form1
             // 
@@ -355,7 +383,7 @@
             this.Name = "Form1";
             this.ShowRadius = false;
             this.ShowRect = false;
-            this.Text = "BookmarksTool V2.5";
+            this.Text = "BookmarksTool";
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 650, 450);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.uiTabControlMenu1.ResumeLayout(false);
@@ -387,6 +415,8 @@
         private Sunny.UI.UISymbolButton btn_word2pdf;
         private Sunny.UI.UISymbolButton btn_start;
         private Sunny.UI.UIImageButton btn_Clear;
+        private Sunny.UI.UIButton btn_Update;
+        private Sunny.UI.UILabel lab_Version;
     }
 }
 
