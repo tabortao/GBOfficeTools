@@ -31,7 +31,13 @@ namespace BookmarksTool
             InitializeComponent();
             form1 = this; //构造方法中引用Form1
             this.rtxt_help.Text = help;
-            this.lab_Version.Text = "当前版本：" + Application.ProductVersion.ToString() + "\n";           
+            this.lab_Version.Text = "当前版本：" + Application.ProductVersion.ToString() + "\n";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //打开软件后，自动检查是否有可用更新,如有更新，弹出对话框询问是否更新，点击更新后，自动更新。
+            LeiTools.AutoUpdate.AutoCheckUpdate();
         }
 
         public void TextBoxMsg(string msg)  //输出消息到多行文本框
@@ -97,7 +103,7 @@ namespace BookmarksTool
             }
             else
             {
-                MessageBox.Show("软件授权过期，请联系Lei");
+                MessageBox.Show("软件授权过期，请关注微信公众号“可持续学园”留言，免费获取更新。");
             }
         }
 
@@ -135,20 +141,6 @@ namespace BookmarksTool
             }
             sw.Stop();//计时结束
             Form1.form1.TextBoxMsg("Word批量转PDF已完成，用时" + sw.Elapsed + "秒");
-        }
-
-        private void Btn_help_Click(object sender, EventArgs e)
-        {
-            textBox1.Clear();
-            txt_Excel.Clear();
-            txt_Folder.Clear();
-            txt_Words.Clear();
-            MessageBox.Show(help, "BookmarksTool 使用说明");
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            LeiTools.AutoUpdate.CheckUpdate();
         }
 
         /// <summary>

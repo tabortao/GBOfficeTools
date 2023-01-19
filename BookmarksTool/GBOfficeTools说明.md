@@ -1,4 +1,5 @@
-﻿﻿# GBOfficeTools说明
+﻿﻿# GBOfficeTools说明 （仅供自己阅读，不对外发布）
+【简书】BookmarksTool更新说明：https://www.jianshu.com/p/0bc0a4c52347
 
 ## Todo:
 
@@ -16,6 +17,9 @@
 2. 新增Update.xml，用于自动更新。Nugut安装Autoupdater.NET.Official 1.6.4版本。
 3. 使用HMS搭建简单HTTP服务器，把Update.xml和更新文件放入服务器。
 4. 采用gitee实现软件自动更新，详见AutoUpdate.cs、Update.xml和 https://gitee.com/yaoleistable/GBOfficeTool 用于软件发布，和GBOfficeTools私人程序不一样。
+5. Update.xml的更新说明，采用简书发布，对本文字更新即可：https://www.jianshu.com/p/0bc0a4c52347
+6. 软件默认强制升级模式，可随时控制软件是否可用。
+
 
 
 

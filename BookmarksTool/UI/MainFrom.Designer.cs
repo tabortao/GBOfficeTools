@@ -47,11 +47,11 @@
             this.textBox1 = new Sunny.UI.UITextBox();
             this.uiLabel4 = new Sunny.UI.UILabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lab_Version = new Sunny.UI.UILabel();
             this.btn_Update = new Sunny.UI.UIButton();
             this.rtxt_help = new Sunny.UI.UIRichTextBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiStyleManager1 = new Sunny.UI.UIStyleManager(this.components);
-            this.lab_Version = new Sunny.UI.UILabel();
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear)).BeginInit();
@@ -317,6 +317,16 @@
             this.tabPage2.Text = "软件使用帮助";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // lab_Version
+            // 
+            this.lab_Version.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lab_Version.Location = new System.Drawing.Point(466, 388);
+            this.lab_Version.Name = "lab_Version";
+            this.lab_Version.Size = new System.Drawing.Size(141, 23);
+            this.lab_Version.TabIndex = 4;
+            this.lab_Version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lab_Version.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
             // btn_Update
             // 
             this.btn_Update.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -358,16 +368,6 @@
             this.uiLabel1.Text = "软件使用帮助";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // lab_Version
-            // 
-            this.lab_Version.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lab_Version.Location = new System.Drawing.Point(466, 388);
-            this.lab_Version.Name = "lab_Version";
-            this.lab_Version.Size = new System.Drawing.Size(141, 23);
-            this.lab_Version.TabIndex = 4;
-            this.lab_Version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lab_Version.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // Form1
             // 

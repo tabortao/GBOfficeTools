@@ -8,12 +8,16 @@
   <!--V2.5大版本下，软件更新内容保持不变-->
   <url>https://gitee.com/yaoleistable/GBOfficeTool/releases/download/V2.5/BookmarksTool.zip</url>
   <!--更新日志（可选）：您需要在更新日志标签之间提供应用程序的变更日志的 URL。如果未提供更改日志的 URL，则更新对话框不会显示更改日志。-->
-  <changelog>https://gitee.com/yaoleistable/GBOfficeTool/releases</changelog>
+  <!--<changelog>https://gitee.com/yaoleistable/GBOfficeTool/blob/master/Updates.md</changelog>-->
+  <!--<changelog>https://gitee.com/yaoleistable/GBOfficeTool/releases</changelog>-->
+  <changelog>https://www.jianshu.com/p/0bc0a4c52347</changelog>
   <!--必需（可选）：如果不希望用户跳过此版本，则可以将其设置为 true。
   这将忽略“稍后提醒”和“跳过”选项，并隐藏更新对话框中的“跳过”和“稍后提醒”按钮。-->
   <mandatory>false</mandatory>
   <!--mode（属性、可选）：您可以在必需元素上提供 mode 属性以更改必需标志的行为。
   如果您提供“1”作为模式属性的值，那么它还将隐藏更新对话框中的关闭按钮。
   如果您提供“2”作为模式属性的值，那么它将跳过更新对话框并开始自动下载和更新应用程序。-->
+
+  <!--修改为强制更新模式-->
   <!--<mandatory mode="2">true</mandatory>-->
 </item>

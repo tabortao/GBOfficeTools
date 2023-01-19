@@ -14,6 +14,7 @@ namespace BookmarksTool.LeiTools
 
             // 1.编制XML文件
 
+            // 2.设置AutoUpdaterDotNET
             //您可以通过添加以下代码来打开错误报告。如果这样做 AutoUpdater.NET 将显示错误消息，
             //如果没有可用的更新或无法从 Web 服务器访问 XML 文件。
             AutoUpdater.ReportErrors = true;
@@ -27,9 +28,14 @@ namespace BookmarksTool.LeiTools
             //AutoUpdater.LetUserSelectRemindLater = false;
             //AutoUpdater.RemindLaterTimeSpan = RemindLaterFormat.Days;
             //AutoUpdater.RemindLaterAt = 2;
+            // 强制更新
+            //可以通过将“必需属性”设置为 true 并将“更新模式”设置为值 或 来启用强制更新。 选项将隐藏标准更新对话框中的稍后提醒，跳过和关闭按钮。 
+            //选项将跳过标准更新对话框，无需用户交互即可开始下载和更新应用程序。 选项还将忽略 OpenDownloadPage 标志的值。
+            //AutoUpdater.Mandatory = true;
+            //AutoUpdater.UpdateMode = Mode.Forced;
 
             //指定更新窗体的大小
-            //AutoUpdater.UpdateFormSize = new System.Drawing.Size(800, 600);
+            //AutoUpdater.UpdateFormSize = new System.Drawing.Size(900, 600);
 
             //经常检查更新:可以在计时器中调用 Start 方法来频繁检查更新。
             //DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(1) };
@@ -38,7 +44,19 @@ namespace BookmarksTool.LeiTools
             //    AutoUpdater.Start("https://gitee.com/yaoleistable/GBOfficeToolsReleases/releases/download/UpdateXML/Update.xml");
             //};
             //timer.Start();
+            // 3.启动更新
+            AutoUpdater.Start("https://gitee.com/yaoleistable/GBOfficeToolsReleases/releases/download/UpdateXML/Update.xml");
+            //System.Windows.Forms.MessageBox.Show("软件更新完成");                    
+            //string updates = @"https://gitee.com/yaoleistable/GBOfficeTool/blob/master/Updates.md";
+            //System.Diagnostics.Process.Start(updates);
 
+        }
+
+        public static void AutoCheckUpdate()
+        {
+            //软件启动，自动检查更新，强制升级。
+            AutoUpdater.Mandatory = true;
+            AutoUpdater.UpdateMode = Mode.Forced;
             AutoUpdater.Start("https://gitee.com/yaoleistable/GBOfficeToolsReleases/releases/download/UpdateXML/Update.xml");
         }
     }
