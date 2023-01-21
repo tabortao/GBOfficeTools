@@ -58,7 +58,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Bookmark.ico</ApplicationIcon>
+    <ApplicationIcon>Lei.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -169,6 +169,8 @@
   <ItemGroup>
     <None Include="Bookmark.png" />
     <Content Include="Bookmark.ico" />
+    <Content Include="Bookmark2.ico" />
+    <None Include="Bookmark2.png" />
     <Content Include="LeiTools\Update.xml" />
     <Content Include="UI\20230117 UI.jpg" />
     <None Include="Resources\word-2.png" />
