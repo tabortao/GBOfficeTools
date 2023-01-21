@@ -383,7 +383,7 @@
             this.Name = "Form1";
             this.ShowRadius = false;
             this.ShowRect = false;
-            this.Text = "BookmarksTool";
+            this.Text = "BookmarksTool 2";
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 650, 450);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.uiTabControlMenu1.ResumeLayout(false);

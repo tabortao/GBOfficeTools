@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +7,7 @@
     <ProjectGuid>{E24B78D8-B284-4D39-8333-CF40D1F39628}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BookmarksTool</RootNamespace>
-    <AssemblyName>BookmarksTool</AssemblyName>
+    <AssemblyName>BookmarksTool 2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -59,7 +58,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Lei.ico</ApplicationIcon>
+    <ApplicationIcon>Bookmark.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -91,9 +90,6 @@
     </Reference>
     <Reference Include="AutoUpdater.NET, Version=1.6.4.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Autoupdater.NET.Official.1.6.4\lib\net45\AutoUpdater.NET.dll</HintPath>
-    </Reference>
-    <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
-      <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -171,6 +167,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Bookmark.png" />
+    <Content Include="Bookmark.ico" />
     <Content Include="LeiTools\Update.xml" />
     <Content Include="UI\20230117 UI.jpg" />
     <None Include="Resources\word-2.png" />
@@ -192,12 +190,4 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props'))" />
-    <Error Condition="!Exists('..\packages\Fody.4.2.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.4.2.1\build\Fody.targets'))" />
-  </Target>
-  <Import Project="..\packages\Fody.4.2.1\build\Fody.targets" Condition="Exists('..\packages\Fody.4.2.1\build\Fody.targets')" />
 </Project>

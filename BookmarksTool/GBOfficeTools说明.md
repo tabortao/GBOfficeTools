@@ -12,6 +12,11 @@
 ## 更新记录
 
 
+### 20230121 BookmarksTool 2 V2.5.1.2
+1. 软件改名为BookmarksTool 2，与之前版本区别。
+2. 制作软件安装包。
+3. 取消项目生成单个文件功能，NuGet卸载了Fody 4.2.1、Costura.Fody 3.3.3。
+
 ### 20230116 BookmarksTool V2.5.1.1
 1. 增加自动更新功能。
 2. 新增Update.xml，用于自动更新。Nugut安装Autoupdater.NET.Official 1.6.4版本。
