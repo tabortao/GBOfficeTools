@@ -21,10 +21,10 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     foreach (var file in files)
                     {
                         //Console.WriteLine("模板：" + Path.GetFileName(file));
-                        Form1.form1.TextBoxMsg("模板：" + Path.GetFileName(file));
+                        MainForm.form1.TextBoxMsg("模板：" + Path.GetFileName(file));
                     }
                     //Console.WriteLine("存在多个报告模板，文件夹内请保留一个模板，请注意！");
-                    Form1.form1.TextBoxMsg("存在多个报告模板，文件夹内请保留一个模板，请注意！");
+                    MainForm.form1.TextBoxMsg("存在多个报告模板，文件夹内请保留一个模板，请注意！");
                     var excelPath = files[0];
                     var excelName = Path.GetFileName(excelPath);
                     //Console.WriteLine("当前计算采用模板为：" + excelName);
@@ -42,7 +42,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                 else
                 {
                     //Console.WriteLine("请在当前文件夹中放入Word书签内容批量修改工具.xlsx！");
-                    Form1.form1.TextBoxMsg("请在当前文件夹中放入Word书签内容批量修改工具.xlsx！");
+                    MainForm.form1.TextBoxMsg("请在当前文件夹中放入Word书签内容批量修改工具.xlsx！");
                 }
             }
             catch (Exception ex)
@@ -59,7 +59,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
         /// <param name="path">Word模板路径</param>
         public static void ReportMaker(string excelPath, string wordFolderPath)
         {
-            Form1.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
+            MainForm.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
             var wordFiles = Directory.GetFiles(wordFolderPath, "*.doc"); //从文件夹中，筛选出word
             var excel = new LeiTools.AsposeOffice.AsposeOfficeExcel();
             excel.Open(excelPath);
@@ -92,7 +92,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     }
                     word.Save(f);
                     //Console.WriteLine(wordName + "  报告生成完成！");
-                    Form1.form1.TextBoxMsg(f + "  报告生成完成！");
+                    MainForm.form1.TextBoxMsg(f + "  报告生成完成！");
                 }
                 catch (Exception e)
                 {
@@ -109,7 +109,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
         /// <param name="wordsPath">多个word文件路径，这里是通过选择文件对话框实现，已经过滤了只能选择word文件</param>
         public static void ReportMaker(string excelPath, string[] wordsPath)
         {
-            Form1.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
+            MainForm.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
             var excel = new LeiTools.AsposeOffice.AsposeOfficeExcel();
             excel.Open(excelPath);
             const int bookmarkNo = 500;//sheet1 书签列书签个数
@@ -142,7 +142,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     }
                     word.Save(f);
                     //Console.WriteLine(wordName + "  报告生成完成！");
-                    Form1.form1.TextBoxMsg(wordName + "  报告生成完成！");
+                    MainForm.form1.TextBoxMsg(wordName + "  报告生成完成！");
                 }
                 catch (Exception e)
                 {
@@ -168,14 +168,14 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     foreach (var file in files)
                     {
                         //Console.WriteLine("模板：" + Path.GetFileName(file));
-                        Form1.form1.TextBoxMsg("模板：" + Path.GetFileName(file));
+                        MainForm.form1.TextBoxMsg("模板：" + Path.GetFileName(file));
                     }
                     //Console.WriteLine("存在多个报告模板，文件夹内请保留一个模板，请注意！");
-                    Form1.form1.TextBoxMsg("存在多个报告模板，文件夹内请保留一个模板，请注意！");
+                    MainForm.form1.TextBoxMsg("存在多个报告模板，文件夹内请保留一个模板，请注意！");
                     var excelPath = files[0];
                     var excelName = Path.GetFileName(excelPath);
                     //Console.WriteLine("当前计算采用模板为：" + excelName);
-                    Form1.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
+                    MainForm.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
                     ParallelReportMaker(excelPath, docPath);
                 }
                 else if (files.Length == 1)
@@ -183,13 +183,13 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     var excelPath = files[0];
                     var excelName = Path.GetFileName(excelPath); // 获取excel文件名，不含路径
                     //Console.WriteLine("当前计算采用模板为：" + excelName);
-                    Form1.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
+                    MainForm.form1.TextBoxMsg("当前计算采用模板为：" + excelName);
                     ParallelReportMaker(excelPath, docPath);
                 }
                 else
                 {
                     //Console.WriteLine("请在当前文件夹中放入Word书签内容批量修改工具.xlsx！");
-                    Form1.form1.TextBoxMsg("请在当前文件夹中放入Word书签内容批量修改工具.xlsx！");
+                    MainForm.form1.TextBoxMsg("请在当前文件夹中放入Word书签内容批量修改工具.xlsx！");
                 }
             }
             catch (Exception ex)
@@ -206,7 +206,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
         /// <param name="wordFolderPath"></param>
         public static void ParallelReportMaker(string excelPath, string wordFolderPath)
         {
-            Form1.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
+            MainForm.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
             var wordFiles = Directory.GetFiles(wordFolderPath, "*.doc"); //从文件夹中，筛选出word
             var excel = new LeiTools.AsposeOffice.AsposeOfficeExcel();
             excel.Open(excelPath);
@@ -239,7 +239,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                       }
                       word.Save(f);
                       //Console.WriteLine(wordName + "  报告生成完成！");
-                      Form1.form1.TextBoxMsg(f + "  报告生成完成！");
+                      MainForm.form1.TextBoxMsg(f + "  报告生成完成！");
                   }
                   catch (Exception e)
                   {
@@ -256,7 +256,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
         /// <param name="wordsPath"></param>
         public static void ParallelReportMaker(string excelPath, string[] wordsPath)
         {
-            Form1.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
+            MainForm.form1.TextBoxMsg("当前计算采用的Excel模板为：" + Path.GetFileName(excelPath)); //显示excel模板文件名
             var excel = new LeiTools.AsposeOffice.AsposeOfficeExcel();
             excel.Open(excelPath);
             const int bookmarkNo = 500;//sheet1 书签列书签个数
@@ -289,7 +289,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                     }
                     word.Save(f);
                     //Console.WriteLine(wordName + "  报告生成完成！");
-                    Form1.form1.TextBoxMsg(wordName + "  报告生成完成！");
+                    MainForm.form1.TextBoxMsg(wordName + "  报告生成完成！");
                 }
                 catch (Exception e)
                 {

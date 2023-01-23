@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <item>
   <!--版本（必需）：您需要在版本标记之间提供应用程序的最新版本。版本应为 X.X.X.X 格式。-->
-  <version>2.5.1.1</version>
+  <version>2.0.0.0</version>
   <!--网址（必填）：您需要在网址标记之间提供最新版本安装程序文件的网址或 zip 文件。
   AutoUpdater.NET 下载此处提供的文件，并在用户按“更新”按钮时安装它。-->
   <!--<url>http://192.168.31.184/BookmarksToolUpdate/BookmarksTool.zip</url>-->
   <!--V2.5大版本下，软件更新内容保持不变-->
-  <url>https://gitee.com/yaoleistable/GBOfficeTool/releases/download/V2.5/BookmarksTool.zip</url>
+  <url>https://gitee.com/yaoleistable/GBOfficeTool/releases/download/V2/GBOfficeToolsUpdate.zip</url>
   <!--更新日志（可选）：您需要在更新日志标签之间提供应用程序的变更日志的 URL。如果未提供更改日志的 URL，则更新对话框不会显示更改日志。-->
   <!--<changelog>https://gitee.com/yaoleistable/GBOfficeTool/blob/master/Updates.md</changelog>-->
   <!--<changelog>https://gitee.com/yaoleistable/GBOfficeTool/releases</changelog>-->

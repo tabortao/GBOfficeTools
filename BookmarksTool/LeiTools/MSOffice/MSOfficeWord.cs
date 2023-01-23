@@ -132,7 +132,7 @@ namespace BookmarksTool.LeiTools.MSOffice.Word
                         if (!File.Exists(@PDFPath))//存在PDF，不需要继续转换
                         {
                             document.ExportAsFixedFormat(PDFPath, WdExportFormat.wdExportFormatPDF);
-                            Form1.form1.TextBoxMsg(f.Name + "转换PDF成功!");
+                            MainForm.form1.TextBoxMsg(f.Name + "转换PDF成功!");
                             //Console.WriteLine("文件{0}转换PDF成功", f.Name);
                         }
                         result = true;
@@ -157,7 +157,7 @@ namespace BookmarksTool.LeiTools.MSOffice.Word
                         if (!File.Exists(@PDFPath))//存在PDF，不需要继续转换
                         {
                             document.ExportAsFixedFormat(PDFPath, WdExportFormat.wdExportFormatPDF);
-                            Form1.form1.TextBoxMsg(f.Name + "转换PDF成功!");
+                            MainForm.form1.TextBoxMsg(f.Name + "转换PDF成功!");
                         }
                         result = true;
                     }

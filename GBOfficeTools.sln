@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookmarksTool 2", "BookmarksTool\BookmarksTool 2.csproj", "{E24B78D8-B284-4D39-8333-CF40D1F39628}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBOfficeTools", "BookmarksTool\GBOfficeTools.csproj", "{E24B78D8-B284-4D39-8333-CF40D1F39628}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BookmarksTool 2 Setup", "BookmarksTool 2 Setup\BookmarksTool 2 Setup.vdproj", "{5BD987D2-C21A-47D4-B45A-36B88F2AC463}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GBOfficeToolsSetup", "GBOfficeToolsSetup\GBOfficeToolsSetup.vdproj", "{26F2666B-7E6F-4E0B-A5EF-A734D99BDCE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{E24B78D8-B284-4D39-8333-CF40D1F39628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E24B78D8-B284-4D39-8333-CF40D1F39628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E24B78D8-B284-4D39-8333-CF40D1F39628}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BD987D2-C21A-47D4-B45A-36B88F2AC463}.Debug|Any CPU.ActiveCfg = Debug
-		{5BD987D2-C21A-47D4-B45A-36B88F2AC463}.Release|Any CPU.ActiveCfg = Release
+		{26F2666B-7E6F-4E0B-A5EF-A734D99BDCE6}.Debug|Any CPU.ActiveCfg = Debug
+		{26F2666B-7E6F-4E0B-A5EF-A734D99BDCE6}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

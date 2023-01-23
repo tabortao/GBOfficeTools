@@ -287,7 +287,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
             string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordFilePath); //获取文件名称，不含拓展名。
             if (LeiTools.IOHelper.IsFileLocked(wordFilePath))  //判断文件是否被锁定
             {
-                Form1.form1.TextBoxMsg(wordFileNameWithoutExtension + "转PDF失败，请关闭Word文件后重试！！!");
+                MainForm.form1.TextBoxMsg(wordFileNameWithoutExtension + "转PDF失败，请关闭Word文件后重试！！!");
                 return false;
             }
             else
@@ -296,12 +296,12 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                 {
                     Aspose.Words.Document doc = new Aspose.Words.Document(wordFilePath);
                     doc.Save(pdfFilePath, Aspose.Words.SaveFormat.Pdf);
-                    Form1.form1.TextBoxMsg(wordFileNameWithoutExtension + "转PDF成功!");
+                    MainForm.form1.TextBoxMsg(wordFileNameWithoutExtension + "转PDF成功!");
                     return true;
                 }
                 catch (Exception e)
                 {
-                    Form1.form1.TextBoxMsg(e.Message);
+                    MainForm.form1.TextBoxMsg(e.Message);
                     result = false;
                 }
             }

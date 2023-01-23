@@ -7,7 +7,7 @@
     <ProjectGuid>{E24B78D8-B284-4D39-8333-CF40D1F39628}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BookmarksTool</RootNamespace>
-    <AssemblyName>BookmarksTool 2</AssemblyName>
+    <AssemblyName>GBOfficeTools</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -167,6 +167,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UI\20230123 UI.jpg" />
     <None Include="Bookmark.png" />
     <Content Include="Bookmark.ico" />
     <Content Include="Bookmark2.ico" />
