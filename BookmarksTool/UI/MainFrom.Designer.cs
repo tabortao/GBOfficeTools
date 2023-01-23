@@ -223,6 +223,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.AllowDrop = true;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox1.Location = new System.Drawing.Point(22, 40);
@@ -232,6 +233,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.RectReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.textBox1.ShowScrollBar = true;
             this.textBox1.ShowText = false;
             this.textBox1.Size = new System.Drawing.Size(573, 196);
             this.textBox1.Style = Sunny.UI.UIStyle.Custom;
@@ -375,6 +377,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.AllowDrop = true;
             this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox2.Location = new System.Drawing.Point(22, 40);
@@ -384,6 +387,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.RectReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.textBox2.ShowScrollBar = true;
             this.textBox2.ShowText = false;
             this.textBox2.Size = new System.Drawing.Size(573, 196);
             this.textBox2.Style = Sunny.UI.UIStyle.Custom;

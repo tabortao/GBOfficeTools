@@ -12,15 +12,13 @@ namespace BookmarksTool
 
         public string help =
                 "    一、Word书签工具使用帮助：\r\n" +
-                "       （1）方式一：选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
-                "       （2）方式二：拷贝软件到存放Excel和Word的文件夹，点击“批量生成Word”按钮。\r\n" +
+                "       （1）选择Excel文件，选择要转换的Words文件，点击“批量生成Word”按钮。\r\n" +
                 "    二、WordPDF使用帮助：\r\n" +
                 "       （1）方式一：选择要转换的Words文件，点击“Word批量转PDF”按钮。\r\n" +
                 "       （2）方式二：选择文件夹路径（存放Word的文件夹）,点击“Word批量转PDF”按钮\r\n" +
-                "       （3）方式三：拷贝软件到存放Excel和Word的文件夹，点击“Word批量转PDF”按钮。\r\n" +
                 "    三、关于软件：\r\n" +
-                "    （1）作者：筑博设计@绿色建筑部@姚蕾。\r\n" +
-                "    （2）如有问题，欢迎联系，微信：yao-lei\r\n";
+                "       （1）作者：筑博设计@绿色建筑部@姚蕾。\r\n" +
+                "       （2）如有问题，欢迎联系，微信：yao-lei\r\n";
 
         public MainForm()
         {
@@ -31,11 +29,21 @@ namespace BookmarksTool
             this.lab_Version.Text = "当前版本：" + Application.ProductVersion.ToString() + "\n";
         }
 
+        #region 自动更新
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            //调用自动更新函数，进行软件更新
+            LeiTools.AutoUpdate.CheckUpdate();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //打开软件后，自动检查是否有可用更新,如有更新，弹出对话框询问是否更新，点击更新后，自动更新。
             LeiTools.AutoUpdate.AutoCheckUpdate();
         }
+
+        #endregion 自动更新
 
         #region Word书签工具
 
@@ -214,17 +222,17 @@ namespace BookmarksTool
             if (txt_Words2.Text.Length != 0 || (txt_Folder2.Text.Length != 0 && txt_Words2.Text.Length != 0))
             {
                 //如果选择了多个word文件，或者既选择了文件夹，又选择了多个word文件时，将多个word文件转为PDF
-                LeiTools.AsposeOffice.AsposeOfficeWord.Word2PDF(wordsPath2);
+                LeiTools.AsposeOffice.WordToPDF.Word2PDF(wordsPath2);
             }
             else if (txt_Folder2.Text.Length != 0)
             {
                 //如果选择了文件夹路径，把文件夹内的word转为pdf
-                LeiTools.AsposeOffice.AsposeOfficeWord.Word2PDF(folderPath2);
+                LeiTools.AsposeOffice.WordToPDF.Word2PDF(folderPath2);
             }
             else if (txt_Words2.Text.Length == 0 && txt_Folder2.Text.Length == 0)
             {
                 //如果没有选择excel文件且没有选择word文件，默认在程序所在文件夹查找并执行
-                LeiTools.AsposeOffice.AsposeOfficeWord.Word2PDF();
+                LeiTools.AsposeOffice.WordToPDF.Word2PDF();
             }
             else
             {
@@ -280,15 +288,5 @@ namespace BookmarksTool
         }
 
         #endregion Word转PDF工具
-
-        #region 自动更新
-
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-            //调用自动更新函数，进行软件更新
-            LeiTools.AutoUpdate.CheckUpdate();
-        }
-
-        #endregion 自动更新
     }
 }

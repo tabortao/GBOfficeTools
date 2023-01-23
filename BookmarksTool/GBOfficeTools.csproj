@@ -86,7 +86,7 @@
       <HintPath>..\packages\Aspose.Cells.dll</HintPath>
     </Reference>
     <Reference Include="Aspose.Words">
-      <HintPath>..\packages\AsposeWords 18.7\Aspose.Words.dll</HintPath>
+      <HintPath>..\packages\Aspose.Words_19.11\net2.0\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="AutoUpdater.NET, Version=1.6.4.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Autoupdater.NET.Official.1.6.4\lib\net45\AutoUpdater.NET.dll</HintPath>
@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LeiTools\AsposeOffice\BookmarksReplace.cs" />
+    <Compile Include="LeiTools\AsposeOffice\WordToPDF.cs" />
     <Compile Include="LeiTools\AutoUpdate.cs" />
     <Compile Include="UI\MainFrom.cs">
       <SubType>Form</SubType>

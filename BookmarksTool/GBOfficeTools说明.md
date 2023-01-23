@@ -10,11 +10,13 @@
 
 ## 更新记录
 
+
+
 ### 20230123 GBOfficeTools V2.0.0.0
 1. 软件改名为GBOfficeTools，版本号从V2.0开始。
 2. 优化软件UI。
 3. 制作软件安装包，便于发布安装及更新。
-
+4. Aspose.Words.dll更新为V19.11，Word书签工具运行速度比Aspose.Words.dll V18.7快5倍。
 
 ### 20230121 BookmarksTool V2.5.1.2
 1. 制作软件安装包。
