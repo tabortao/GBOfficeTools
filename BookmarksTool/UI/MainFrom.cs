@@ -17,8 +17,9 @@ namespace BookmarksTool
                 "       （1）方式一：选择要转换的Words文件，点击“Word批量转PDF”按钮。\r\n" +
                 "       （2）方式二：选择文件夹路径（存放Word的文件夹）,点击“Word批量转PDF”按钮\r\n" +
                 "    三、关于软件：\r\n" +
-                "       （1）作者：筑博设计@绿色建筑部@姚蕾。\r\n" +
-                "       （2）如有问题，欢迎联系，微信：yao-lei\r\n";
+                "       （1）作者：可持续学园。\r\n" +
+                "       （2）《GBOfficeTools软件说明与帮助》，点击下方“软件说明”按钮打开浏览器进行阅读。 \r\n" +
+                "       （3）关注公众号“可持续学园”，回复“GBOfficeTools”获取软件下载地址，留言提出宝贵建议。\r\n";
 
         public MainForm()
         {
@@ -288,5 +289,10 @@ namespace BookmarksTool
         }
 
         #endregion Word转PDF工具
+
+        private void btn_OpenHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://mp.weixin.qq.com/s/wy68Un1If0Esz0nrYunSbw");
+        }
     }
 }

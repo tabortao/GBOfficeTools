@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("GBOfficeTools")]
 [assembly: AssemblyDescription("绿色办公工具箱，更快、更方便")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("筑博设计@绿色建筑部@姚蕾")]
+[assembly: AssemblyCompany("可持续学园")]
 [assembly: AssemblyProduct("GBOfficeTools")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]

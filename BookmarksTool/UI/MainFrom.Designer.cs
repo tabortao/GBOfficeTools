@@ -59,6 +59,7 @@
             this.rtxt_help = new Sunny.UI.UIRichTextBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiStyleManager1 = new Sunny.UI.UIStyleManager(this.components);
+            this.btn_OpenHelp = new Sunny.UI.UIButton();
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear1)).BeginInit();
@@ -425,6 +426,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.lab_Version);
+            this.tabPage2.Controls.Add(this.btn_OpenHelp);
             this.tabPage2.Controls.Add(this.btn_Update);
             this.tabPage2.Controls.Add(this.rtxt_help);
             this.tabPage2.Controls.Add(this.uiLabel1);
@@ -449,7 +451,7 @@
             // 
             this.btn_Update.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Update.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_Update.Location = new System.Drawing.Point(251, 360);
+            this.btn_Update.Location = new System.Drawing.Point(319, 360);
             this.btn_Update.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(92, 30);
@@ -486,6 +488,20 @@
             this.uiLabel1.Text = "帮助|关于";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // btn_OpenHelp
+            // 
+            this.btn_OpenHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OpenHelp.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_OpenHelp.Location = new System.Drawing.Point(169, 360);
+            this.btn_OpenHelp.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_OpenHelp.Name = "btn_OpenHelp";
+            this.btn_OpenHelp.Size = new System.Drawing.Size(92, 30);
+            this.btn_OpenHelp.TabIndex = 3;
+            this.btn_OpenHelp.Text = "软件说明";
+            this.btn_OpenHelp.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_OpenHelp.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_OpenHelp.Click += new System.EventHandler(this.btn_OpenHelp_Click);
             // 
             // MainForm
             // 
@@ -544,6 +560,7 @@
         private Sunny.UI.UILabel uiLabel8;
         private Sunny.UI.UITextBox textBox2;
         private Sunny.UI.UIImageButton btn_Clear2;
+        private Sunny.UI.UIButton btn_OpenHelp;
     }
 }
 

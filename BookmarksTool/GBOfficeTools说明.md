@@ -1,5 +1,7 @@
 ﻿﻿# GBOfficeTools说明 （仅供自己阅读，不对外发布）
 【简书】BookmarksTool更新说明：https://www.jianshu.com/p/0bc0a4c52347
+【简书】GBOfficeTools软件说明与帮助:https://www.jianshu.com/p/fe202305641c?v=1674476116069
+【微信公众号】GBOfficeTools软件说明与帮助：https://mp.weixin.qq.com/s/wy68Un1If0Esz0nrYunSbw
 
 ## Todo:
 
@@ -17,6 +19,8 @@
 2. 优化软件UI。
 3. 制作软件安装包，便于发布安装及更新。
 4. Aspose.Words.dll更新为V19.11，Word书签工具运行速度比Aspose.Words.dll V18.7快5倍。
+5. Update.xml文件用于程序自动更新，每次需要到“发行版-UpdateXML”中进行上传https://gitee.com/yaoleistable/GBOfficeTool/releases/tag/UpdateXML
+6. 更新文件“BookmarksTool.zip”，上传到“发布版”里面，然后复制地址，放入Update.xml相应位置。
 
 ### 20230121 BookmarksTool V2.5.1.2
 1. 制作软件安装包。

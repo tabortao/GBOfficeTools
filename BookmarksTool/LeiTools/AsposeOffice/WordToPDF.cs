@@ -153,7 +153,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                 {
                     Aspose.Words.Document doc = new Aspose.Words.Document(wordFilePath);
                     doc.Save(pdfFilePath, Aspose.Words.SaveFormat.Pdf);
-                    MainForm.form1.TextBoxMsg2(wordFileNameWithoutExtension + "转PDF成功!");
+                    MainForm.form1.TextBoxMsg2(wordFileNameWithoutExtension + "，转PDF成功!");
                     return true;
                 }
                 catch (Exception e)
