@@ -5,10 +5,16 @@ namespace BookmarksTool.LeiTools.AsposeOffice
 {
     public class BookmarksReplace
     {
-        public const int bookmarkNo = 400;//书签列书签个数
-        public const int WorksheetNo = 0;//定义书签在哪个sheet
-        public const int bookmarkNameNo = 3;//书签名所在列
-        public const int bookmarkTextNo = 2;//书签值所在列
+        //public static int bookmarkNo = 300;//书签列书签个数
+        public static int bookmarkNo = int.Parse(ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签个数", "NA"));
+        //public const int WorksheetNo = 0;//定义书签在哪个sheet
+        public static int WorksheetNo = int.Parse(ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签所在Sheet页", "NA"));
+
+        //public const int bookmarkNameNo = 3;//书签名所在列
+        public static int bookmarkNameNo = int.Parse(ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签名所在列", "NA"));
+
+        //public const int bookmarkTextNo = 2;//书签值所在列
+        public static int bookmarkTextNo = int.Parse(ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签值所在列", "NA"));
 
         /// <summary>
         /// 如果没有选择excel文件且没有选择word文件，默认在程序所在文件夹查找并执行
@@ -95,7 +101,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
                         word.ReplaceBookMark("Involved_Range", involvedRangePath, "IMG");
                     }
                     word.Save(f);
-                    //Console.WriteLine(wordName + "  报告生成完成！");                 
+                    //Console.WriteLine(wordName + "  报告生成完成！");
                     MainForm.form1.TextBoxMsg(Path.GetFileName(f) + "  报告生成完成！");
                 }
                 catch (Exception e)

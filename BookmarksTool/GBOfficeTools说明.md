@@ -1,18 +1,21 @@
-﻿﻿# GBOfficeTools说明 （仅供自己阅读，不对外发布）
+﻿﻿﻿# GBOfficeTools说明 （仅供自己阅读，不对外发布）
 【简书】BookmarksTool更新说明：https://www.jianshu.com/p/0bc0a4c52347
 【简书】GBOfficeTools软件说明与帮助:https://www.jianshu.com/p/fe202305641c?v=1674476116069
 【微信公众号】GBOfficeTools软件说明与帮助：https://mp.weixin.qq.com/s/wy68Un1If0Esz0nrYunSbw
 
+【软件发布地址】：百度网盘——>500 软件——>502原创软件——>GBOfficeTools，微信公众号留言关键词可获取下载链接。
+
 ## Todo:
 
-- 考虑实现根据配置文件，生成项目文件目录的功能。
 - 考虑实现生成文件夹内所有word文件名称的功能，写入并生成txt文件。
+- 实现OCR识别功能。
 
 
 
 ## 更新记录
 
-
+### 20230123 GBOfficeTools V2.0.1.0
+1. 增加软件设置功能，从AppConfig.ini读写设置。
 
 ### 20230123 GBOfficeTools V2.0.0.0
 1. 软件改名为GBOfficeTools，版本号从V2.0开始。

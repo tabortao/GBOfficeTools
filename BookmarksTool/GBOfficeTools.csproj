@@ -125,6 +125,7 @@
     <Compile Include="LeiTools\AsposeOffice\BookmarksReplace.cs" />
     <Compile Include="LeiTools\AsposeOffice\WordToPDF.cs" />
     <Compile Include="LeiTools\AutoUpdate.cs" />
+    <Compile Include="LeiTools\ConfigHelper\IniHelper.cs" />
     <Compile Include="UI\MainFrom.cs">
       <SubType>Form</SubType>
     </Compile>

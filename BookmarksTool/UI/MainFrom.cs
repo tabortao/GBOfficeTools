@@ -28,6 +28,12 @@ namespace BookmarksTool
             form1 = this; //构造方法中引用Form1
             this.rtxt_help.Text = help;
             this.lab_Version.Text = "当前版本：" + Application.ProductVersion.ToString() + "\n";
+
+            //Excel模板书签设置 读取AppConfig.ini
+            this.txt_SheetPageNo.Text = LeiTools.ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签所在Sheet页", "NA");
+            this.txt_bookmarkNameNo.Text = LeiTools.ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签名所在列", "NA");
+            this.txt_bookmarkValueNo.Text = LeiTools.ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签值所在列", "NA");
+            this.txt_bookmarkNo.Text = LeiTools.ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签个数", "NA");
         }
 
         #region 自动更新
@@ -293,6 +299,70 @@ namespace BookmarksTool
         private void btn_OpenHelp_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://mp.weixin.qq.com/s/wy68Un1If0Esz0nrYunSbw");
+        }
+
+        /// <summary>
+        /// 修改Excel模板书签设置设置值，修改AppConfig.ini
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_ChangeSetting_Click(object sender, EventArgs e)
+        {
+            LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签所在Sheet页", this.txt_SheetPageNo.Text);
+            LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签名所在列", this.txt_bookmarkNameNo.Text);
+            LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签值所在列", this.txt_bookmarkValueNo.Text);
+        }
+
+        private void txt_SheetPageNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //只允许输入数字
+
+            if (e.KeyChar != '\b')//这是允许输入退格键
+            {
+                if ((e.KeyChar < '0') || (e.KeyChar > '9'))//这是允许输入0-9数字
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txt_bookmarkNameNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //只允许输入数字
+
+            if (e.KeyChar != '\b')//这是允许输入退格键
+            {
+                if ((e.KeyChar < '0') || (e.KeyChar > '9'))//这是允许输入0-9数字
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txt_bookmarkValueNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //只允许输入数字
+
+            if (e.KeyChar != '\b')//这是允许输入退格键
+            {
+                if ((e.KeyChar < '0') || (e.KeyChar > '9'))//这是允许输入0-9数字
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void btn_Reset_Click(object sender, EventArgs e)
+        {
+            LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签所在Sheet页", "0");
+            LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签名所在列", "3");
+            LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签值所在列", "2");
+            LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签个数", "300");
+            txt_SheetPageNo.Text = "0";
+            txt_bookmarkNameNo.Text = "3";
+            txt_bookmarkValueNo.Text = "2";
+            txt_bookmarkNo.Text = "300";
+
         }
     }
 }
