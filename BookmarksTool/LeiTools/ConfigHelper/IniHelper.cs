@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
+// 参考如下内容 https://gitee.com/yuguansu/FileHelper
 namespace BookmarksTool.LeiTools.ConfigHelper
 {
     public class IniHelper

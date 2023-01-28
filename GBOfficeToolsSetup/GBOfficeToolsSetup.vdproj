@@ -39,6 +39,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6CDF5BEB4DD9463A94FDBE6BCA274B7A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_84C951AF651C409AB7CFF9C8AFDA1B2E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D0D4085BD46945398ACD4634C3BA8E87"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E94501921A834C8BA24376ADE65CCA75"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -74,6 +92,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -180,7 +206,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:GBOfficeTools, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:GBOfficeTools, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_3B20C159715947D793EE3EBADB5E5C1B"
@@ -213,6 +239,66 @@
             "TargetName" = "8:AutoUpdater.NET.xml"
             "Tag" = "8:"
             "Folder" = "8:_53FA413BD5134C1682F996A8D1F12A3F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6CDF5BEB4DD9463A94FDBE6BCA274B7A"
+            {
+            "SourcePath" = "8:..\\BookmarksTool\\bin\\Release\\Data\\获取的文件名称.txt"
+            "TargetName" = "8:获取的文件名称.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_A4AAA3B0437D4F27A207379C1E51522C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_84C951AF651C409AB7CFF9C8AFDA1B2E"
+            {
+            "SourcePath" = "8:..\\BookmarksTool\\bin\\Release\\AppConfig.ini"
+            "TargetName" = "8:AppConfig.ini"
+            "Tag" = "8:"
+            "Folder" = "8:_53FA413BD5134C1682F996A8D1F12A3F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D0D4085BD46945398ACD4634C3BA8E87"
+            {
+            "SourcePath" = "8:..\\BookmarksTool\\bin\\Release\\Data\\ProjectFolder.ini"
+            "TargetName" = "8:ProjectFolder.ini"
+            "Tag" = "8:"
+            "Folder" = "8:_A4AAA3B0437D4F27A207379C1E51522C"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -274,6 +360,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_A4AAA3B0437D4F27A207379C1E51522C"
+                    {
+                    "Name" = "8:Data"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_D4787E33DF854232B40231DFB4B0CDD0"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_7FD99BF7988B44BCB94E4537ECC29169"
@@ -303,15 +400,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GBOfficeTools"
-        "ProductCode" = "8:{522BB8D4-607F-48A2-B8A6-B0C83AA5289E}"
-        "PackageCode" = "8:{5ECCA018-08B3-40B9-A133-FF75A0A93420}"
+        "ProductCode" = "8:{CEB300F0-3C60-4AAF-8973-66F1A2269F76}"
+        "PackageCode" = "8:{72D312FE-5F32-4C93-A78E-B95CD7A8E9F2}"
         "UpgradeCode" = "8:{6094D4EC-81B1-40B0-AD89-DCC8F769DFEA}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:可持续学园"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

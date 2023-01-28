@@ -1,6 +1,7 @@
 ﻿using Sunny.UI;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BookmarksTool
@@ -152,6 +153,7 @@ namespace BookmarksTool
         private void btn_SelectWords_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+
             OpenFileDialog dialog = new OpenFileDialog
             {
                 //是否支持多个文件的打开？
@@ -276,15 +278,28 @@ namespace BookmarksTool
         private void btn_SelectFolder2_Click(object sender, EventArgs e)
         {
             textBox2.Clear();
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
-            dialog.Description = "请选择文件夹";
+            //FolderBrowserDialog dialog = new FolderBrowserDialog();
+            //dialog.Description = "请选择文件夹";
 
-            if (dialog.ShowDialog() == DialogResult.OK)
+            //if (dialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    folderPath2 = dialog.SelectedPath;
+            //    //TextBoxMsg(folderPath);
+            //    txt_Folder2.AppendText(folderPath2);
+            //}
+
+            //使用Ookii 优化文件夹选择对话框
+            var folderDialog = new Ookii.Dialogs.WinForms.VistaFolderBrowserDialog
             {
-                folderPath2 = dialog.SelectedPath;
-                //TextBoxMsg(folderPath);
+                Description = "选择文件夹"
+            };
+
+            if (folderDialog.ShowDialog() == DialogResult.OK)
+            {
+                folderPath2 = folderDialog.SelectedPath;
                 txt_Folder2.AppendText(folderPath2);
             }
+
         }
 
         private void btn_Clear2_Click(object sender, EventArgs e)
@@ -362,7 +377,104 @@ namespace BookmarksTool
             txt_bookmarkNameNo.Text = "3";
             txt_bookmarkValueNo.Text = "2";
             txt_bookmarkNo.Text = "300";
+        }
 
+        /// <summary>
+        /// 生成选取的文件的名称，不含拓展名,存放于软件目录的\Data\获取的文件名称.txt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_FileNames_Click(object sender, EventArgs e)
+        {
+            string fileNamePath = System.IO.Directory.GetCurrentDirectory() + @"\Data\获取的文件名称.txt";
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                //是否支持多个文件的打开？
+                Multiselect = true,
+                //标题
+                Title = "请选择文件名",
+                //文件类型
+                Filter = "所有文件(*.*)|*.*",
+            };
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string[] fileNamePaths = dialog.FileNames;
+                if (File.Exists(fileNamePath))
+                {
+                    File.Delete(fileNamePath);
+                }
+                StreamWriter sw = new StreamWriter(fileNamePath);
+                foreach (var f in fileNamePaths)
+                {
+                    try
+                    {
+                        sw.WriteLine(Path.GetFileNameWithoutExtension(f));
+                    }
+                    catch (Exception er)
+                    {
+                        MessageBox.Show("Exception: " + er.Message);
+                    }
+                }
+                sw.Close();
+                //打开记事本程序
+                System.Diagnostics.Process.Start("NOTEPAD.exe", fileNamePath);
+            }
+        }
+
+        private void btn_ProjectFolder_Click(object sender, EventArgs e)
+        {
+            //FolderBrowserDialog dialog = new FolderBrowserDialog();
+            //dialog.Description = "请选择文件夹";
+
+            //优化文件夹选择对话框
+            var dialog = new Ookii.Dialogs.WinForms.VistaFolderBrowserDialog
+            {
+                Description = "选择文件夹"
+            };
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                var folderPath3 = dialog.SelectedPath;
+                //MessageBox.Show(folderPath3);
+                //string iniPath = Directory.GetCurrentDirectory() + @"\Data\ProjectFolder.ini";
+                //string path1 = LeiTools.ConfigHelper.IniHelper.ReadString(iniPath, "项目文件夹", "path1", "NA");
+                //string path2 = LeiTools.ConfigHelper.IniHelper.ReadString(iniPath, "项目文件夹", "path2", "NA");
+
+                string path_1 = CreatProjectPath(folderPath3, "path_1");
+                string path_2 = CreatProjectPath(folderPath3, "path_2");
+                string path_3 = CreatProjectPath(folderPath3, "path_3");
+                string path_3_1 = CreatProjectPath(folderPath3, "path_3_1");
+                string path_3_2 = CreatProjectPath(folderPath3, "path_3_2");
+                string path_3_3 = CreatProjectPath(folderPath3, "path_3_3");
+                string path_4 = CreatProjectPath(folderPath3, "path_4");
+                string path_5 = CreatProjectPath(folderPath3, "path_5");
+                string path_5_1 = CreatProjectPath(folderPath3, "path_5_1");
+                string path_6 = CreatProjectPath(folderPath3, "path_6");
+                string path_6_0_1 = CreatProjectPath(folderPath3, "path_6_0_1");
+                string path_6_0_2 = CreatProjectPath(folderPath3, "path_6_0_2");
+                string path_6_1 = CreatProjectPath(folderPath3, "path_6_1");
+                string path_6_1_1 = CreatProjectPath(folderPath3, "path_6_1_1");
+                string path_6_1_2 = CreatProjectPath(folderPath3, "path_6_1_2");
+                string path_6_2 = CreatProjectPath(folderPath3, "path_6_2");
+                string path_6_2_1 = CreatProjectPath(folderPath3, "path_6_2_1");
+                string path_6_2_2 = CreatProjectPath(folderPath3, "path_6_2_2");
+                string path_6_3 = CreatProjectPath(folderPath3, "path_6_3");
+                string path_6_3_1 = CreatProjectPath(folderPath3, "path_6_3_1");
+                string path_6_3_2 = CreatProjectPath(folderPath3, "path_6_3_2");
+                string[] path = { path_1, path_2, path_3, path_3_1, path_3_2, path_3_3, path_4, path_5, path_5_1, 
+                    path_6, path_6_0_1,path_6_0_2, path_6_1, path_6_1_1, path_6_1_2, path_6_2, path_6_2_1, path_6_2_2, 
+                    path_6_3, path_6_3_1, path_6_3_2 };
+                LeiTools.IOHelper.Mkdirs(path);
+                MessageBox.Show("生成项目文件夹成功！");
+            }
+        }
+
+        public string CreatProjectPath(string folderPath, string path)
+        {
+            string iniPath = Directory.GetCurrentDirectory() + @"\Data\ProjectFolder.ini";
+            string projectName = @"\P23-XX XXX项目";
+            //string path1 = folderPath + projectName + @"\00 合同";
+            return folderPath + projectName + @"\" + LeiTools.ConfigHelper.IniHelper.ReadString(iniPath, "项目文件夹", path, "NA");
         }
     }
 }

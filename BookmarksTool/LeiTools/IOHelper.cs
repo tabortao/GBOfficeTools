@@ -1,8 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace BookmarksTool.LeiTools
 {
-    class IOHelper
+    internal class IOHelper
     {
         /// <summary>
         /// 判断文件是否被锁定
@@ -27,6 +29,28 @@ namespace BookmarksTool.LeiTools
                 return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// 按照数组，创建文件夹
+        /// </summary>
+        /// <param name="path"></param>
+        public static void Mkdirs(string[] path)
+        {
+            foreach (var f in path)
+            {
+                try
+                {
+                    if (!Directory.Exists(f))
+                    {
+                        Directory.CreateDirectory(f);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Exception: " + e.Message);
+                }               
+            }
         }
     }
 }

@@ -1,0 +1,62 @@
+[
+  {
+    "text": "project1",
+    "children": [
+      {
+        "text": "a",
+        "children": [
+          {
+            "text": "c",
+            "children": [
+              {
+                "text": "d",
+                "children": [
+                  {
+                    "text": "e",
+                    "children": [
+                      { "text": "asd" },
+                      {
+                        "text": "f",
+                        "children": [
+                          {
+                            "text": "g",
+                            "children": [
+                              { "text": "asddasd" },
+                              {
+                                "text": "h",
+                                "children": [
+                                  {
+                                    "text": "i",
+                                    "children": [
+                                      {
+                                        "text": "j",
+                                        "children": [
+                                          { "text": "asdasd" },
+                                          {
+                                            "text": "k",
+                                            "children": [ { "text": "gfhgf" } ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      { "text": "qwe" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      { "text": "b" }
+    ]
+  }
+]
+

@@ -95,8 +95,16 @@
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>G:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Ookii.Dialogs.WinForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=66aa232afad40158, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ookii.Dialogs.WinForms.1.2.0\lib\net45\Ookii.Dialogs.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="SunnyUI, Version=3.3.1.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
       <HintPath>..\packages\SunnyUI.3.3.1\lib\net40\SunnyUI.dll</HintPath>
@@ -109,6 +117,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -125,7 +134,12 @@
     <Compile Include="LeiTools\AsposeOffice\BookmarksReplace.cs" />
     <Compile Include="LeiTools\AsposeOffice\WordToPDF.cs" />
     <Compile Include="LeiTools\AutoUpdate.cs" />
+    <Compile Include="LeiTools\ConfigHelper\CSVHelper.cs" />
     <Compile Include="LeiTools\ConfigHelper\IniHelper.cs" />
+    <Compile Include="LeiTools\ConfigHelper\Linq2Xml.cs" />
+    <Compile Include="LeiTools\ConfigHelper\XmlHelper.cs" />
+    <Compile Include="LeiTools\ExcelHelper.cs" />
+    <Compile Include="LeiTools\LogHelper\LogHelper.cs" />
     <Compile Include="UI\MainFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +186,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="生成项目文件夹.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="UI\20230123 UI.jpg" />
