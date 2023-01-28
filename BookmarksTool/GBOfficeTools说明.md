@@ -1,5 +1,4 @@
 ﻿﻿﻿# GBOfficeTools说明 （仅供自己阅读，不对外发布）
-- 【简书】GBOfficeTools软件说明与帮助:https://www.jianshu.com/p/fe202305641c?v=1674476116069
 - 【微信公众号】GBOfficeTools软件说明与帮助：https://mp.weixin.qq.com/s/wy68Un1If0Esz0nrYunSbw
 - 【简书】GBOfficeTools更新日志：https://www.jianshu.com/p/0bc0a4c52347
 - 【软件发布地址】：百度网盘——>500 软件——>502原创软件——>GBOfficeTools，微信公众号留言关键词可获取下载链接。
@@ -8,6 +7,7 @@
 
 - 考虑实现生成文件夹内所有word文件名称的功能，写入并生成txt文件。
 - 实现OCR识别功能。
+- 暂时停止软件新功能维护，有新功能想法先记录下来。
 
 
 
@@ -31,7 +31,7 @@
 
 ### 20230121 BookmarksTool V2.5.1.2
 1. 制作软件安装包。
-2. 取消项目生成单个文件功能，NuGet卸载了Fody 4.2.1、Costura.Fody 3.3.3。
+2. 取消项目生成单个文件功能，NuGet卸载了Fody 4.2.1、Costura.Fody 3.3.3。(20230128 恢复了合并成为一个软件包的功能)
 
 ### 20230116 BookmarksTool V2.5.1.1
 1. 增加自动更新功能。

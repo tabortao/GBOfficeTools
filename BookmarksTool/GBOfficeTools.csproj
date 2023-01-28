@@ -190,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="UI\20230123 UI.jpg" />
+    <Content Include="UI\20230128 UI.jpg" />
     <None Include="Bookmark.png" />
     <Content Include="Bookmark.ico" />
     <Content Include="Bookmark2.ico" />
