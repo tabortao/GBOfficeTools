@@ -476,5 +476,60 @@ namespace BookmarksTool
             //string path1 = folderPath + projectName + @"\00 合同";
             return folderPath + projectName + @"\" + LeiTools.ConfigHelper.IniHelper.ReadString(iniPath, "项目文件夹", path, "NA");
         }
+
+        private void contextMain(object sender, MouseEventArgs e)
+        {
+            
+        }
+        //调整窗体大小的时候触发的事件
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)//当窗体设置值为最小化时
+            {
+                notifyIcon1.Visible = true;//该控件可见
+                this.ShowInTaskbar = false;//在任务栏中显示该窗口
+            }
+            else
+            {
+                notifyIcon1.Visible = false;//否则该控件不可见
+            }
+        }
+
+        //双击该控件时触发的事件
+        private void notifyIcon1_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            Visible = true;//
+            WindowState = FormWindowState.Normal;//窗口正常显示
+            ShowInTaskbar = true;//在任务栏中显示该窗口
+        }
+
+        //private void notifyIcon1_MouseClick_1(object sender, MouseEventArgs e)
+        //{
+        //    Visible = true;//
+        //    WindowState = FormWindowState.Normal;//窗口正常显示
+        //    ShowInTaskbar = true;//在任务栏中显示该窗口
+        //}
+
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            notifyIcon1.Visible = false;   //设置图标不可见
+            this.Close();                  //关闭窗体
+            this.Dispose();                //释放资源
+            Application.Exit();            //关闭应用程序窗体
+        }
+
+        private void 显示ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Visible = true;//
+            WindowState = FormWindowState.Normal;//窗口正常显示
+            ShowInTaskbar = true;//在任务栏中显示该窗口
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
     }
 }

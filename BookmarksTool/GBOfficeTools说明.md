@@ -1,7 +1,19 @@
-﻿﻿﻿# GBOfficeTools说明 （仅供自己阅读，不对外发布）
+﻿﻿﻿﻿﻿# GBOfficeTools说明
+
+（仅供自己阅读，不对外发布）
+
 - 【微信公众号】GBOfficeTools软件说明与帮助：https://mp.weixin.qq.com/s/wy68Un1If0Esz0nrYunSbw
 - 【简书】GBOfficeTools更新日志：https://www.jianshu.com/p/0bc0a4c52347
+- 【知乎】GBOfficeTools更新日志：https://zhuanlan.zhihu.com/p/601505550
+- 【知乎】GBOfficeTools软件说明与帮助：https://zhuanlan.zhihu.com/p/602014402
 - 【软件发布地址】：百度网盘——>500 软件——>502原创软件——>GBOfficeTools，微信公众号留言关键词可获取下载链接。
+
+## 软件UI
+
+<p align="center">
+  <img src="./_images/20230128 UI.jpg">
+</p>
+
 
 ## Todo:
 
@@ -10,16 +22,20 @@
 - 暂时停止软件新功能维护，有新功能想法先记录下来。
 
 
-
 ## 更新记录
+
+
+### 2023-01-31 GBOfficeTools V2.0.5.0
+- 新功能：实现主窗口最小化隐藏至系统托盘中。
+- 参考：https://www.cnblogs.com/guhuazhen/p/11095037.html
 
 ### 2023-01-29 GBOfficeTools V2.0.4.0
 - 调整优化文件夹选择对话框，更易于选中文件夹。参考使用Nuget【Ookii.Dialogs.WinForms】 https://blog.csdn.net/XiaoYuHaoAiMin/article/details/127972769
 
 ### 2023-01-28 GBOfficeTools V2.0.3.0
-- 增加软件设置功能，从AppConfig.ini读写设置。
-- 增加小工具-【获取文件名】，可批量生成选中的文件名称，用记事本打开。
-- 增加小工具-【生成项目文件夹】，根据ini格式的配置文件，生成项目文件夹。
+- 新功能：增加软件设置功能，从AppConfig.ini读写设置。
+- 新功能：增加小工具-【获取文件名】，可批量生成选中的文件名称，用记事本打开。
+- 新功能：增加小工具-【生成项目文件夹】，根据ini格式的配置文件，生成项目文件夹。
 
 ### 20230128 GBOfficeTools V2.0.0.0
 1. 软件改名为GBOfficeTools，版本号从V2.0开始。
