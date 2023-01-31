@@ -28,7 +28,8 @@ namespace BookmarksTool
             InitializeComponent();
             form1 = this; //构造方法中引用Form1
             this.rtxt_help.Text = help;
-            this.lab_Version.Text = "当前版本：" + Application.ProductVersion.ToString() + "\n";
+            string version = Application.ProductVersion.ToString();
+            this.lab_Version.Text = "当前版本：" + version.Substring(0,5) + "\n";
 
             //Excel模板书签设置 读取AppConfig.ini
             this.txt_SheetPageNo.Text = LeiTools.ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签所在Sheet页", "NA");
@@ -299,7 +300,6 @@ namespace BookmarksTool
                 folderPath2 = folderDialog.SelectedPath;
                 txt_Folder2.AppendText(folderPath2);
             }
-
         }
 
         private void btn_Clear2_Click(object sender, EventArgs e)
@@ -461,8 +461,8 @@ namespace BookmarksTool
                 string path_6_3 = CreatProjectPath(folderPath3, "path_6_3");
                 string path_6_3_1 = CreatProjectPath(folderPath3, "path_6_3_1");
                 string path_6_3_2 = CreatProjectPath(folderPath3, "path_6_3_2");
-                string[] path = { path_1, path_2, path_3, path_3_1, path_3_2, path_3_3, path_4, path_5, path_5_1, 
-                    path_6, path_6_0_1,path_6_0_2, path_6_1, path_6_1_1, path_6_1_2, path_6_2, path_6_2_1, path_6_2_2, 
+                string[] path = { path_1, path_2, path_3, path_3_1, path_3_2, path_3_3, path_4, path_5, path_5_1,
+                    path_6, path_6_0_1,path_6_0_2, path_6_1, path_6_1_1, path_6_1_2, path_6_2, path_6_2_1, path_6_2_2,
                     path_6_3, path_6_3_1, path_6_3_2 };
                 LeiTools.IOHelper.Mkdirs(path);
                 MessageBox.Show("生成项目文件夹成功！");
@@ -479,8 +479,8 @@ namespace BookmarksTool
 
         private void contextMain(object sender, MouseEventArgs e)
         {
-            
         }
+
         //调整窗体大小的时候触发的事件
         private void Form1_Resize(object sender, EventArgs e)
         {
@@ -510,7 +510,6 @@ namespace BookmarksTool
         //    ShowInTaskbar = true;//在任务栏中显示该窗口
         //}
 
-
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             notifyIcon1.Visible = false;   //设置图标不可见
@@ -530,6 +529,26 @@ namespace BookmarksTool
         {
             e.Cancel = true;
             this.Hide();
+        }
+
+        private void lab_ExcelPath_Click(object sender, EventArgs e)
+        {
+            txt_Excel1.Clear();
+        }
+
+        private void lab_WordsPath1_Click(object sender, EventArgs e)
+        {
+            txt_Words1.Clear();
+        }
+
+        private void lab_WordsPath2_Click(object sender, EventArgs e)
+        {
+            txt_Words2.Clear();
+        }
+
+        private void lab_FolderPath_Click(object sender, EventArgs e)
+        {
+            txt_Folder2.Clear();
         }
     }
 }

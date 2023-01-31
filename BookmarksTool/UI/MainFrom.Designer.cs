@@ -36,20 +36,20 @@
             this.btn_start = new Sunny.UI.UISymbolButton();
             this.txt_Words1 = new Sunny.UI.UITextBox();
             this.txt_Excel1 = new Sunny.UI.UITextBox();
-            this.uiLabel3 = new Sunny.UI.UILabel();
+            this.lab_ExcelPath = new Sunny.UI.UILabel();
             this.btn_SelectWords1 = new Sunny.UI.UIButton();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.but_SelectExcel1 = new Sunny.UI.UIButton();
             this.textBox1 = new Sunny.UI.UITextBox();
-            this.uiLabel4 = new Sunny.UI.UILabel();
+            this.lab_WordsPath1 = new Sunny.UI.UILabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btn_word2pdf = new Sunny.UI.UISymbolButton();
             this.txt_Folder2 = new Sunny.UI.UITextBox();
             this.txt_Words2 = new Sunny.UI.UITextBox();
-            this.uiLabel7 = new Sunny.UI.UILabel();
+            this.lab_FolderPath = new Sunny.UI.UILabel();
             this.btn_SelectFolder2 = new Sunny.UI.UIButton();
             this.btn_SelectWords2 = new Sunny.UI.UIButton();
-            this.uiLabel8 = new Sunny.UI.UILabel();
+            this.lab_WordsPath2 = new Sunny.UI.UILabel();
             this.textBox2 = new Sunny.UI.UITextBox();
             this.uiLabel6 = new Sunny.UI.UILabel();
             this.btn_Clear2 = new Sunny.UI.UIImageButton();
@@ -82,6 +82,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear1)).BeginInit();
@@ -121,12 +122,12 @@
             this.tabPage1.Controls.Add(this.btn_start);
             this.tabPage1.Controls.Add(this.txt_Words1);
             this.tabPage1.Controls.Add(this.txt_Excel1);
-            this.tabPage1.Controls.Add(this.uiLabel3);
+            this.tabPage1.Controls.Add(this.lab_ExcelPath);
             this.tabPage1.Controls.Add(this.btn_SelectWords1);
             this.tabPage1.Controls.Add(this.uiLabel2);
             this.tabPage1.Controls.Add(this.but_SelectExcel1);
             this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.uiLabel4);
+            this.tabPage1.Controls.Add(this.lab_WordsPath1);
             this.tabPage1.Location = new System.Drawing.Point(151, 0);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(626, 425);
@@ -169,7 +170,7 @@
             // 
             this.txt_Words1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_Words1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Words1.Location = new System.Drawing.Point(118, 315);
+            this.txt_Words1.Location = new System.Drawing.Point(115, 319);
             this.txt_Words1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Words1.MinimumSize = new System.Drawing.Size(1, 16);
             this.txt_Words1.Name = "txt_Words1";
@@ -187,7 +188,7 @@
             // 
             this.txt_Excel1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_Excel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Excel1.Location = new System.Drawing.Point(118, 263);
+            this.txt_Excel1.Location = new System.Drawing.Point(115, 263);
             this.txt_Excel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Excel1.MinimumSize = new System.Drawing.Size(1, 16);
             this.txt_Excel1.Name = "txt_Excel1";
@@ -201,22 +202,23 @@
             this.txt_Excel1.Watermark = "";
             this.txt_Excel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // uiLabel3
+            // lab_ExcelPath
             // 
-            this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel3.Location = new System.Drawing.Point(8, 266);
-            this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(100, 23);
-            this.uiLabel3.TabIndex = 18;
-            this.uiLabel3.Text = "Excel模板路径：";
-            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel3.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lab_ExcelPath.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lab_ExcelPath.Location = new System.Drawing.Point(8, 263);
+            this.lab_ExcelPath.Name = "lab_ExcelPath";
+            this.lab_ExcelPath.Size = new System.Drawing.Size(100, 23);
+            this.lab_ExcelPath.TabIndex = 18;
+            this.lab_ExcelPath.Text = "Excel模板路径：";
+            this.lab_ExcelPath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lab_ExcelPath.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lab_ExcelPath.Click += new System.EventHandler(this.lab_ExcelPath_Click);
             // 
             // btn_SelectWords1
             // 
             this.btn_SelectWords1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SelectWords1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_SelectWords1.Location = new System.Drawing.Point(525, 317);
+            this.btn_SelectWords1.Location = new System.Drawing.Point(525, 319);
             this.btn_SelectWords1.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_SelectWords1.Name = "btn_SelectWords1";
             this.btn_SelectWords1.Size = new System.Drawing.Size(70, 26);
@@ -241,7 +243,7 @@
             // 
             this.but_SelectExcel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.but_SelectExcel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.but_SelectExcel1.Location = new System.Drawing.Point(525, 265);
+            this.but_SelectExcel1.Location = new System.Drawing.Point(525, 263);
             this.but_SelectExcel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.but_SelectExcel1.Name = "but_SelectExcel1";
             this.but_SelectExcel1.Size = new System.Drawing.Size(70, 26);
@@ -272,16 +274,17 @@
             this.textBox1.Watermark = "";
             this.textBox1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // uiLabel4
+            // lab_WordsPath1
             // 
-            this.uiLabel4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel4.Location = new System.Drawing.Point(8, 318);
-            this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(111, 23);
-            this.uiLabel4.TabIndex = 19;
-            this.uiLabel4.Text = "Words文件路径：";
-            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel4.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lab_WordsPath1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lab_WordsPath1.Location = new System.Drawing.Point(8, 319);
+            this.lab_WordsPath1.Name = "lab_WordsPath1";
+            this.lab_WordsPath1.Size = new System.Drawing.Size(111, 23);
+            this.lab_WordsPath1.TabIndex = 19;
+            this.lab_WordsPath1.Text = "Words文件路径：";
+            this.lab_WordsPath1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lab_WordsPath1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lab_WordsPath1.Click += new System.EventHandler(this.lab_WordsPath1_Click);
             // 
             // tabPage3
             // 
@@ -289,10 +292,10 @@
             this.tabPage3.Controls.Add(this.btn_word2pdf);
             this.tabPage3.Controls.Add(this.txt_Folder2);
             this.tabPage3.Controls.Add(this.txt_Words2);
-            this.tabPage3.Controls.Add(this.uiLabel7);
+            this.tabPage3.Controls.Add(this.lab_FolderPath);
             this.tabPage3.Controls.Add(this.btn_SelectFolder2);
             this.tabPage3.Controls.Add(this.btn_SelectWords2);
-            this.tabPage3.Controls.Add(this.uiLabel8);
+            this.tabPage3.Controls.Add(this.lab_WordsPath2);
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Controls.Add(this.uiLabel6);
             this.tabPage3.Controls.Add(this.btn_Clear2);
@@ -323,7 +326,7 @@
             // 
             this.txt_Folder2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_Folder2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Folder2.Location = new System.Drawing.Point(118, 315);
+            this.txt_Folder2.Location = new System.Drawing.Point(115, 319);
             this.txt_Folder2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Folder2.MinimumSize = new System.Drawing.Size(1, 16);
             this.txt_Folder2.Name = "txt_Folder2";
@@ -341,7 +344,7 @@
             // 
             this.txt_Words2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_Words2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Words2.Location = new System.Drawing.Point(118, 264);
+            this.txt_Words2.Location = new System.Drawing.Point(115, 263);
             this.txt_Words2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Words2.MinimumSize = new System.Drawing.Size(1, 16);
             this.txt_Words2.Name = "txt_Words2";
@@ -355,22 +358,23 @@
             this.txt_Words2.Watermark = "";
             this.txt_Words2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // uiLabel7
+            // lab_FolderPath
             // 
-            this.uiLabel7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel7.Location = new System.Drawing.Point(8, 318);
-            this.uiLabel7.Name = "uiLabel7";
-            this.uiLabel7.Size = new System.Drawing.Size(83, 23);
-            this.uiLabel7.TabIndex = 32;
-            this.uiLabel7.Text = "文件夹路径：";
-            this.uiLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel7.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lab_FolderPath.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lab_FolderPath.Location = new System.Drawing.Point(8, 319);
+            this.lab_FolderPath.Name = "lab_FolderPath";
+            this.lab_FolderPath.Size = new System.Drawing.Size(83, 23);
+            this.lab_FolderPath.TabIndex = 32;
+            this.lab_FolderPath.Text = "文件夹路径：";
+            this.lab_FolderPath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lab_FolderPath.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lab_FolderPath.Click += new System.EventHandler(this.lab_FolderPath_Click);
             // 
             // btn_SelectFolder2
             // 
             this.btn_SelectFolder2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SelectFolder2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_SelectFolder2.Location = new System.Drawing.Point(525, 317);
+            this.btn_SelectFolder2.Location = new System.Drawing.Point(525, 319);
             this.btn_SelectFolder2.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_SelectFolder2.Name = "btn_SelectFolder2";
             this.btn_SelectFolder2.Size = new System.Drawing.Size(70, 26);
@@ -384,7 +388,7 @@
             // 
             this.btn_SelectWords2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SelectWords2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_SelectWords2.Location = new System.Drawing.Point(525, 267);
+            this.btn_SelectWords2.Location = new System.Drawing.Point(525, 263);
             this.btn_SelectWords2.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_SelectWords2.Name = "btn_SelectWords2";
             this.btn_SelectWords2.Size = new System.Drawing.Size(70, 26);
@@ -394,16 +398,17 @@
             this.btn_SelectWords2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.btn_SelectWords2.Click += new System.EventHandler(this.btn_SelectWords2_Click);
             // 
-            // uiLabel8
+            // lab_WordsPath2
             // 
-            this.uiLabel8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel8.Location = new System.Drawing.Point(8, 267);
-            this.uiLabel8.Name = "uiLabel8";
-            this.uiLabel8.Size = new System.Drawing.Size(111, 23);
-            this.uiLabel8.TabIndex = 31;
-            this.uiLabel8.Text = "Words文件路径：";
-            this.uiLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel8.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lab_WordsPath2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lab_WordsPath2.Location = new System.Drawing.Point(8, 263);
+            this.lab_WordsPath2.Name = "lab_WordsPath2";
+            this.lab_WordsPath2.Size = new System.Drawing.Size(111, 23);
+            this.lab_WordsPath2.TabIndex = 31;
+            this.lab_WordsPath2.Text = "Words文件路径：";
+            this.lab_WordsPath2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lab_WordsPath2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.lab_WordsPath2.Click += new System.EventHandler(this.lab_WordsPath2_Click);
             // 
             // textBox2
             // 
@@ -716,9 +721,9 @@
             // lab_Version
             // 
             this.lab_Version.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lab_Version.Location = new System.Drawing.Point(466, 388);
+            this.lab_Version.Location = new System.Drawing.Point(483, 388);
             this.lab_Version.Name = "lab_Version";
-            this.lab_Version.Size = new System.Drawing.Size(141, 23);
+            this.lab_Version.Size = new System.Drawing.Size(124, 23);
             this.lab_Version.TabIndex = 4;
             this.lab_Version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lab_Version.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -799,16 +804,21 @@
             // 打开ToolStripMenuItem
             // 
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.打开ToolStripMenuItem.Text = "显示";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.显示ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
             // MainForm
             // 
@@ -855,8 +865,8 @@
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UIButton btn_SelectWords1;
         private Sunny.UI.UITextBox txt_Excel1;
-        private Sunny.UI.UILabel uiLabel3;
-        private Sunny.UI.UILabel uiLabel4;
+        private Sunny.UI.UILabel lab_ExcelPath;
+        private Sunny.UI.UILabel lab_WordsPath1;
         private Sunny.UI.UITextBox txt_Words1;
         private Sunny.UI.UISymbolButton btn_start;
         private Sunny.UI.UIImageButton btn_Clear1;
@@ -867,10 +877,10 @@
         private Sunny.UI.UISymbolButton btn_word2pdf;
         private Sunny.UI.UITextBox txt_Folder2;
         private Sunny.UI.UITextBox txt_Words2;
-        private Sunny.UI.UILabel uiLabel7;
+        private Sunny.UI.UILabel lab_FolderPath;
         private Sunny.UI.UIButton btn_SelectFolder2;
         private Sunny.UI.UIButton btn_SelectWords2;
-        private Sunny.UI.UILabel uiLabel8;
+        private Sunny.UI.UILabel lab_WordsPath2;
         private Sunny.UI.UITextBox textBox2;
         private Sunny.UI.UIImageButton btn_Clear2;
         private Sunny.UI.UIButton btn_OpenHelp;
@@ -896,6 +906,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 打开ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }
 

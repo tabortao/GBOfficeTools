@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# GBOfficeTools说明
+﻿﻿﻿﻿﻿﻿# GBOfficeTools说明
 
 （仅供自己阅读，不对外发布）
 
@@ -20,14 +20,17 @@
 - 考虑实现生成文件夹内所有word文件名称的功能，写入并生成txt文件。
 - 实现OCR识别功能。
 - 暂时停止软件新功能维护，有新功能想法先记录下来。
+- 右键菜单增加“Word批量转PDF”功能 https://www.cnblogs.com/boyryan/p/14127499.html
 
 
 ## 更新记录
 
 
 ### 2023-01-31 GBOfficeTools V2.0.5.0
-- 新功能：实现主窗口最小化隐藏至系统托盘中。
-- 参考：https://www.cnblogs.com/guhuazhen/p/11095037.html
+- 新功能：实现主窗口最小化隐藏至系统托盘中。参考：https://www.cnblogs.com/guhuazhen/p/11095037.html
+- 新功能：双击文本框左侧的文字标签，可清除文本框内容。
+- 优化，使当前应用程序只允许启动一个实例 。参考： https://www.cnblogs.com/jaxu/archive/2009/05/05/1450083.html
+
 
 ### 2023-01-29 GBOfficeTools V2.0.4.0
 - 调整优化文件夹选择对话框，更易于选中文件夹。参考使用Nuget【Ookii.Dialogs.WinForms】 https://blog.csdn.net/XiaoYuHaoAiMin/article/details/127972769
