@@ -566,7 +566,7 @@
             this.uiLabel11.Size = new System.Drawing.Size(260, 166);
             this.uiLabel11.TabIndex = 0;
             this.uiLabel11.Text = "1. 书签所在Sheet页：sheet1 = 0，sheet2 = 1，依次类推；默认为Sheet1（0）。\r\n2. 书签名\\值所在列：A列 = 0，B列 = 1" +
-    "，依次类推；默认书签名为D列（3）、书签值为C列（2）。\r\n3. 书签个数：默认为300，可根据项目需要调整。";
+    "，依次类推；默认书签名为D列（3）、书签值为C列（2）。\r\n3. 书签个数：默认为500，可根据项目需要调整。";
             this.uiLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiLabel11.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 

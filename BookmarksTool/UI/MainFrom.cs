@@ -372,11 +372,11 @@ namespace BookmarksTool
             LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签所在Sheet页", "0");
             LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签名所在列", "3");
             LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签值所在列", "2");
-            LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签个数", "300");
+            LeiTools.ConfigHelper.IniHelper.WriteString("Excel模板书签设置", "书签个数", "500");
             txt_SheetPageNo.Text = "0";
             txt_bookmarkNameNo.Text = "3";
             txt_bookmarkValueNo.Text = "2";
-            txt_bookmarkNo.Text = "300";
+            txt_bookmarkNo.Text = "500";
         }
 
         /// <summary>

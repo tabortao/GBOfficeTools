@@ -5,7 +5,7 @@ namespace BookmarksTool.LeiTools.AsposeOffice
 {
     public class BookmarksReplace
     {
-        //public static int bookmarkNo = 300;//书签列书签个数
+        //public static int bookmarkNo = 500;//书签列书签个数
         public static int bookmarkNo = int.Parse(ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签个数", "NA"));
         //public const int WorksheetNo = 0;//定义书签在哪个sheet
         public static int WorksheetNo = int.Parse(ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签所在Sheet页", "NA"));

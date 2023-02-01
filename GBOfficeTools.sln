@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBOfficeTools", "BookmarksTool\GBOfficeTools.csproj", "{E24B78D8-B284-4D39-8333-CF40D1F39628}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GBOfficeToolsSetup", "GBOfficeToolsSetup\GBOfficeToolsSetup.vdproj", "{A67A93E3-7937-4892-BA7D-0868CB75688C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformTest", "WinformTest\WinformTest.csproj", "{D863E0E8-30EE-4D32-98FD-922776CEC3DC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GBOfficeToolsSetup", "GBOfficeToolsSetup\GBOfficeToolsSetup.vdproj", "{D49F0CAA-5A48-4A54-877B-D7976A65CD5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +19,12 @@ Global
 		{E24B78D8-B284-4D39-8333-CF40D1F39628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E24B78D8-B284-4D39-8333-CF40D1F39628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E24B78D8-B284-4D39-8333-CF40D1F39628}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A67A93E3-7937-4892-BA7D-0868CB75688C}.Debug|Any CPU.ActiveCfg = Debug
-		{A67A93E3-7937-4892-BA7D-0868CB75688C}.Release|Any CPU.ActiveCfg = Release
 		{D863E0E8-30EE-4D32-98FD-922776CEC3DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D863E0E8-30EE-4D32-98FD-922776CEC3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D863E0E8-30EE-4D32-98FD-922776CEC3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D863E0E8-30EE-4D32-98FD-922776CEC3DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D49F0CAA-5A48-4A54-877B-D7976A65CD5D}.Debug|Any CPU.ActiveCfg = Debug
+		{D49F0CAA-5A48-4A54-877B-D7976A65CD5D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -26,10 +26,15 @@
 ## 更新记录
 
 
+### 2023-01-31 GBOfficeTools V2.0.6.0
+- 修改书签个数较少的问题，由默认300个改为默认500个。
+- 取消项目生成单个文件功能，NuGet卸载了Fody 4.2.1、Costura.Fody 3.3.3。
+
 ### 2023-01-31 GBOfficeTools V2.0.5.0
 - 新功能：实现主窗口最小化隐藏至系统托盘中。参考：https://www.cnblogs.com/guhuazhen/p/11095037.html
 - 新功能：双击文本框左侧的文字标签，可清除文本框内容。
 - 优化，使当前应用程序只允许启动一个实例 。参考： https://www.cnblogs.com/jaxu/archive/2009/05/05/1450083.html
+- 取消vs2019生成app.publish.参考：https://zhidao.baidu.com/question/1447961951084472100.html
 
 
 ### 2023-01-29 GBOfficeTools V2.0.4.0
