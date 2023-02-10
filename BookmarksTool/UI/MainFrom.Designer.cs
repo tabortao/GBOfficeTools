@@ -83,6 +83,7 @@
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modifyFolderConfi = new Sunny.UI.UISymbolButton();
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear1)).BeginInit();
@@ -459,6 +460,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.modifyFolderConfi);
             this.tabPage5.Controls.Add(this.btn_ProjectFolder);
             this.tabPage5.Controls.Add(this.btn_FileNames);
             this.tabPage5.Location = new System.Drawing.Point(151, 0);
@@ -472,7 +474,7 @@
             // 
             this.btn_ProjectFolder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ProjectFolder.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_ProjectFolder.Location = new System.Drawing.Point(201, 16);
+            this.btn_ProjectFolder.Location = new System.Drawing.Point(224, 16);
             this.btn_ProjectFolder.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_ProjectFolder.Name = "btn_ProjectFolder";
             this.btn_ProjectFolder.Size = new System.Drawing.Size(146, 35);
@@ -489,7 +491,7 @@
             // 
             this.btn_FileNames.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_FileNames.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_FileNames.Location = new System.Drawing.Point(28, 16);
+            this.btn_FileNames.Location = new System.Drawing.Point(51, 16);
             this.btn_FileNames.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_FileNames.Name = "btn_FileNames";
             this.btn_FileNames.Size = new System.Drawing.Size(146, 35);
@@ -820,6 +822,23 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
+            // modifyFolderConfi
+            // 
+            this.modifyFolderConfi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.modifyFolderConfi.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.modifyFolderConfi.Location = new System.Drawing.Point(398, 16);
+            this.modifyFolderConfi.MinimumSize = new System.Drawing.Size(1, 1);
+            this.modifyFolderConfi.Name = "modifyFolderConfi";
+            this.modifyFolderConfi.Size = new System.Drawing.Size(146, 35);
+            this.modifyFolderConfi.Style = Sunny.UI.UIStyle.Custom;
+            this.modifyFolderConfi.Symbol = 61564;
+            this.modifyFolderConfi.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.modifyFolderConfi.TabIndex = 4;
+            this.modifyFolderConfi.Text = "修改文件夹配置";
+            this.modifyFolderConfi.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.modifyFolderConfi.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.modifyFolderConfi.Click += new System.EventHandler(this.modifyFolderConfi_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -836,7 +855,6 @@
             this.ShowRect = false;
             this.Text = "GBOfficeTools";
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 650, 450);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.uiTabControlMenu1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -907,6 +925,7 @@
         private System.Windows.Forms.ToolStripMenuItem 打开ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private Sunny.UI.UISymbolButton modifyFolderConfi;
     }
 }
 

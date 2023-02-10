@@ -197,7 +197,7 @@
     <None Include="Resources\word-1.png" />
     <None Include="Resources\Word-Color.png" />
     <None Include="Resources\清理.png" />
-    <None Include="GBOfficeTools说明.md" />
+    <None Include="GBOfficeTools更新日志.md" />
     <Content Include="Lei.ico" />
     <None Include="Resources\Pdf.ico" />
     <None Include="Resources\start.ico" />

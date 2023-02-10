@@ -75,6 +75,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BFCD477AF77B428D95E9E4A51C2F4D15"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CCB4EEEF97894486A8B8FD49C5D18C55"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -95,12 +101,6 @@
         {
         "MsmKey" = "8:_EB4DCE07984A41B5926EFE23713F8E41"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0A3994DAEA86C19E6F9CD5D2E9359208"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -139,6 +139,12 @@
         "OwnerKey" = "8:_13961FAC3CA24DE436A0B62BC2F5F1D2"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0A3994DAEA86C19E6F9CD5D2E9359208"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -157,6 +163,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -433,6 +447,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BFCD477AF77B428D95E9E4A51C2F4D15"
+            {
+            "SourcePath" = "8:..\\BookmarksTool\\bin\\Release\\Data\\CreateFolder.ini"
+            "TargetName" = "8:CreateFolder.ini"
+            "Tag" = "8:"
+            "Folder" = "8:_652A43572A5E47719660F7EF90F53B5D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CCB4EEEF97894486A8B8FD49C5D18C55"
             {
             "SourcePath" = "8:..\\BookmarksTool\\bin\\Release\\Aspose.Words.xml"
@@ -591,15 +625,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GBOfficeTools"
-        "ProductCode" = "8:{767A4420-F459-48FA-9576-D621B9AB6A51}"
-        "PackageCode" = "8:{26EC15C6-9E0D-4026-A7EA-AFC04B2907B8}"
+        "ProductCode" = "8:{3BFCE44B-0B93-4CA2-ACCA-AA2315A89673}"
+        "PackageCode" = "8:{9CE84717-B6FE-4F24-B2C3-9BDB34704ECE}"
         "UpgradeCode" = "8:{A5021DE6-3E21-4DC2-BB3F-1A69FD2CF77A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.0.6"
+        "ProductVersion" = "8:2.0.7"
         "Manufacturer" = "8:可持续学园"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

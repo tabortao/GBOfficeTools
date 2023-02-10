@@ -1,6 +1,7 @@
-﻿﻿﻿﻿﻿﻿# GBOfficeTools说明
+﻿﻿﻿﻿﻿﻿
+# GBOfficeTools更新日志
 
-（仅供自己阅读，不对外发布）
+> 仅供自己阅读，不对外发布
 
 - 【微信公众号】GBOfficeTools软件说明与帮助：https://mp.weixin.qq.com/s/wy68Un1If0Esz0nrYunSbw
 - 【简书】GBOfficeTools更新日志：https://www.jianshu.com/p/0bc0a4c52347
@@ -17,7 +18,7 @@
 
 ## Todo:
 
-- 考虑实现生成文件夹内所有word文件名称的功能，写入并生成txt文件。
+- 考虑增加PDF压缩、PDF拆分等小功能。
 - 实现OCR识别功能。
 - 暂时停止软件新功能维护，有新功能想法先记录下来。
 - 右键菜单增加“Word批量转PDF”功能 https://www.cnblogs.com/boyryan/p/14127499.html
@@ -25,10 +26,18 @@
 
 ## 更新记录
 
+### 2023-02-10 GBOfficeTools V2.0.7.0
+- 优化【生成项目文件夹】功能。
+- 修改 关闭按钮，为正常关闭，不再是最小化。
+- 新功能：增加小工具-【修改文件夹配置】。
 
-### 2023-01-31 GBOfficeTools V2.0.6.0
+
+### 2023-02-01 GBOfficeTools V2.0.6.0
 - 修改书签个数较少的问题，由默认300个改为默认500个。
 - 取消项目生成单个文件功能，NuGet卸载了Fody 4.2.1、Costura.Fody 3.3.3。
+- 修复了已知的问题。C# Winform 窗体程序只启动一个，多次启动，激活窗体，并置于最前端。（20230204：没有成功！！！）
+- 参考1：https://blog.csdn.net/m0_62355555/article/details/124323369 
+- 参考2：https://blog.csdn.net/bluecard2008/article/details/103758796
 
 ### 2023-01-31 GBOfficeTools V2.0.5.0
 - 新功能：实现主窗口最小化隐藏至系统托盘中。参考：https://www.cnblogs.com/guhuazhen/p/11095037.html

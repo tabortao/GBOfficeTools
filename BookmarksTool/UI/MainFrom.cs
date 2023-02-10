@@ -29,7 +29,7 @@ namespace BookmarksTool
             form1 = this; //构造方法中引用Form1
             this.rtxt_help.Text = help;
             string version = Application.ProductVersion.ToString();
-            this.lab_Version.Text = "当前版本：" + version.Substring(0,5) + "\n";
+            this.lab_Version.Text = "当前版本：" + version.Substring(0, 5) + "\n";
 
             //Excel模板书签设置 读取AppConfig.ini
             this.txt_SheetPageNo.Text = LeiTools.ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签所在Sheet页", "NA");
@@ -422,6 +422,7 @@ namespace BookmarksTool
             }
         }
 
+        // 20230210：修改本方法，更加实用方便
         private void btn_ProjectFolder_Click(object sender, EventArgs e)
         {
             //FolderBrowserDialog dialog = new FolderBrowserDialog();
@@ -440,35 +441,39 @@ namespace BookmarksTool
                 //string path1 = LeiTools.ConfigHelper.IniHelper.ReadString(iniPath, "项目文件夹", "path1", "NA");
                 //string path2 = LeiTools.ConfigHelper.IniHelper.ReadString(iniPath, "项目文件夹", "path2", "NA");
 
-                string path_1 = CreatProjectPath(folderPath3, "path_1");
-                string path_2 = CreatProjectPath(folderPath3, "path_2");
-                string path_3 = CreatProjectPath(folderPath3, "path_3");
-                string path_3_1 = CreatProjectPath(folderPath3, "path_3_1");
-                string path_3_2 = CreatProjectPath(folderPath3, "path_3_2");
-                string path_3_3 = CreatProjectPath(folderPath3, "path_3_3");
-                string path_4 = CreatProjectPath(folderPath3, "path_4");
-                string path_5 = CreatProjectPath(folderPath3, "path_5");
-                string path_5_1 = CreatProjectPath(folderPath3, "path_5_1");
-                string path_6 = CreatProjectPath(folderPath3, "path_6");
-                string path_6_0_1 = CreatProjectPath(folderPath3, "path_6_0_1");
-                string path_6_0_2 = CreatProjectPath(folderPath3, "path_6_0_2");
-                string path_6_1 = CreatProjectPath(folderPath3, "path_6_1");
-                string path_6_1_1 = CreatProjectPath(folderPath3, "path_6_1_1");
-                string path_6_1_2 = CreatProjectPath(folderPath3, "path_6_1_2");
-                string path_6_2 = CreatProjectPath(folderPath3, "path_6_2");
-                string path_6_2_1 = CreatProjectPath(folderPath3, "path_6_2_1");
-                string path_6_2_2 = CreatProjectPath(folderPath3, "path_6_2_2");
-                string path_6_3 = CreatProjectPath(folderPath3, "path_6_3");
-                string path_6_3_1 = CreatProjectPath(folderPath3, "path_6_3_1");
-                string path_6_3_2 = CreatProjectPath(folderPath3, "path_6_3_2");
-                string[] path = { path_1, path_2, path_3, path_3_1, path_3_2, path_3_3, path_4, path_5, path_5_1,
-                    path_6, path_6_0_1,path_6_0_2, path_6_1, path_6_1_1, path_6_1_2, path_6_2, path_6_2_1, path_6_2_2,
-                    path_6_3, path_6_3_1, path_6_3_2 };
-                LeiTools.IOHelper.Mkdirs(path);
+                //string path_1 = CreatProjectPath(folderPath3, "path_1");
+                //string path_2 = CreatProjectPath(folderPath3, "path_2");
+                //string path_3 = CreatProjectPath(folderPath3, "path_3");
+                //string path_3_1 = CreatProjectPath(folderPath3, "path_3_1");
+                //string path_3_2 = CreatProjectPath(folderPath3, "path_3_2");
+                //string path_3_3 = CreatProjectPath(folderPath3, "path_3_3");
+                //string path_4 = CreatProjectPath(folderPath3, "path_4");
+                //string path_5 = CreatProjectPath(folderPath3, "path_5");
+                //string path_5_1 = CreatProjectPath(folderPath3, "path_5_1");
+                //string path_6 = CreatProjectPath(folderPath3, "path_6");
+                //string path_6_0_1 = CreatProjectPath(folderPath3, "path_6_0_1");
+                //string path_6_0_2 = CreatProjectPath(folderPath3, "path_6_0_2");
+                //string path_6_1 = CreatProjectPath(folderPath3, "path_6_1");
+                //string path_6_1_1 = CreatProjectPath(folderPath3, "path_6_1_1");
+                //string path_6_1_2 = CreatProjectPath(folderPath3, "path_6_1_2");
+                //string path_6_2 = CreatProjectPath(folderPath3, "path_6_2");
+                //string path_6_2_1 = CreatProjectPath(folderPath3, "path_6_2_1");
+                //string path_6_2_2 = CreatProjectPath(folderPath3, "path_6_2_2");
+                //string path_6_3 = CreatProjectPath(folderPath3, "path_6_3");
+                //string path_6_3_1 = CreatProjectPath(folderPath3, "path_6_3_1");
+                //string path_6_3_2 = CreatProjectPath(folderPath3, "path_6_3_2");
+                //string[] path = { path_1, path_2, path_3, path_3_1, path_3_2, path_3_3, path_4, path_5, path_5_1,
+                //    path_6, path_6_0_1,path_6_0_2, path_6_1, path_6_1_1, path_6_1_2, path_6_2, path_6_2_1, path_6_2_2,
+                //    path_6_3, path_6_3_1, path_6_3_2 };
+                //LeiTools.IOHelper.Mkdirs(path);
+                //MessageBox.Show("生成项目文件夹成功！");
+
+                LeiTools.IOHelper.BatchCreateFolder(folderPath3);
                 MessageBox.Show("生成项目文件夹成功！");
             }
         }
 
+        // 20230210：取消本方法，改用BatchCreateFolder(string folderPath)
         public string CreatProjectPath(string folderPath, string path)
         {
             string iniPath = Directory.GetCurrentDirectory() + @"\Data\ProjectFolder.ini";
@@ -522,13 +527,36 @@ namespace BookmarksTool
         {
             Visible = true;//
             WindowState = FormWindowState.Normal;//窗口正常显示
+
             ShowInTaskbar = true;//在任务栏中显示该窗口
         }
 
+
+
+        //修改关闭窗口的方法，使窗口隐藏
+        //  只有Form_Closing事件中 e.Cancel可以用。
+        //  你的是Form_Closed事件。 Form_Closed事件时窗口已关了 ，Cancel没用了；
+        //  Form_Closing是窗口即将关闭时询问你是不是真的关闭才有Cancel事件
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
-            this.Hide();
+            // 注意判断关闭事件reason来源于窗体按钮，否则用菜单退出时无法退出!
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                //取消"关闭窗口"事件
+                e.Cancel = true; // 取消关闭窗体
+
+                //使关闭时窗口向右下角缩小的效果
+                this.WindowState = FormWindowState.Minimized;//窗口最小化
+                this.notifyIcon1.Visible = true;
+                //this.m_cartoonForm.CartoonClose();
+                this.Hide();
+                return;
+            }
+
+            //e.Cancel = true;
+            //WindowState = FormWindowState.Minimized;//窗口最小化
+            //this.ShowInTaskbar = false;
+            //this.Hide();
         }
 
         private void lab_ExcelPath_Click(object sender, EventArgs e)
@@ -550,5 +578,12 @@ namespace BookmarksTool
         {
             txt_Folder2.Clear();
         }
+
+        private void modifyFolderConfi_Click(object sender, EventArgs e)
+        {
+            string iniFilePath = System.IO.Directory.GetCurrentDirectory() + @"\Data\CreateFolder.ini";
+            System.Diagnostics.Process.Start("NOTEPAD.exe", iniFilePath);
+        }
+
     }
 }
