@@ -1,4 +1,5 @@
-﻿using Sunny.UI;
+﻿using Microsoft.Win32;
+using Sunny.UI;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -28,6 +29,7 @@ namespace BookmarksTool
             InitializeComponent();
             form1 = this; //构造方法中引用Form1
             this.rtxt_help.Text = help;
+            this.uiStyleManager1.DPIScale = true; // 防止缩放产生问题 vV2.0.8条修复问题
             string version = Application.ProductVersion.ToString();
             this.lab_Version.Text = "当前版本：" + version.Substring(0, 5) + "\n";
 
@@ -48,8 +50,70 @@ namespace BookmarksTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // 读取系统设置，APP是否开机启动
+            ck_Selfstart.Checked = Convert.ToBoolean(LeiTools.ConfigHelper.IniHelper.ReadString("App设置", "IsAutoBoot", "NA"));
+            //读取系统设置，截图 OCR快捷键
+            txt_Screencapture.Text = LeiTools.ConfigHelper.IniHelper.ReadString("App设置", "Screencapture", "NA");
+
+
+            //ck_Selfstart.Checked = LeiTools.ConfigHelper.JSONHelper.ReadJSON<bool>("IsAutoBoot");
             //打开软件后，自动检查是否有可用更新,如有更新，弹出对话框询问是否更新，点击更新后，自动更新。
             LeiTools.AutoUpdate.AutoCheckUpdate();
+
+            //启动后自动最小化
+            //this.WindowState = FormWindowState.Minimized;
+
+            // 注册热键
+            //注册热键Shift+S，Id号为100。HotKey.KeyModifiers.Shift也可以直接使用数字4来表示。   
+            //LeiTools.SystemOp.HotKey.RegisterHotKey(Handle, 100, LeiTools.SystemOp.HotKey.KeyModifiers.Shift, Keys.S);
+            //注册热键Ctrl+B，Id号为101。HotKey.KeyModifiers.Ctrl也可以直接使用数字2来表示。   
+            //LeiTools.SystemOp.HotKey.RegisterHotKey(Handle, 101, LeiTools.SystemOp.HotKey.KeyModifiers.Ctrl, Keys.B);
+            //注册热键Ctrl+Alt+D，Id号为102。HotKey.KeyModifiers.Alt也可以直接使用数字1来表示。   
+            //LeiTools.SystemOp.HotKey.RegisterHotKey(Handle, 102, LeiTools.SystemOp.HotKey.KeyModifiers.Alt | LeiTools.SystemOp.HotKey.KeyModifiers.Ctrl, Keys.D);
+            //注册热键F4，Id号为103。   
+            LeiTools.SystemOp.HotKey.RegisterHotKey(Handle, 103, LeiTools.SystemOp.HotKey.KeyModifiers.None, Keys.F4);
+        }
+        private void btn_ShortcutKey_Click(object sender, EventArgs e)
+        {
+            //自定义 修改截图ORC快捷键
+            //LeiTools.ConfigHelper.IniHelper.WriteString("App设置", "Screencapture", Convert.ToString(this.txt_Screencapture.Text));
+            //MessageBox.Show("截图 OCR快捷键设置成为了"+txt_Screencapture.Text);
+            MessageBox.Show("截图 OCR快捷键默认F4，暂不允许修改");
+        }
+        /// <summary>
+        /// 注册热键
+        /// </summary>
+        /// <param name="m"></param>
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_HOTKEY = 0x0312;
+            //按快捷键    
+            switch (m.Msg)
+            {
+                case WM_HOTKEY:
+                    switch (m.WParam.ToInt32())
+                    {
+                        case 100:    //按下的是Shift+S   
+                            //MessageBox.Show("按下的是Shift+S");
+                            break;
+                        case 101:    //按下的是Ctrl+B   
+                                     //此处填写快捷键响应代码   
+                            //MessageBox.Show("按下的是Ctrl+B");
+                            break;
+                        case 102:    //按下的是Alt+D   
+                                     //此处填写快捷键响应代码   
+                            //MessageBox.Show("按下的是Ctrl+Alt+D");
+                            break;
+                        case 103:
+                            //this.Text = "F4";
+                            string screencapture = System.Environment.CurrentDirectory + @"\Screencapture\screencapture.exe";
+                            Process.Start(screencapture);
+                            //MessageBox.Show("按下的是F4");
+                            break;
+                    }
+                    break;
+            }
+            base.WndProc(ref m);
         }
 
         #endregion 自动更新
@@ -427,7 +491,6 @@ namespace BookmarksTool
         {
             //FolderBrowserDialog dialog = new FolderBrowserDialog();
             //dialog.Description = "请选择文件夹";
-
             //优化文件夹选择对话框
             var dialog = new Ookii.Dialogs.WinForms.VistaFolderBrowserDialog
             {
@@ -436,38 +499,6 @@ namespace BookmarksTool
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 var folderPath3 = dialog.SelectedPath;
-                //MessageBox.Show(folderPath3);
-                //string iniPath = Directory.GetCurrentDirectory() + @"\Data\ProjectFolder.ini";
-                //string path1 = LeiTools.ConfigHelper.IniHelper.ReadString(iniPath, "项目文件夹", "path1", "NA");
-                //string path2 = LeiTools.ConfigHelper.IniHelper.ReadString(iniPath, "项目文件夹", "path2", "NA");
-
-                //string path_1 = CreatProjectPath(folderPath3, "path_1");
-                //string path_2 = CreatProjectPath(folderPath3, "path_2");
-                //string path_3 = CreatProjectPath(folderPath3, "path_3");
-                //string path_3_1 = CreatProjectPath(folderPath3, "path_3_1");
-                //string path_3_2 = CreatProjectPath(folderPath3, "path_3_2");
-                //string path_3_3 = CreatProjectPath(folderPath3, "path_3_3");
-                //string path_4 = CreatProjectPath(folderPath3, "path_4");
-                //string path_5 = CreatProjectPath(folderPath3, "path_5");
-                //string path_5_1 = CreatProjectPath(folderPath3, "path_5_1");
-                //string path_6 = CreatProjectPath(folderPath3, "path_6");
-                //string path_6_0_1 = CreatProjectPath(folderPath3, "path_6_0_1");
-                //string path_6_0_2 = CreatProjectPath(folderPath3, "path_6_0_2");
-                //string path_6_1 = CreatProjectPath(folderPath3, "path_6_1");
-                //string path_6_1_1 = CreatProjectPath(folderPath3, "path_6_1_1");
-                //string path_6_1_2 = CreatProjectPath(folderPath3, "path_6_1_2");
-                //string path_6_2 = CreatProjectPath(folderPath3, "path_6_2");
-                //string path_6_2_1 = CreatProjectPath(folderPath3, "path_6_2_1");
-                //string path_6_2_2 = CreatProjectPath(folderPath3, "path_6_2_2");
-                //string path_6_3 = CreatProjectPath(folderPath3, "path_6_3");
-                //string path_6_3_1 = CreatProjectPath(folderPath3, "path_6_3_1");
-                //string path_6_3_2 = CreatProjectPath(folderPath3, "path_6_3_2");
-                //string[] path = { path_1, path_2, path_3, path_3_1, path_3_2, path_3_3, path_4, path_5, path_5_1,
-                //    path_6, path_6_0_1,path_6_0_2, path_6_1, path_6_1_1, path_6_1_2, path_6_2, path_6_2_1, path_6_2_2,
-                //    path_6_3, path_6_3_1, path_6_3_2 };
-                //LeiTools.IOHelper.Mkdirs(path);
-                //MessageBox.Show("生成项目文件夹成功！");
-
                 LeiTools.IOHelper.BatchCreateFolder(folderPath3);
                 MessageBox.Show("生成项目文件夹成功！");
             }
@@ -531,8 +562,6 @@ namespace BookmarksTool
             ShowInTaskbar = true;//在任务栏中显示该窗口
         }
 
-
-
         //修改关闭窗口的方法，使窗口隐藏
         //  只有Form_Closing事件中 e.Cancel可以用。
         //  你的是Form_Closed事件。 Form_Closed事件时窗口已关了 ，Cancel没用了；
@@ -581,9 +610,64 @@ namespace BookmarksTool
 
         private void modifyFolderConfi_Click(object sender, EventArgs e)
         {
-            string iniFilePath = System.IO.Directory.GetCurrentDirectory() + @"\Data\CreateFolder.ini";
+            //string iniFilePath = System.IO.Directory.GetCurrentDirectory() + @"\Data\CreateFolder.ini";
+            string iniFilePath = System.Environment.CurrentDirectory + @"\Data\CreateFolder.ini";
             System.Diagnostics.Process.Start("NOTEPAD.exe", iniFilePath);
         }
 
+        private void FrmMain_SizeChanged(object sender, EventArgs e)
+        {
+            //当窗体最小化时，隐藏到系统托盘。
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                this.notifyIcon1.Visible = true;
+            }
+        }
+
+        private void btn_Screencapture_Click(object sender, EventArgs e)
+        {
+            string screencapture = System.Environment.CurrentDirectory + @"\Screencapture\screencapture.exe";
+            Process.Start(screencapture);
+        }
+
+        private void 截图OCR识别ToolStripMenuItem_Click(object sender, EventArgs e)
+        {          
+            string screencapture = System.Environment.CurrentDirectory + @"\Screencapture\screencapture.exe";
+            Process.Start(screencapture);
+        }
+
+        /// <summary>
+        /// 开机自启 复选框的change事件：当单选框选中时，将程序添加至注册表中，未选中时从注册表中移除。并修改配置文件中IsAutoBoot的值。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ck_Selfstart_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string execPath = Application.ExecutablePath;
+                RegistryKey rk = Registry.LocalMachine;
+                RegistryKey rk2 = rk.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run");
+                if (ck_Selfstart.Checked)
+                {
+                    rk2.SetValue("GBOfficeTools", execPath);
+                }
+                else
+                {
+                    rk2.DeleteValue("GBOfficeTools", false);
+                }
+                rk2.Close();
+                rk.Close();
+                LeiTools.ConfigHelper.IniHelper.WriteString("App设置", "IsAutoBoot", Convert.ToString( this.ck_Selfstart.Checked));
+                //LeiTools.ConfigHelper.JSONHelper.WriteJSON("IsAutoBoot", ck_Selfstart.Checked);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("[注册表操作]向注册表写开机启动信息失败, Exception: {0}", ex.Message));
+            }
+        }
+
+        
     }
 }

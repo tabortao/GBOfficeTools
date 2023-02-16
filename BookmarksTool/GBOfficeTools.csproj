@@ -73,7 +73,7 @@
     <ManifestKeyFile>BookmarksTool_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -98,6 +98,9 @@
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ookii.Dialogs.WinForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=66aa232afad40158, processorArchitecture=MSIL">
       <HintPath>..\packages\Ookii.Dialogs.WinForms.1.2.0\lib\net45\Ookii.Dialogs.WinForms.dll</HintPath>
@@ -132,10 +135,12 @@
     <Compile Include="LeiTools\AutoUpdate.cs" />
     <Compile Include="LeiTools\ConfigHelper\CSVHelper.cs" />
     <Compile Include="LeiTools\ConfigHelper\IniHelper.cs" />
+    <Compile Include="LeiTools\ConfigHelper\JSONHelper.cs" />
     <Compile Include="LeiTools\ConfigHelper\Linq2Xml.cs" />
     <Compile Include="LeiTools\ConfigHelper\XmlHelper.cs" />
     <Compile Include="LeiTools\ExcelHelper.cs" />
     <Compile Include="LeiTools\LogHelper\LogHelper.cs" />
+    <Compile Include="LeiTools\SystemOp\SystemHotKey.cs" />
     <Compile Include="UI\MainFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +169,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app.manifest" />
+    <None Include="appsettings.json" />
     <None Include="BookmarksTool_TemporaryKey.pfx" />
     <None Include="GBOfficeTools软件说明与帮助.md" />
     <None Include="packages.config" />

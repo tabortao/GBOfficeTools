@@ -19,12 +19,24 @@
 ## Todo:
 
 - 考虑增加PDF压缩、PDF拆分等小功能。
-- 实现OCR识别功能。
 - 暂时停止软件新功能维护，有新功能想法先记录下来。
 - 右键菜单增加“Word批量转PDF”功能 https://www.cnblogs.com/boyryan/p/14127499.html
 
 
+
 ## 更新记录
+
+
+### 2023-02-16 GBOfficeTools V2.0.8.0
+- 修复高分屏时字体显示不全的问题。
+- 当窗体最小化时，隐藏到系统托盘。
+- 优化按钮命名，批量创建文件夹。
+- 调用Screencapture文件夹里面的screencapture.exe，实现截图和文字OCR识别。
+- 设置截图 OCR快捷键 F4。https://www.cnblogs.com/xdoudou/archive/2013/05/04/3059635.html
+- 设置软件开机自启动。https://www.cnblogs.com/hyx1229/p/15763483.html
+- 开机启动项注册表位置：计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+- 开机启动项注册表位置：计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run  (目前软件会写道注册表这里来)
+
 
 ### 2023-02-10 GBOfficeTools V2.0.7.0
 - 优化【生成项目文件夹】功能。

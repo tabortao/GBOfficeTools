@@ -54,10 +54,11 @@
             this.uiLabel6 = new Sunny.UI.UILabel();
             this.btn_Clear2 = new Sunny.UI.UIImageButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.modifyFolderConfi = new Sunny.UI.UISymbolButton();
             this.btn_ProjectFolder = new Sunny.UI.UISymbolButton();
             this.btn_FileNames = new Sunny.UI.UISymbolButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.uiLabel13 = new Sunny.UI.UILabel();
+            this.ck_Selfstart = new Sunny.UI.UICheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_Reset = new Sunny.UI.UIButton();
             this.uiLabel11 = new Sunny.UI.UILabel();
@@ -81,9 +82,13 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.截图OCR识别ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.modifyFolderConfi = new Sunny.UI.UISymbolButton();
+            this.uiLabel3 = new Sunny.UI.UILabel();
+            this.txt_Screencapture = new Sunny.UI.UITextBox();
+            this.uiLabel13 = new Sunny.UI.UILabel();
+            this.btn_ShortcutKey = new Sunny.UI.UIButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear1)).BeginInit();
@@ -95,6 +100,7 @@
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTabControlMenu1
@@ -470,6 +476,23 @@
             this.tabPage5.Text = "小工具";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // modifyFolderConfi
+            // 
+            this.modifyFolderConfi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.modifyFolderConfi.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.modifyFolderConfi.Location = new System.Drawing.Point(398, 16);
+            this.modifyFolderConfi.MinimumSize = new System.Drawing.Size(1, 1);
+            this.modifyFolderConfi.Name = "modifyFolderConfi";
+            this.modifyFolderConfi.Size = new System.Drawing.Size(146, 35);
+            this.modifyFolderConfi.Style = Sunny.UI.UIStyle.Custom;
+            this.modifyFolderConfi.Symbol = 61564;
+            this.modifyFolderConfi.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.modifyFolderConfi.TabIndex = 4;
+            this.modifyFolderConfi.Text = "修改文件夹配置";
+            this.modifyFolderConfi.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.modifyFolderConfi.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.modifyFolderConfi.Click += new System.EventHandler(this.modifyFolderConfi_Click);
+            // 
             // btn_ProjectFolder
             // 
             this.btn_ProjectFolder.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -482,7 +505,7 @@
             this.btn_ProjectFolder.Symbol = 61564;
             this.btn_ProjectFolder.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_ProjectFolder.TabIndex = 3;
-            this.btn_ProjectFolder.Text = "生成项目文件夹";
+            this.btn_ProjectFolder.Text = "批量创建文件夹";
             this.btn_ProjectFolder.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_ProjectFolder.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.btn_ProjectFolder.Click += new System.EventHandler(this.btn_ProjectFolder_Click);
@@ -499,13 +522,14 @@
             this.btn_FileNames.Symbol = 261787;
             this.btn_FileNames.SymbolColor = System.Drawing.Color.Aqua;
             this.btn_FileNames.TabIndex = 2;
-            this.btn_FileNames.Text = "获取文件名";
+            this.btn_FileNames.Text = "批量获取文件名";
             this.btn_FileNames.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_FileNames.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.btn_FileNames.Click += new System.EventHandler(this.btn_FileNames_Click);
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Controls.Add(this.uiLabel13);
             this.tabPage4.Controls.Add(this.groupBox2);
             this.tabPage4.Controls.Add(this.txt_bookmarkValueNo);
@@ -522,16 +546,20 @@
             this.tabPage4.Text = "软件设置";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // uiLabel13
+            // ck_Selfstart
             // 
-            this.uiLabel13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel13.Location = new System.Drawing.Point(258, 6);
-            this.uiLabel13.Name = "uiLabel13";
-            this.uiLabel13.Size = new System.Drawing.Size(127, 26);
-            this.uiLabel13.TabIndex = 8;
-            this.uiLabel13.Text = "软件设置";
-            this.uiLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel13.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.ck_Selfstart.Checked = true;
+            this.ck_Selfstart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ck_Selfstart.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ck_Selfstart.Location = new System.Drawing.Point(15, 22);
+            this.ck_Selfstart.MinimumSize = new System.Drawing.Size(1, 1);
+            this.ck_Selfstart.Name = "ck_Selfstart";
+            this.ck_Selfstart.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.ck_Selfstart.Size = new System.Drawing.Size(150, 29);
+            this.ck_Selfstart.TabIndex = 9;
+            this.ck_Selfstart.Text = "开机启动";
+            this.ck_Selfstart.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.ck_Selfstart.CheckedChanged += new System.EventHandler(this.ck_Selfstart_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -798,46 +826,101 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.打开ToolStripMenuItem,
+            this.截图OCR识别ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(156, 70);
             this.contextMenuStrip1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contextMain);
             // 
             // 打开ToolStripMenuItem
             // 
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.打开ToolStripMenuItem.Text = "显示";
+            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.打开ToolStripMenuItem.Text = "显示窗口";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.显示ToolStripMenuItem_Click);
+            // 
+            // 截图OCR识别ToolStripMenuItem
+            // 
+            this.截图OCR识别ToolStripMenuItem.Name = "截图OCR识别ToolStripMenuItem";
+            this.截图OCR识别ToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.截图OCR识别ToolStripMenuItem.Text = "截图 OCR (F4)";
+            this.截图OCR识别ToolStripMenuItem.Click += new System.EventHandler(this.截图OCR识别ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
-            // contextMenuStrip2
+            // uiLabel3
             // 
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel3.Location = new System.Drawing.Point(283, 23);
+            this.uiLabel3.Name = "uiLabel3";
+            this.uiLabel3.Size = new System.Drawing.Size(129, 23);
+            this.uiLabel3.TabIndex = 10;
+            this.uiLabel3.Text = "截图 OCR快捷键：";
+            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel3.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // modifyFolderConfi
+            // txt_Screencapture
             // 
-            this.modifyFolderConfi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.modifyFolderConfi.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.modifyFolderConfi.Location = new System.Drawing.Point(398, 16);
-            this.modifyFolderConfi.MinimumSize = new System.Drawing.Size(1, 1);
-            this.modifyFolderConfi.Name = "modifyFolderConfi";
-            this.modifyFolderConfi.Size = new System.Drawing.Size(146, 35);
-            this.modifyFolderConfi.Style = Sunny.UI.UIStyle.Custom;
-            this.modifyFolderConfi.Symbol = 61564;
-            this.modifyFolderConfi.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.modifyFolderConfi.TabIndex = 4;
-            this.modifyFolderConfi.Text = "修改文件夹配置";
-            this.modifyFolderConfi.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.modifyFolderConfi.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.modifyFolderConfi.Click += new System.EventHandler(this.modifyFolderConfi_Click);
+            this.txt_Screencapture.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Screencapture.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Screencapture.Location = new System.Drawing.Point(405, 20);
+            this.txt_Screencapture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Screencapture.MinimumSize = new System.Drawing.Size(1, 16);
+            this.txt_Screencapture.Name = "txt_Screencapture";
+            this.txt_Screencapture.ReadOnly = true;
+            this.txt_Screencapture.RectDisableColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.txt_Screencapture.RectReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.txt_Screencapture.ShowText = false;
+            this.txt_Screencapture.Size = new System.Drawing.Size(51, 29);
+            this.txt_Screencapture.Style = Sunny.UI.UIStyle.Custom;
+            this.txt_Screencapture.TabIndex = 10;
+            this.txt_Screencapture.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_Screencapture.Watermark = "";
+            this.txt_Screencapture.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiLabel13
+            // 
+            this.uiLabel13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel13.Location = new System.Drawing.Point(258, 6);
+            this.uiLabel13.Name = "uiLabel13";
+            this.uiLabel13.Size = new System.Drawing.Size(127, 26);
+            this.uiLabel13.TabIndex = 8;
+            this.uiLabel13.Text = "软件设置";
+            this.uiLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel13.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // btn_ShortcutKey
+            // 
+            this.btn_ShortcutKey.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ShortcutKey.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ShortcutKey.Location = new System.Drawing.Point(463, 20);
+            this.btn_ShortcutKey.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_ShortcutKey.Name = "btn_ShortcutKey";
+            this.btn_ShortcutKey.Size = new System.Drawing.Size(100, 29);
+            this.btn_ShortcutKey.TabIndex = 10;
+            this.btn_ShortcutKey.Text = "设置快捷键";
+            this.btn_ShortcutKey.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ShortcutKey.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_ShortcutKey.Click += new System.EventHandler(this.btn_ShortcutKey_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.ck_Selfstart);
+            this.groupBox3.Controls.Add(this.btn_ShortcutKey);
+            this.groupBox3.Controls.Add(this.txt_Screencapture);
+            this.groupBox3.Controls.Add(this.uiLabel3);
+            this.groupBox3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox3.Location = new System.Drawing.Point(23, 315);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(568, 57);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "App设置";
             // 
             // MainForm
             // 
@@ -856,6 +939,7 @@
             this.Text = "GBOfficeTools";
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 650, 450);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmMain_SizeChanged);
             this.uiTabControlMenu1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear1)).EndInit();
@@ -867,6 +951,7 @@
             this.groupBox1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -916,7 +1001,6 @@
         private Sunny.UI.UIButton btn_Reset;
         private Sunny.UI.UITextBox txt_bookmarkNo;
         private Sunny.UI.UILabel uiLabel12;
-        private Sunny.UI.UILabel uiLabel13;
         private System.Windows.Forms.TabPage tabPage5;
         private Sunny.UI.UISymbolButton btn_FileNames;
         private Sunny.UI.UISymbolButton btn_ProjectFolder;
@@ -924,8 +1008,14 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 打开ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private Sunny.UI.UISymbolButton modifyFolderConfi;
+        private System.Windows.Forms.ToolStripMenuItem 截图OCR识别ToolStripMenuItem;
+        private Sunny.UI.UICheckBox ck_Selfstart;
+        private Sunny.UI.UITextBox txt_Screencapture;
+        private Sunny.UI.UILabel uiLabel3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private Sunny.UI.UIButton btn_ShortcutKey;
+        private Sunny.UI.UILabel uiLabel13;
     }
 }
 
