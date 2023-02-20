@@ -58,7 +58,12 @@
             this.btn_ProjectFolder = new Sunny.UI.UISymbolButton();
             this.btn_FileNames = new Sunny.UI.UISymbolButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ck_Selfstart = new Sunny.UI.UICheckBox();
+            this.btn_ShortcutKey = new Sunny.UI.UIButton();
+            this.txt_Screencapture = new Sunny.UI.UITextBox();
+            this.uiLabel3 = new Sunny.UI.UILabel();
+            this.uiLabel13 = new Sunny.UI.UILabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_Reset = new Sunny.UI.UIButton();
             this.uiLabel11 = new Sunny.UI.UILabel();
@@ -84,11 +89,9 @@
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.截图OCR识别ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uiLabel3 = new Sunny.UI.UILabel();
-            this.txt_Screencapture = new Sunny.UI.UITextBox();
-            this.uiLabel13 = new Sunny.UI.UILabel();
-            this.btn_ShortcutKey = new Sunny.UI.UIButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.uiLinkLabel1 = new Sunny.UI.UILinkLabel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_deleteBookmarks = new Sunny.UI.UISymbolButton();
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear1)).BeginInit();
@@ -96,11 +99,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear2)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTabControlMenu1
@@ -466,6 +470,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btn_deleteBookmarks);
+            this.tabPage5.Controls.Add(this.groupBox4);
             this.tabPage5.Controls.Add(this.modifyFolderConfi);
             this.tabPage5.Controls.Add(this.btn_ProjectFolder);
             this.tabPage5.Controls.Add(this.btn_FileNames);
@@ -546,6 +552,20 @@
             this.tabPage4.Text = "软件设置";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.ck_Selfstart);
+            this.groupBox3.Controls.Add(this.btn_ShortcutKey);
+            this.groupBox3.Controls.Add(this.txt_Screencapture);
+            this.groupBox3.Controls.Add(this.uiLabel3);
+            this.groupBox3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox3.Location = new System.Drawing.Point(23, 315);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(568, 57);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "App设置";
+            // 
             // ck_Selfstart
             // 
             this.ck_Selfstart.Checked = true;
@@ -560,6 +580,61 @@
             this.ck_Selfstart.Text = "开机启动";
             this.ck_Selfstart.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.ck_Selfstart.CheckedChanged += new System.EventHandler(this.ck_Selfstart_CheckedChanged);
+            // 
+            // btn_ShortcutKey
+            // 
+            this.btn_ShortcutKey.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ShortcutKey.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ShortcutKey.Location = new System.Drawing.Point(463, 20);
+            this.btn_ShortcutKey.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_ShortcutKey.Name = "btn_ShortcutKey";
+            this.btn_ShortcutKey.Size = new System.Drawing.Size(100, 29);
+            this.btn_ShortcutKey.TabIndex = 10;
+            this.btn_ShortcutKey.Text = "设置快捷键";
+            this.btn_ShortcutKey.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ShortcutKey.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_ShortcutKey.Click += new System.EventHandler(this.btn_ShortcutKey_Click);
+            // 
+            // txt_Screencapture
+            // 
+            this.txt_Screencapture.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Screencapture.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_Screencapture.Location = new System.Drawing.Point(405, 20);
+            this.txt_Screencapture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Screencapture.MinimumSize = new System.Drawing.Size(1, 16);
+            this.txt_Screencapture.Name = "txt_Screencapture";
+            this.txt_Screencapture.ReadOnly = true;
+            this.txt_Screencapture.RectDisableColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.txt_Screencapture.RectReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.txt_Screencapture.ShowText = false;
+            this.txt_Screencapture.Size = new System.Drawing.Size(51, 29);
+            this.txt_Screencapture.Style = Sunny.UI.UIStyle.Custom;
+            this.txt_Screencapture.TabIndex = 10;
+            this.txt_Screencapture.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_Screencapture.Watermark = "";
+            this.txt_Screencapture.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiLabel3
+            // 
+            this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel3.Location = new System.Drawing.Point(283, 23);
+            this.uiLabel3.Name = "uiLabel3";
+            this.uiLabel3.Size = new System.Drawing.Size(129, 23);
+            this.uiLabel3.TabIndex = 10;
+            this.uiLabel3.Text = "截图 OCR快捷键：";
+            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel3.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiLabel13
+            // 
+            this.uiLabel13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel13.Location = new System.Drawing.Point(258, 6);
+            this.uiLabel13.Name = "uiLabel13";
+            this.uiLabel13.Size = new System.Drawing.Size(127, 26);
+            this.uiLabel13.TabIndex = 8;
+            this.uiLabel13.Text = "软件设置";
+            this.uiLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel13.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // groupBox2
             // 
@@ -853,74 +928,49 @@
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
-            // uiLabel3
+            // uiLinkLabel1
             // 
-            this.uiLabel3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel3.Location = new System.Drawing.Point(283, 23);
-            this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(129, 23);
-            this.uiLabel3.TabIndex = 10;
-            this.uiLabel3.Text = "截图 OCR快捷键：";
-            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel3.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiLinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.uiLinkLabel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.uiLinkLabel1.Location = new System.Drawing.Point(2, 30);
+            this.uiLinkLabel1.Name = "uiLinkLabel1";
+            this.uiLinkLabel1.Size = new System.Drawing.Size(100, 23);
+            this.uiLinkLabel1.TabIndex = 5;
+            this.uiLinkLabel1.TabStop = true;
+            this.uiLinkLabel1.Text = "PDF24";
+            this.uiLinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiLinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.uiLinkLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiLinkLabel1.Click += new System.EventHandler(this.linkLable_Click);
             // 
-            // txt_Screencapture
+            // groupBox4
             // 
-            this.txt_Screencapture.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Screencapture.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Screencapture.Location = new System.Drawing.Point(405, 20);
-            this.txt_Screencapture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_Screencapture.MinimumSize = new System.Drawing.Size(1, 16);
-            this.txt_Screencapture.Name = "txt_Screencapture";
-            this.txt_Screencapture.ReadOnly = true;
-            this.txt_Screencapture.RectDisableColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.txt_Screencapture.RectReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.txt_Screencapture.ShowText = false;
-            this.txt_Screencapture.Size = new System.Drawing.Size(51, 29);
-            this.txt_Screencapture.Style = Sunny.UI.UIStyle.Custom;
-            this.txt_Screencapture.TabIndex = 10;
-            this.txt_Screencapture.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txt_Screencapture.Watermark = "";
-            this.txt_Screencapture.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.groupBox4.Controls.Add(this.uiLinkLabel1);
+            this.groupBox4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox4.Location = new System.Drawing.Point(51, 287);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(493, 100);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "在线工具";
             // 
-            // uiLabel13
+            // btn_deleteBookmarks
             // 
-            this.uiLabel13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel13.Location = new System.Drawing.Point(258, 6);
-            this.uiLabel13.Name = "uiLabel13";
-            this.uiLabel13.Size = new System.Drawing.Size(127, 26);
-            this.uiLabel13.TabIndex = 8;
-            this.uiLabel13.Text = "软件设置";
-            this.uiLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel13.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // btn_ShortcutKey
-            // 
-            this.btn_ShortcutKey.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ShortcutKey.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_ShortcutKey.Location = new System.Drawing.Point(463, 20);
-            this.btn_ShortcutKey.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btn_ShortcutKey.Name = "btn_ShortcutKey";
-            this.btn_ShortcutKey.Size = new System.Drawing.Size(100, 29);
-            this.btn_ShortcutKey.TabIndex = 10;
-            this.btn_ShortcutKey.Text = "设置快捷键";
-            this.btn_ShortcutKey.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_ShortcutKey.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.btn_ShortcutKey.Click += new System.EventHandler(this.btn_ShortcutKey_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.ck_Selfstart);
-            this.groupBox3.Controls.Add(this.btn_ShortcutKey);
-            this.groupBox3.Controls.Add(this.txt_Screencapture);
-            this.groupBox3.Controls.Add(this.uiLabel3);
-            this.groupBox3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox3.Location = new System.Drawing.Point(23, 315);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(568, 57);
-            this.groupBox3.TabIndex = 11;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "App设置";
+            this.btn_deleteBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_deleteBookmarks.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_deleteBookmarks.Location = new System.Drawing.Point(51, 72);
+            this.btn_deleteBookmarks.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_deleteBookmarks.Name = "btn_deleteBookmarks";
+            this.btn_deleteBookmarks.Size = new System.Drawing.Size(146, 35);
+            this.btn_deleteBookmarks.Style = Sunny.UI.UIStyle.Custom;
+            this.btn_deleteBookmarks.Symbol = 61591;
+            this.btn_deleteBookmarks.SymbolColor = System.Drawing.Color.Aqua;
+            this.btn_deleteBookmarks.TabIndex = 7;
+            this.btn_deleteBookmarks.Text = "删除Word书签";
+            this.btn_deleteBookmarks.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_deleteBookmarks.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_deleteBookmarks.Click += new System.EventHandler(this.btn_deleteBookmarks_Click);
             // 
             // MainForm
             // 
@@ -947,11 +997,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear2)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1016,6 +1067,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private Sunny.UI.UIButton btn_ShortcutKey;
         private Sunny.UI.UILabel uiLabel13;
+        private Sunny.UI.UILinkLabel uiLinkLabel1;
+        private Sunny.UI.UISymbolButton btn_deleteBookmarks;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 

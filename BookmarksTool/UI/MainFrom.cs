@@ -55,7 +55,6 @@ namespace BookmarksTool
             //读取系统设置，截图 OCR快捷键
             txt_Screencapture.Text = LeiTools.ConfigHelper.IniHelper.ReadString("App设置", "Screencapture", "NA");
 
-
             //ck_Selfstart.Checked = LeiTools.ConfigHelper.JSONHelper.ReadJSON<bool>("IsAutoBoot");
             //打开软件后，自动检查是否有可用更新,如有更新，弹出对话框询问是否更新，点击更新后，自动更新。
             LeiTools.AutoUpdate.AutoCheckUpdate();
@@ -64,22 +63,26 @@ namespace BookmarksTool
             //this.WindowState = FormWindowState.Minimized;
 
             // 注册热键
-            //注册热键Shift+S，Id号为100。HotKey.KeyModifiers.Shift也可以直接使用数字4来表示。   
+            //注册热键Shift+S，Id号为100。HotKey.KeyModifiers.Shift也可以直接使用数字4来表示。
             //LeiTools.SystemOp.HotKey.RegisterHotKey(Handle, 100, LeiTools.SystemOp.HotKey.KeyModifiers.Shift, Keys.S);
-            //注册热键Ctrl+B，Id号为101。HotKey.KeyModifiers.Ctrl也可以直接使用数字2来表示。   
+            //注册热键Ctrl+B，Id号为101。HotKey.KeyModifiers.Ctrl也可以直接使用数字2来表示。
             //LeiTools.SystemOp.HotKey.RegisterHotKey(Handle, 101, LeiTools.SystemOp.HotKey.KeyModifiers.Ctrl, Keys.B);
-            //注册热键Ctrl+Alt+D，Id号为102。HotKey.KeyModifiers.Alt也可以直接使用数字1来表示。   
+            //注册热键Ctrl+Alt+D，Id号为102。HotKey.KeyModifiers.Alt也可以直接使用数字1来表示。
             //LeiTools.SystemOp.HotKey.RegisterHotKey(Handle, 102, LeiTools.SystemOp.HotKey.KeyModifiers.Alt | LeiTools.SystemOp.HotKey.KeyModifiers.Ctrl, Keys.D);
-            //注册热键F4，Id号为103。   
+            //注册热键F4，Id号为103。
             LeiTools.SystemOp.HotKey.RegisterHotKey(Handle, 103, LeiTools.SystemOp.HotKey.KeyModifiers.None, Keys.F4);
         }
+
         private void btn_ShortcutKey_Click(object sender, EventArgs e)
         {
             //自定义 修改截图ORC快捷键
             //LeiTools.ConfigHelper.IniHelper.WriteString("App设置", "Screencapture", Convert.ToString(this.txt_Screencapture.Text));
             //MessageBox.Show("截图 OCR快捷键设置成为了"+txt_Screencapture.Text);
-            MessageBox.Show("截图 OCR快捷键默认F4，暂不允许修改");
+            ShowInfoTip("截图 OCR快捷键默认F4，暂不允许修改");
+            //UIMessageBox.Show("截图 OCR快捷键默认F4，暂不允许修改");
+            //MessageBox.Show("截图 OCR快捷键默认F4，暂不允许修改");
         }
+
         /// <summary>
         /// 注册热键
         /// </summary>
@@ -87,28 +90,31 @@ namespace BookmarksTool
         protected override void WndProc(ref Message m)
         {
             const int WM_HOTKEY = 0x0312;
-            //按快捷键    
+            //按快捷键
             switch (m.Msg)
             {
                 case WM_HOTKEY:
                     switch (m.WParam.ToInt32())
                     {
-                        case 100:    //按下的是Shift+S   
+                        case 100:    //按下的是Shift+S
                             //MessageBox.Show("按下的是Shift+S");
                             break;
-                        case 101:    //按下的是Ctrl+B   
-                                     //此处填写快捷键响应代码   
-                            //MessageBox.Show("按下的是Ctrl+B");
+
+                        case 101:    //按下的是Ctrl+B
+                                     //此处填写快捷键响应代码
+                                     //MessageBox.Show("按下的是Ctrl+B");
                             break;
-                        case 102:    //按下的是Alt+D   
-                                     //此处填写快捷键响应代码   
-                            //MessageBox.Show("按下的是Ctrl+Alt+D");
+
+                        case 102:    //按下的是Alt+D
+                                     //此处填写快捷键响应代码
+                                     //MessageBox.Show("按下的是Ctrl+Alt+D");
                             break;
+
                         case 103:
                             //this.Text = "F4";
                             string screencapture = System.Environment.CurrentDirectory + @"\Screencapture\screencapture.exe";
                             Process.Start(screencapture);
-                            //MessageBox.Show("按下的是F4");
+                            //UIMessageBox.Show("按下的是F4");
                             break;
                     }
                     break;
@@ -166,11 +172,13 @@ namespace BookmarksTool
                 }
                 else if (txt_Excel1.Text.Length == 0 || txt_Words1.Text.Length == 0)
                 {
-                    MessageBox.Show("请选择Excel模板文件或选择Word文件");
+                    ShowInfoTip("请选择Excel模板文件或选择Word文件");
+                    //MessageBox.Show("请选择Excel模板文件或选择Word文件");
                 }
                 else
                 {
-                    MessageBox.Show("文件选择有误，请重新选择！");
+                    ShowErrorTip("文件选择有误，请重新选择！");
+                    //MessageBox.Show("文件选择有误，请重新选择！");
                 }
 
                 //LeiTools.AsposeOffice.BookmarksReplace.StartBookmarksReplace2();
@@ -182,7 +190,8 @@ namespace BookmarksTool
             }
             else
             {
-                MessageBox.Show("软件授权过期，请关注微信公众号“可持续学园”留言，免费获取更新。");
+                ShowInfoDialog("软件授权过期，请关注微信公众号“可持续学园”留言，免费获取更新。");
+                //UIMessageBox.Show("软件授权过期，请关注微信公众号“可持续学园”留言，免费获取更新。");
             }
         }
 
@@ -310,7 +319,9 @@ namespace BookmarksTool
             }
             else
             {
-                MessageBox.Show("选择的Word文件有误，请重试！");
+                //ShowErrorTip("选择的Word文件有误，请重试！");
+                ShowErrorDialog("选择的Word文件有误，请重试！");
+                //UIMessageBox.Show("选择的Word文件有误，请重试！");
             }
             sw.Stop();//计时结束
             MainForm.form1.TextBoxMsg2("Word批量转PDF已完成，用时" + sw.Elapsed + "秒");
@@ -477,7 +488,8 @@ namespace BookmarksTool
                     }
                     catch (Exception er)
                     {
-                        MessageBox.Show("Exception: " + er.Message);
+                        ShowErrorDialog("Exception: " + er.Message);
+                        //UIMessageBox.Show("Exception: " + er.Message);
                     }
                 }
                 sw.Close();
@@ -500,7 +512,10 @@ namespace BookmarksTool
             {
                 var folderPath3 = dialog.SelectedPath;
                 LeiTools.IOHelper.BatchCreateFolder(folderPath3);
-                MessageBox.Show("生成项目文件夹成功！");
+                //ShowSuccessNotifier("生成项目文件夹成功！");
+                ShowSuccessTip("生成项目文件夹成功！");
+                //UIMessageBox.Show("生成项目文件夹成功！");
+                //MessageBox.Show("生成项目文件夹成功！");
             }
         }
 
@@ -632,7 +647,7 @@ namespace BookmarksTool
         }
 
         private void 截图OCR识别ToolStripMenuItem_Click(object sender, EventArgs e)
-        {          
+        {
             string screencapture = System.Environment.CurrentDirectory + @"\Screencapture\screencapture.exe";
             Process.Start(screencapture);
         }
@@ -659,15 +674,70 @@ namespace BookmarksTool
                 }
                 rk2.Close();
                 rk.Close();
-                LeiTools.ConfigHelper.IniHelper.WriteString("App设置", "IsAutoBoot", Convert.ToString( this.ck_Selfstart.Checked));
+                LeiTools.ConfigHelper.IniHelper.WriteString("App设置", "IsAutoBoot", Convert.ToString(this.ck_Selfstart.Checked));
                 //LeiTools.ConfigHelper.JSONHelper.WriteJSON("IsAutoBoot", ck_Selfstart.Checked);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("[注册表操作]向注册表写开机启动信息失败, Exception: {0}", ex.Message));
+                ShowErrorDialog(string.Format("[注册表操作]向注册表写开机启动信息失败, Exception: {0}", ex.Message));
+                //UIMessageBox.Show(string.Format("[注册表操作]向注册表写开机启动信息失败, Exception: {0}", ex.Message));
+                //MessageBox.Show(string.Format("[注册表操作]向注册表写开机启动信息失败, Exception: {0}", ex.Message));
             }
         }
 
-        
+        private void linkLable_Click(object sender, EventArgs e)
+        {
+            //this.uiLinkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://tools.pdf24.org/zh/");
+        }
+
+
+        /// <summary>
+        /// 删除word的所有书签
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_deleteBookmarks_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                //是否支持多个文件的打开？
+                Multiselect = true,
+                //标题
+                Title = "请选择Word文件",
+                //文件类型
+                Filter = "Word文件(*.doc;*.docx)|*.doc;*.docx",//或"图片(*.jpg;*.bmp)|*.jpg;*.bmp"
+            };
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var wordsPath3 = dialog.FileNames;
+
+                foreach (var wordPath in wordsPath3)
+                {
+                    string wordFileNameWithoutExtension = Path.GetFileNameWithoutExtension(wordPath); //获取文件名称，不含拓展名。
+                    if (LeiTools.IOHelper.IsFileLocked(wordPath))  //判断文件是否被锁定
+                    {
+                        ShowErrorDialog(wordFileNameWithoutExtension + "已打开，请关闭Word文件后重试！");
+                        //MainForm.form1.TextBoxMsg2(wordFileNameWithoutExtension + "已打开，请关闭Word文件后重试！！!");
+                    }
+                    else
+                    {
+                        try
+                        {
+                            Aspose.Words.Document doc = new Aspose.Words.Document(wordPath);
+                            doc.Range.Bookmarks.Clear();
+                            doc.Save(wordPath);
+                            doc.UpdateFields(); //更新域
+                            ShowSuccessTip(wordFileNameWithoutExtension + "的书签已全部删除！");
+                        }
+                        catch (Exception ex)
+                        {
+                            ShowErrorDialog(ex.Message);                          
+                        }
+                    }
+                }
+            }
+        }
     }
 }

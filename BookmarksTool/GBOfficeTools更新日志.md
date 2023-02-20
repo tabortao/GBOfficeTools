@@ -27,6 +27,9 @@
 ## 更新记录
 
 
+### 2023-02-20 GBOfficeTools V2.0.9.0
+- 新功能：增加小工具-【删除Word书签】。
+
 ### 2023-02-16 GBOfficeTools V2.0.8.0
 - 修复高分屏时字体显示不全的问题。
 - 当窗体最小化时，隐藏到系统托盘。
@@ -36,7 +39,7 @@
 - 设置软件开机自启动。https://www.cnblogs.com/hyx1229/p/15763483.html
 - 开机启动项注册表位置：计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
 - 开机启动项注册表位置：计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run  (目前软件会写道注册表这里来)
-
+- 更新UIMessageBox.Show、ShowSuccesstips。
 
 ### 2023-02-10 GBOfficeTools V2.0.7.0
 - 优化【生成项目文件夹】功能。
