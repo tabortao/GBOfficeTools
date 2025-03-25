@@ -18,6 +18,8 @@
 
 ## Todo:
 
+- 增加AI翻译等功能
+- 增加PDF提取功能
 - 考虑增加PDF压缩、PDF拆分等小功能。
 - 暂时停止软件新功能维护，有新功能想法先记录下来。
 - 右键菜单增加“Word批量转PDF”功能 https://www.cnblogs.com/boyryan/p/14127499.html
