@@ -54,6 +54,9 @@
             this.uiLabel6 = new Sunny.UI.UILabel();
             this.btn_Clear2 = new Sunny.UI.UIImageButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btn_deleteBookmarks = new Sunny.UI.UISymbolButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.uiLinkLabel1 = new Sunny.UI.UILinkLabel();
             this.modifyFolderConfi = new Sunny.UI.UISymbolButton();
             this.btn_ProjectFolder = new Sunny.UI.UISymbolButton();
             this.btn_FileNames = new Sunny.UI.UISymbolButton();
@@ -89,22 +92,19 @@
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.截图OCR识别ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uiLinkLabel1 = new Sunny.UI.UILinkLabel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_deleteBookmarks = new Sunny.UI.UISymbolButton();
             this.uiTabControlMenu1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear2)).BeginInit();
             this.tabPage5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiTabControlMenu1
@@ -482,6 +482,50 @@
             this.tabPage5.Text = "小工具";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // btn_deleteBookmarks
+            // 
+            this.btn_deleteBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_deleteBookmarks.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_deleteBookmarks.Location = new System.Drawing.Point(51, 72);
+            this.btn_deleteBookmarks.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_deleteBookmarks.Name = "btn_deleteBookmarks";
+            this.btn_deleteBookmarks.Size = new System.Drawing.Size(146, 35);
+            this.btn_deleteBookmarks.Style = Sunny.UI.UIStyle.Custom;
+            this.btn_deleteBookmarks.Symbol = 61591;
+            this.btn_deleteBookmarks.SymbolColor = System.Drawing.Color.Aqua;
+            this.btn_deleteBookmarks.TabIndex = 7;
+            this.btn_deleteBookmarks.Text = "删除Word书签";
+            this.btn_deleteBookmarks.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_deleteBookmarks.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btn_deleteBookmarks.Click += new System.EventHandler(this.btn_deleteBookmarks_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.uiLinkLabel1);
+            this.groupBox4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox4.Location = new System.Drawing.Point(51, 287);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(493, 100);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "在线工具";
+            // 
+            // uiLinkLabel1
+            // 
+            this.uiLinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.uiLinkLabel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.uiLinkLabel1.Location = new System.Drawing.Point(2, 30);
+            this.uiLinkLabel1.Name = "uiLinkLabel1";
+            this.uiLinkLabel1.Size = new System.Drawing.Size(100, 23);
+            this.uiLinkLabel1.TabIndex = 5;
+            this.uiLinkLabel1.TabStop = true;
+            this.uiLinkLabel1.Text = "PDF24";
+            this.uiLinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiLinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.uiLinkLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiLinkLabel1.Click += new System.EventHandler(this.linkLable_Click);
+            // 
             // modifyFolderConfi
             // 
             this.modifyFolderConfi.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -568,7 +612,6 @@
             // 
             // ck_Selfstart
             // 
-            this.ck_Selfstart.Checked = true;
             this.ck_Selfstart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ck_Selfstart.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ck_Selfstart.Location = new System.Drawing.Point(15, 22);
@@ -826,9 +869,9 @@
             // lab_Version
             // 
             this.lab_Version.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lab_Version.Location = new System.Drawing.Point(483, 388);
+            this.lab_Version.Location = new System.Drawing.Point(475, 388);
             this.lab_Version.Name = "lab_Version";
-            this.lab_Version.Size = new System.Drawing.Size(124, 23);
+            this.lab_Version.Size = new System.Drawing.Size(132, 23);
             this.lab_Version.TabIndex = 4;
             this.lab_Version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lab_Version.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
@@ -928,50 +971,6 @@
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
-            // uiLinkLabel1
-            // 
-            this.uiLinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.uiLinkLabel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
-            this.uiLinkLabel1.Location = new System.Drawing.Point(2, 30);
-            this.uiLinkLabel1.Name = "uiLinkLabel1";
-            this.uiLinkLabel1.Size = new System.Drawing.Size(100, 23);
-            this.uiLinkLabel1.TabIndex = 5;
-            this.uiLinkLabel1.TabStop = true;
-            this.uiLinkLabel1.Text = "PDF24";
-            this.uiLinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiLinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.uiLinkLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiLinkLabel1.Click += new System.EventHandler(this.linkLable_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.uiLinkLabel1);
-            this.groupBox4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox4.Location = new System.Drawing.Point(51, 287);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(493, 100);
-            this.groupBox4.TabIndex = 6;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "在线工具";
-            // 
-            // btn_deleteBookmarks
-            // 
-            this.btn_deleteBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_deleteBookmarks.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_deleteBookmarks.Location = new System.Drawing.Point(51, 72);
-            this.btn_deleteBookmarks.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btn_deleteBookmarks.Name = "btn_deleteBookmarks";
-            this.btn_deleteBookmarks.Size = new System.Drawing.Size(146, 35);
-            this.btn_deleteBookmarks.Style = Sunny.UI.UIStyle.Custom;
-            this.btn_deleteBookmarks.Symbol = 61591;
-            this.btn_deleteBookmarks.SymbolColor = System.Drawing.Color.Aqua;
-            this.btn_deleteBookmarks.TabIndex = 7;
-            this.btn_deleteBookmarks.Text = "删除Word书签";
-            this.btn_deleteBookmarks.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_deleteBookmarks.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.btn_deleteBookmarks.Click += new System.EventHandler(this.btn_deleteBookmarks_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -996,13 +995,13 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Clear2)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

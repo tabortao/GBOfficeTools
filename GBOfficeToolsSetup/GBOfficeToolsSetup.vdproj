@@ -33,7 +33,31 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1749E8A322204E5B8ABC2D2E22B214DD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_19969EFFFD1D4A81869B26B35572800C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1EFE3A2432954A09ACF6B5A369ECCCB6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_28808D813B744FF79B5631FF120647EF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2C2BD6D8FF6F4F759BCF15748C33036F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -45,13 +69,43 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3F3EB16FC83D4F61B58C49072E101F3C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4D563A5D87929F5A15A7A47644898989"
+        "OwnerKey" = "8:_97CF0997E70E4A05A37F69DA5D68FFCA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5C74A1BAF2674F9EA385A5523216E035"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_863EE241C84C4DD18FB02359722A62DA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_88ABFB3D8F0D42C6B4641A3837178D50"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_97CF0997E70E4A05A37F69DA5D68FFCA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9E0D8F1DF49D4F8588A7C42FF89E94C7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,7 +129,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BFB2FD4481754CF2AB1BC38811EF13A2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BFCD477AF77B428D95E9E4A51C2F4D15"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C171523B691D416CB6E08C08823E55DB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -93,8 +159,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D2752F32FB0546729B23A2C2BC96A023"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D70A4C271A90D98B7E0C051015AEE739"
         "OwnerKey" = "8:_97CF0997E70E4A05A37F69DA5D68FFCA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E2795B55DCCE4BD08E0E52FAF368D48C"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -125,6 +203,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_D70A4C271A90D98B7E0C051015AEE739"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4D563A5D87929F5A15A7A47644898989"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -170,6 +254,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -325,12 +417,92 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1749E8A322204E5B8ABC2D2E22B214DD"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\Screencapture\\创建快捷键方法.txt"
+            "TargetName" = "8:创建快捷键方法.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_F663AE69DC11444EB5FDFB4BB95E4DD7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_19969EFFFD1D4A81869B26B35572800C"
             {
             "SourcePath" = "8:..\\BookmarksTool\\bin\\Release\\Data\\Lei.ico"
             "TargetName" = "8:Lei.ico"
             "Tag" = "8:"
             "Folder" = "8:_652A43572A5E47719660F7EF90F53B5D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1EFE3A2432954A09ACF6B5A369ECCCB6"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\appsettings.json"
+            "TargetName" = "8:appsettings.json"
+            "Tag" = "8:"
+            "Folder" = "8:_D4B55DAC9C9D45EA994071617AFECA00"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_28808D813B744FF79B5631FF120647EF"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\GBOfficeTools.application"
+            "TargetName" = "8:GBOfficeTools.application"
+            "Tag" = "8:"
+            "Folder" = "8:_D4B55DAC9C9D45EA994071617AFECA00"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2C2BD6D8FF6F4F759BCF15748C33036F"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\Screencapture\\SGCurlHelper.dll"
+            "TargetName" = "8:SGCurlHelper.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_F663AE69DC11444EB5FDFB4BB95E4DD7"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -365,12 +537,123 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3F3EB16FC83D4F61B58C49072E101F3C"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\Screencapture\\screencapture.exe"
+            "TargetName" = "8:screencapture.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_F663AE69DC11444EB5FDFB4BB95E4DD7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4D563A5D87929F5A15A7A47644898989"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4D563A5D87929F5A15A7A47644898989"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_D4B55DAC9C9D45EA994071617AFECA00"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5C74A1BAF2674F9EA385A5523216E035"
             {
             "SourcePath" = "8:..\\BookmarksTool\\bin\\Release\\Data\\ProjectFolder.ini"
             "TargetName" = "8:ProjectFolder.ini"
             "Tag" = "8:"
             "Folder" = "8:_652A43572A5E47719660F7EF90F53B5D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_863EE241C84C4DD18FB02359722A62DA"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\GBOfficeTools.exe.config"
+            "TargetName" = "8:GBOfficeTools.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_D4B55DAC9C9D45EA994071617AFECA00"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_88ABFB3D8F0D42C6B4641A3837178D50"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\Screencapture\\screencaptureconfig.ini"
+            "TargetName" = "8:screencaptureconfig.ini"
+            "Tag" = "8:"
+            "Folder" = "8:_F663AE69DC11444EB5FDFB4BB95E4DD7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9E0D8F1DF49D4F8588A7C42FF89E94C7"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\GBOfficeTools.exe.manifest"
+            "TargetName" = "8:GBOfficeTools.exe.manifest"
+            "Tag" = "8:"
+            "Folder" = "8:_D4B55DAC9C9D45EA994071617AFECA00"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -447,12 +730,52 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BFB2FD4481754CF2AB1BC38811EF13A2"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\Screencapture\\SGSmartAssistant.exe"
+            "TargetName" = "8:SGSmartAssistant.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_F663AE69DC11444EB5FDFB4BB95E4DD7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BFCD477AF77B428D95E9E4A51C2F4D15"
             {
             "SourcePath" = "8:..\\BookmarksTool\\bin\\Release\\Data\\CreateFolder.ini"
             "TargetName" = "8:CreateFolder.ini"
             "Tag" = "8:"
             "Folder" = "8:_652A43572A5E47719660F7EF90F53B5D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C171523B691D416CB6E08C08823E55DB"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\Screencapture\\screencapture.cupf"
+            "TargetName" = "8:screencapture.cupf"
+            "Tag" = "8:"
+            "Folder" = "8:_F663AE69DC11444EB5FDFB4BB95E4DD7"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -507,6 +830,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D2752F32FB0546729B23A2C2BC96A023"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\Screencapture\\SmartAssistant.log"
+            "TargetName" = "8:SmartAssistant.log"
+            "Tag" = "8:"
+            "Folder" = "8:_F663AE69DC11444EB5FDFB4BB95E4DD7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D70A4C271A90D98B7E0C051015AEE739"
             {
             "AssemblyRegister" = "3:1"
@@ -536,6 +879,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E2795B55DCCE4BD08E0E52FAF368D48C"
+            {
+            "SourcePath" = "8:G:\\Yao\\OneDrive\\App\\GBOfficeTools\\GBOfficeTools\\Newtonsoft.Json.xml"
+            "TargetName" = "8:Newtonsoft.Json.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_D4B55DAC9C9D45EA994071617AFECA00"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EB4DCE07984A41B5926EFE23713F8E41"
@@ -607,6 +970,17 @@
                         {
                         }
                     }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F663AE69DC11444EB5FDFB4BB95E4DD7"
+                    {
+                    "Name" = "8:Screencapture"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_74BA77687E9A46CE8767B807014BDB50"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -625,15 +999,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:GBOfficeTools"
-        "ProductCode" = "8:{3BFCE44B-0B93-4CA2-ACCA-AA2315A89673}"
-        "PackageCode" = "8:{9CE84717-B6FE-4F24-B2C3-9BDB34704ECE}"
+        "ProductCode" = "8:{B5A9F388-735E-466F-B64F-0C6911712169}"
+        "PackageCode" = "8:{382477A6-29DB-4FD5-99DB-FCB16DE7AF32}"
         "UpgradeCode" = "8:{A5021DE6-3E21-4DC2-BB3F-1A69FD2CF77A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.0.7"
+        "ProductVersion" = "8:2.1.0"
         "Manufacturer" = "8:可持续学园"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

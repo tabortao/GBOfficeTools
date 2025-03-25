@@ -50,8 +50,19 @@ namespace BookmarksTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string isAutoBoot = LeiTools.ConfigHelper.IniHelper.ReadString("App设置", "IsAutoBoot", "NA");
+            bool autoBoot;
+            if (bool.TryParse(isAutoBoot, out autoBoot))
+            {
+                ck_Selfstart.Checked = autoBoot;
+            }
+            else
+            {
+                // Handle the case where the value is not a valid boolean
+                ck_Selfstart.Checked = false; // or some default value
+            }
             // 读取系统设置，APP是否开机启动
-            ck_Selfstart.Checked = Convert.ToBoolean(LeiTools.ConfigHelper.IniHelper.ReadString("App设置", "IsAutoBoot", "NA"));
+            
             //读取系统设置，截图 OCR快捷键
             txt_Screencapture.Text = LeiTools.ConfigHelper.IniHelper.ReadString("App设置", "Screencapture", "NA");
 
