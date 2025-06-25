@@ -8,7 +8,7 @@
 - 【知乎】GBOfficeTools更新日志：https://zhuanlan.zhihu.com/p/601505550
 - 【知乎】GBOfficeTools软件说明与帮助：https://zhuanlan.zhihu.com/p/602014402
 - 【软件发布地址】：百度网盘——>500 软件——>502原创软件——>GBOfficeTools，微信公众号留言关键词可获取下载链接。
-- 项目地址：https://gitee.com/yaoleistable/gboffice-tools
+- 项目地址：https://gitee.com/tabortao/GBOfficeTools https://github.com/tabortao/GBOfficeTools
 
 ## 软件UI
 
