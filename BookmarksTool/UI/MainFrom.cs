@@ -3,6 +3,7 @@ using Sunny.UI;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace BookmarksTool
@@ -38,6 +39,20 @@ namespace BookmarksTool
             this.txt_bookmarkNameNo.Text = LeiTools.ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签名所在列", "NA");
             this.txt_bookmarkValueNo.Text = LeiTools.ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签值所在列", "NA");
             this.txt_bookmarkNo.Text = LeiTools.ConfigHelper.IniHelper.ReadString("Excel模板书签设置", "书签个数", "NA");
+            // 启用拖放
+            textBox2.AllowDrop = true;
+            txt_Excel1.AllowDrop = true;
+            txt_Words1.AllowDrop = true;
+            // 注册事件
+            textBox2.DragEnter += textBox2_DragEnter;
+            textBox2.DragDrop += textBox2_DragDrop;
+            txt_Excel1.DragEnter += txt_Excel1_DragEnter;
+            txt_Excel1.DragDrop += txt_Excel1_DragDrop;
+            txt_Words1.DragEnter += txt_Words1_DragEnter;
+            txt_Words1.DragDrop += txt_Words1_DragDrop;
+            txt_Words2.Watermark = "可拖入Word文件到上方文本框";
+            txt_Excel1.Watermark = "可拖入Excel文件到这里";
+            txt_Words1.Watermark = "可拖入Word文件到这里";
         }
 
         #region 自动更新
@@ -148,7 +163,7 @@ namespace BookmarksTool
 
         private void Btn_start_Click(object sender, EventArgs e)
         {
-            bool isDateExpired = LeiTools.Keygen.DateTimeHelper.IsDateExpired(2025); // 设置软件过期时间为2025年
+            bool isDateExpired = LeiTools.Keygen.DateTimeHelper.IsDateExpired(2030); // 设置软件过期时间为2030年
             if (isDateExpired)
             {
                 #region 执行Word报告生成
@@ -203,6 +218,82 @@ namespace BookmarksTool
             {
                 ShowInfoDialog("软件授权过期，请关注微信公众号“可持续学园”留言，免费获取更新。");
                 //UIMessageBox.Show("软件授权过期，请关注微信公众号“可持续学园”留言，免费获取更新。");
+            }
+        }
+        // Excel 拖入
+        private void txt_Excel1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                // 只允许Excel文件
+                if (files.Length == 1 && (files[0].EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase)))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void txt_Excel1_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                var excelFile = files.FirstOrDefault(f => f.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase));
+                if (!string.IsNullOrEmpty(excelFile))
+                {
+                    txt_Excel1.Clear();
+                    txt_Excel1.AppendText(excelFile);
+                    excelFilePath = excelFile;
+                }
+            }
+        }
+
+        // Word 拖入
+        private void txt_Words1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                // 只允许Word文件
+                if (files.Any(f => f.EndsWith(".doc", StringComparison.OrdinalIgnoreCase) || f.EndsWith(".docx", StringComparison.OrdinalIgnoreCase)))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void txt_Words1_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                var wordFiles = files.Where(f => f.EndsWith(".doc", StringComparison.OrdinalIgnoreCase) || f.EndsWith(".docx", StringComparison.OrdinalIgnoreCase)).ToArray();
+                if (wordFiles.Length > 0)
+                {
+                    txt_Words1.Clear();
+                    foreach (var file in wordFiles)
+                    {
+                        txt_Words1.AppendText(file + "\r\n");
+                    }
+                    wordsPath = wordFiles;
+                }
             }
         }
 
@@ -336,6 +427,47 @@ namespace BookmarksTool
             }
             sw.Stop();//计时结束
             MainForm.form1.TextBoxMsg2("Word批量转PDF已完成，用时" + sw.Elapsed + "秒");
+        }
+
+        private void textBox2_DragEnter(object sender, DragEventArgs e)
+        {
+            // 判断拖入的数据是否为文件
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                // 只允许Word文件
+                if (files.Any(f => f.EndsWith(".doc", StringComparison.OrdinalIgnoreCase) || f.EndsWith(".docx", StringComparison.OrdinalIgnoreCase)))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void textBox2_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                        // Update the problematic code to ensure LINQ methods are accessible
+                        var wordFiles = files.Where(f => f.EndsWith(".doc", StringComparison.OrdinalIgnoreCase) || f.EndsWith(".docx", StringComparison.OrdinalIgnoreCase)).ToArray();
+                if (wordFiles.Length > 0)
+                {
+                    // 显示到 txt_Words2 控件，并赋值 wordsPath2
+                    foreach (var file in wordFiles)
+                    {
+                        txt_Words2.AppendText(file + "\r\n");
+                    }
+                    wordsPath2 = wordFiles;
+                }
+            }
         }
 
         private void btn_SelectWords2_Click(object sender, EventArgs e)

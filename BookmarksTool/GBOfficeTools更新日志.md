@@ -8,6 +8,7 @@
 - 【知乎】GBOfficeTools更新日志：https://zhuanlan.zhihu.com/p/601505550
 - 【知乎】GBOfficeTools软件说明与帮助：https://zhuanlan.zhihu.com/p/602014402
 - 【软件发布地址】：百度网盘——>500 软件——>502原创软件——>GBOfficeTools，微信公众号留言关键词可获取下载链接。
+- 项目地址：https://gitee.com/yaoleistable/gboffice-tools
 
 ## 软件UI
 
@@ -15,18 +16,19 @@
   <img src="./_images/20230128 UI.jpg">
 </p>
 
+## 备注
+- 修改软件版本：在Properties\AssemblyInfo.cs中进行修改
 
 ## Todo:
 
-- 增加AI翻译等功能
-- 增加PDF提取功能
-- 考虑增加PDF压缩、PDF拆分等小功能。
 - 暂时停止软件新功能维护，有新功能想法先记录下来。
 - 右键菜单增加“Word批量转PDF”功能 https://www.cnblogs.com/boyryan/p/14127499.html
 
 
 
 ## 更新记录
+### 2025-06-25 GBOfficeTools V2.1.2.0
+- 支持文件拖入到对应文本框，更加方便使用。
 
 ### 2025-03-25 GBOfficeTools V2.1.1.0
 - Newtonsoft.Json更新到13.0.3。

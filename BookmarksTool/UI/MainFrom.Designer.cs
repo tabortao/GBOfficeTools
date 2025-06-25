@@ -179,6 +179,7 @@
             // 
             // txt_Words1
             // 
+            this.txt_Words1.AllowDrop = true;
             this.txt_Words1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_Words1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_Words1.Location = new System.Drawing.Point(115, 319);
@@ -197,6 +198,7 @@
             // 
             // txt_Excel1
             // 
+            this.txt_Excel1.AllowDrop = true;
             this.txt_Excel1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_Excel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_Excel1.Location = new System.Drawing.Point(115, 263);
@@ -708,7 +710,7 @@
             // uiLabel11
             // 
             this.uiLabel11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiLabel11.Font = new System.Drawing.Font("阿里巴巴普惠体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiLabel11.Location = new System.Drawing.Point(6, 26);
             this.uiLabel11.Name = "uiLabel11";
             this.uiLabel11.Size = new System.Drawing.Size(260, 166);
