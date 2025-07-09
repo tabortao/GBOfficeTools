@@ -44,7 +44,7 @@
 
 ### 2.3 操作动画
 
-![Word转PDF 01](_images/Word转PDF.gif)
+![Word转PDF](_images/Word转PDF.gif)
 
 ## 3 其他
 
